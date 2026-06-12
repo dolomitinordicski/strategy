@@ -3,141 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube.com https://www.youtube-nocookie.com; img-src * data:;">
-<title>DNS – Strategisches Ticketing & Systemkonzept | Vorstandssitzung 10.06.2026</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube.com https://www.youtube-nocookie.com; img-src * data: blob:;">
+<title>DNS – Strategisches Ticketing | Vorstandssitzung 10.06.2026</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f0f6f7;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
 :root{--deep:#0D4D5E;--mid:#417483;--light:#AAD0D1;--lighter:#D6ECED;--lightest:#EEF7F7;--text:#1a2e33;--muted:#5a7a83;--white:#fff}
 .app{width:100%;max-width:800px;background:var(--white);border-radius:16px;box-shadow:0 4px 32px rgba(13,77,94,.12);overflow:hidden}
-.header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid var(--lighter)}
+.header{display:flex;align-items:center;justify-content:space-between;padding:12px 22px;border-bottom:1px solid var(--lighter)}
 .logo{display:flex;align-items:center;gap:10px}
-.logo-icon{width:30px;height:30px;border-radius:7px;background:var(--deep);display:flex;align-items:center;justify-content:center}
-.logo-text{font-size:13px;font-weight:700;color:var(--deep);letter-spacing:.02em}
-.logo-sub{font-size:11px;color:var(--muted);border-left:1px solid var(--lighter);padding-left:10px;margin-left:2px}
-.header-btns{display:flex;gap:8px}
-.btn-sm{font-size:12px;padding:5px 12px;border-radius:7px;border:1px solid var(--lighter);background:transparent;color:var(--muted);cursor:pointer;transition:background .15s}
+.logo img{height:36px;width:auto;object-fit:contain}
+.logo-sub{font-size:11px;color:var(--muted);border-left:1px solid var(--lighter);padding-left:10px}
+.header-btns{display:flex;gap:7px}
+.btn-sm{font-size:12px;padding:5px 11px;border-radius:7px;border:1px solid var(--lighter);background:transparent;color:var(--muted);cursor:pointer;transition:background .15s}
 .btn-sm:hover,.btn-sm.active{background:var(--lightest);border-color:var(--light)}
 .progress-bar{height:3px;background:var(--lighter)}
 .progress-fill{height:100%;background:var(--mid);transition:width .3s}
-.toc{background:var(--lightest);border-bottom:1px solid var(--lighter);padding:12px 24px;display:none;grid-template-columns:1fr 1fr;gap:3px;max-height:280px;overflow-y:auto}
+.toc{background:var(--lightest);border-bottom:1px solid var(--lighter);padding:10px 22px;display:none;grid-template-columns:1fr 1fr;gap:2px;max-height:260px;overflow-y:auto}
 .toc.open{display:grid}
-.toc-item{font-size:11px;padding:4px 8px;border-radius:6px;border:none;background:transparent;color:var(--muted);cursor:pointer;text-align:left;transition:background .1s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.toc-item{font-size:11px;padding:4px 8px;border-radius:6px;border:none;background:transparent;color:var(--muted);cursor:pointer;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:background .1s}
 .toc-item:hover{background:var(--lighter)}
-.toc-item.active{background:var(--light);color:var(--deep);font-weight:600}
-.toc-num{opacity:.5;margin-right:4px}
-.slide{min-height:380px;padding:26px 28px 18px}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-top:1px solid var(--lighter)}
-.btn-nav{font-size:13px;padding:8px 18px;border-radius:8px;cursor:pointer;transition:all .15s}
+.toc-item.active{background:var(--light);color:var(--deep);font-weight:700}
+.toc-num{opacity:.45;margin-right:4px}
+.slide{min-height:380px;padding:24px 26px 16px}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:13px 22px;border-top:1px solid var(--lighter)}
+.btn-nav{font-size:13px;padding:7px 16px;border-radius:8px;cursor:pointer;transition:all .15s}
 .btn-prev{border:1px solid var(--lighter);background:transparent;color:var(--muted)}
 .btn-prev:hover:not(:disabled){border-color:var(--light);color:var(--mid)}
-.btn-prev:disabled,.btn-next:disabled{opacity:.35;cursor:default}
+.btn-prev:disabled,.btn-next:disabled{opacity:.3;cursor:default}
 .btn-next{border:1px solid var(--mid);background:var(--mid);color:var(--white)}
 .btn-next:hover:not(:disabled){background:var(--deep);border-color:var(--deep)}
 .nav-counter{font-size:12px;color:var(--muted)}
-.tag{font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--mid);text-transform:uppercase;margin-bottom:8px}
-.slide-title{font-size:21px;font-weight:700;color:var(--deep);margin-bottom:14px}
-.quad-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.quad-card{background:var(--lightest);border-radius:10px;padding:13px 15px;border:1px solid var(--lighter)}
-.quad-card h3{font-size:13px;font-weight:700;color:var(--deep);margin-bottom:5px}
-.quad-card p{font-size:12px;color:var(--muted);line-height:1.55}
-.section-slide{background:linear-gradient(135deg,var(--deep) 0%,var(--mid) 100%);border-radius:14px;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 32px;text-align:center}
-.section-num{font-size:52px;font-weight:800;color:var(--light);line-height:1;margin-bottom:8px}
-.section-title{font-size:26px;font-weight:700;color:var(--white);margin-bottom:12px;max-width:520px}
-.section-sub{font-size:15px;color:var(--lighter);max-width:420px}
+/* components */
+.tag{font-size:10px;font-weight:700;letter-spacing:.09em;color:var(--mid);text-transform:uppercase;margin-bottom:7px}
+.slide-title{font-size:21px;font-weight:700;color:var(--deep);margin-bottom:13px;line-height:1.25}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
-.text-body{font-size:13px;color:var(--text);line-height:1.7;margin-bottom:9px}
-.text-note{font-size:11px;color:var(--mid);font-style:italic;margin-top:12px}
-.img-placeholder{background:var(--lightest);border-radius:12px;border:1px solid var(--lighter);min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;gap:8px}
-.img-caption{font-size:13px;color:var(--mid);text-align:center}
-.img-sub{font-size:11px;color:var(--light);text-align:center}
-.product-list{display:flex;flex-direction:column;gap:10px}
-.product-item{display:flex;align-items:center;gap:14px;background:var(--lightest);border-radius:10px;padding:12px 15px;border:1px solid var(--lighter)}
-.product-icon{width:40px;height:40px;background:var(--light);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px}
-.product-item h3{font-size:14px;font-weight:600;color:var(--deep)}
-.product-item .tech{font-size:12px;color:var(--muted);margin-top:2px}
-.product-note{font-size:11px;color:var(--mid);font-style:italic;text-align:right;max-width:130px;flex-shrink:0}
-.list-right-grid{display:grid;grid-template-columns:180px 1fr;gap:26px;align-items:start}
-.list-right-title{font-size:30px;font-weight:800;color:var(--deep);padding-top:4px}
-.list-items{display:flex;flex-direction:column;gap:10px}
-.list-item{border-left:3px solid var(--light);padding-left:13px}
+.text-body{font-size:13px;color:var(--text);line-height:1.7;margin-bottom:8px}
+.text-note{font-size:11px;color:var(--mid);font-style:italic;margin-top:10px}
+.quad-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.qcard{background:var(--lightest);border-radius:10px;padding:13px 14px;border:1px solid var(--lighter)}
+.qcard h3{font-size:13px;font-weight:700;color:var(--deep);margin-bottom:4px}
+.qcard p{font-size:12px;color:var(--muted);line-height:1.55}
+.section-wrap{background:linear-gradient(135deg,var(--deep) 0%,var(--mid) 100%);border-radius:14px;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:44px 32px;text-align:center}
+.section-num{font-size:52px;font-weight:800;color:var(--light);line-height:1;margin-bottom:8px}
+.section-title{font-size:26px;font-weight:700;color:var(--white);margin-bottom:10px;max-width:520px}
+.section-sub{font-size:15px;color:var(--lighter);max-width:420px}
+.list-right{display:grid;grid-template-columns:175px 1fr;gap:24px;align-items:start}
+.list-right-title{font-size:28px;font-weight:800;color:var(--deep);padding-top:4px;line-height:1.2}
+.list-items{display:flex;flex-direction:column;gap:9px}
+.list-item{border-left:3px solid var(--light);padding-left:12px}
 .list-item h3{font-size:13px;font-weight:600;color:var(--deep);margin-bottom:2px}
 .list-item p{font-size:12px;color:var(--muted);line-height:1.5}
-.pilot-grid{display:grid;grid-template-columns:160px 1fr;gap:18px;align-items:start}
-.pilot-title-box{background:linear-gradient(160deg,var(--deep),var(--mid));border-radius:12px;padding:18px 13px;text-align:center}
-.pilot-title-box h2{font-size:18px;font-weight:800;color:var(--white);line-height:1.3}
-.pilot-items{display:flex;flex-direction:column;gap:8px}
-.pilot-item{background:var(--lightest);border-radius:8px;padding:9px 12px;border:1px solid var(--lighter)}
-.pilot-item h3{font-size:12px;font-weight:700;color:var(--deep);margin-bottom:3px}
+.product-list{display:flex;flex-direction:column;gap:9px}
+.product-item{display:flex;align-items:center;gap:13px;background:var(--lightest);border-radius:10px;padding:11px 14px;border:1px solid var(--lighter)}
+.product-icon{width:40px;height:40px;background:var(--lightest);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid var(--lighter)}
+.product-item h3{font-size:13px;font-weight:600;color:var(--deep)}
+.product-item .tech{font-size:11px;color:var(--muted);margin-top:2px}
+.product-note{font-size:11px;color:var(--mid);font-style:italic;text-align:right;max-width:120px;flex-shrink:0}
+.pilot-grid{display:grid;grid-template-columns:155px 1fr;gap:16px;align-items:start}
+.pilot-box{background:linear-gradient(160deg,var(--deep),var(--mid));border-radius:12px;padding:18px 12px;text-align:center}
+.pilot-box h2{font-size:17px;font-weight:800;color:var(--white);line-height:1.3}
+.pilot-items{display:flex;flex-direction:column;gap:7px}
+.pilot-item{background:var(--lightest);border-radius:8px;padding:9px 11px;border:1px solid var(--lighter)}
+.pilot-item h3{font-size:12px;font-weight:700;color:var(--deep);margin-bottom:2px}
 .pilot-item p{font-size:12px;color:var(--muted);line-height:1.5}
-.roadmap-note{font-size:12px;color:var(--muted);font-style:italic;margin-bottom:14px}
-.roadmap-steps{display:flex;flex-direction:column;gap:10px}
-.roadmap-step{display:flex;gap:12px;align-items:stretch}
-.roadmap-year{border-radius:8px;padding:11px 13px;min-width:84px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.roadmap-note{font-size:11px;color:var(--muted);font-style:italic;margin-bottom:12px}
+.roadmap-steps{display:flex;flex-direction:column;gap:9px}
+.roadmap-step{display:flex;gap:11px;align-items:stretch}
+.roadmap-year{border-radius:8px;padding:10px 12px;min-width:82px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .roadmap-year span{font-size:12px;font-weight:700;text-align:center}
-.roadmap-content{flex:1;background:var(--lightest);border-radius:8px;padding:10px 13px;border:1px solid var(--lighter)}
+.roadmap-content{flex:1;background:var(--lightest);border-radius:8px;padding:10px 12px;border:1px solid var(--lighter)}
 .roadmap-content h3{font-size:13px;font-weight:600;color:var(--deep);margin-bottom:3px}
 .roadmap-content p{font-size:12px;color:var(--muted);line-height:1.55}
-.invest-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.invest-table{width:100%;border-collapse:collapse}
-.invest-table td{padding:7px 4px;font-size:12px;border-bottom:1px solid var(--lightest)}
-.invest-table .opt td{color:var(--mid);font-style:italic}
-.invest-table .bold td{font-weight:700;color:var(--deep)}
-.alt-box{background:var(--lightest);border-radius:10px;padding:14px;border:1px solid var(--lighter);display:flex;flex-direction:column;justify-content:center}
-.alt-box h3{font-size:13px;font-weight:600;color:var(--deep);margin-bottom:7px}
-.alt-box p{font-size:12px;color:var(--muted);line-height:1.6}
-.decision-items{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:13px}
-.decision-item{background:var(--lightest);border-radius:8px;padding:11px 13px;border:1px solid var(--lighter)}
-.decision-item h3{font-size:12px;font-weight:700;color:var(--deep);margin-bottom:3px}
-.decision-item p{font-size:12px;color:var(--muted);line-height:1.55}
-.decision-quote{background:linear-gradient(135deg,var(--deep),var(--mid));border-radius:10px;padding:16px 20px}
-.decision-quote p{color:var(--white);font-size:13px;font-weight:500;line-height:1.65;text-align:center;font-style:italic}
-.bullet-slide h2{font-size:14px;font-weight:700;color:var(--deep);margin:12px 0 5px}
-.bullet-slide ul{padding-left:18px;margin-bottom:6px}
-.bullet-slide ul li{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:2px}
-.bullet-slide p{font-size:13px;color:var(--text);line-height:1.65;margin-bottom:8px}
-.highlight-box{background:var(--lightest);border-radius:10px;padding:14px 16px;border:1px solid var(--light);margin-top:14px}
-.highlight-box p{font-size:13px;font-weight:600;color:var(--deep);margin-bottom:4px}
-.highlight-box ul{padding-left:16px}
-.highlight-box ul li{font-size:12px;color:var(--mid);line-height:1.6}
-.fin-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.fin-table-wrap h3{font-size:13px;font-weight:700;color:var(--deep);margin-bottom:8px}
-.fin-table{width:100%;border-collapse:collapse}
-.fin-table thead tr{background:var(--light)}
-.fin-table thead td{padding:7px 10px;font-size:12px;font-weight:700;color:var(--deep)}
-.fin-table tbody tr{border-bottom:1px solid var(--lightest)}
-.fin-table tbody td{padding:7px 10px;font-size:12px;color:var(--text)}
-.fin-table tbody tr.bold td{font-weight:700;color:var(--deep)}
-.phase2-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.phase2-table-wrap{}
-.phase2-modules{background:var(--lightest);border-radius:10px;padding:14px 16px;border:1px solid var(--lighter)}
-.phase2-modules h3{font-size:13px;font-weight:700;color:var(--deep);margin-bottom:6px}
-.phase2-modules p{font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:8px}
-.phase2-modules ul{padding-left:16px}
-.phase2-modules ul li{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:2px}
-.risiko-list{display:flex;flex-direction:column;gap:10px;margin-top:4px}
-.risiko-item{display:flex;align-items:flex-start;gap:12px;background:var(--lightest);border-radius:9px;padding:12px 14px;border:1px solid var(--lighter)}
-.risiko-dot{width:10px;height:10px;border-radius:50%;background:var(--light);flex-shrink:0;margin-top:3px}
+.risiko-list{display:flex;flex-direction:column;gap:9px;margin-top:4px}
+.risiko-item{display:flex;align-items:flex-start;gap:11px;background:var(--lightest);border-radius:9px;padding:11px 13px;border:1px solid var(--lighter)}
+.risiko-dot{width:9px;height:9px;border-radius:50%;background:var(--light);flex-shrink:0;margin-top:4px}
 .risiko-item p{font-size:13px;font-weight:600;color:var(--deep);line-height:1.4}
+.invest-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.inv-table{width:100%;border-collapse:collapse}
+.inv-table td{padding:7px 4px;font-size:12px;border-bottom:1px solid var(--lightest)}
+.inv-table .opt td{color:var(--mid);font-style:italic}
+.inv-table .bold td{font-weight:700;color:var(--deep)}
+.alt-box{background:var(--lightest);border-radius:10px;padding:13px;border:1px solid var(--lighter)}
+.alt-box h3{font-size:13px;font-weight:600;color:var(--deep);margin-bottom:6px}
+.alt-box p{font-size:12px;color:var(--muted);line-height:1.6}
+.fin-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fin-wrap h3{font-size:13px;font-weight:700;color:var(--deep);margin-bottom:7px}
+.fin-table{width:100%;border-collapse:collapse}
+.fin-table thead td{padding:6px 10px;font-size:12px;font-weight:700;color:var(--deep);background:var(--light)}
+.fin-table tbody td{padding:6px 10px;font-size:12px;color:var(--text);border-bottom:1px solid var(--lightest)}
+.fin-table .bold td{font-weight:700;color:var(--deep)}
+.phase2-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.phase2-mod{background:var(--lightest);border-radius:10px;padding:13px;border:1px solid var(--lighter)}
+.phase2-mod h3{font-size:13px;font-weight:700;color:var(--deep);margin-bottom:5px}
+.phase2-mod p{font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:7px}
+.phase2-mod ul{padding-left:15px}
+.phase2-mod ul li{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:2px}
+.decision-items{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.dec-item{background:var(--lightest);border-radius:8px;padding:10px 12px;border:1px solid var(--lighter)}
+.dec-item h3{font-size:12px;font-weight:700;color:var(--deep);margin-bottom:3px}
+.dec-item p{font-size:12px;color:var(--muted);line-height:1.55}
+.dec-quote{background:linear-gradient(135deg,var(--deep),var(--mid));border-radius:10px;padding:15px 20px}
+.dec-quote p{color:var(--white);font-size:13px;font-weight:500;line-height:1.65;text-align:center;font-style:italic}
+.bullet-slide p{font-size:13px;color:var(--text);line-height:1.65;margin-bottom:7px}
+.bullet-slide h2{font-size:14px;font-weight:700;color:var(--deep);margin:11px 0 4px}
+.bullet-slide ul{padding-left:17px;margin-bottom:6px}
+.bullet-slide ul li{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:2px}
+.hl-box{background:var(--lightest);border-radius:10px;padding:12px 15px;border:1px solid var(--light);margin-top:12px}
+.hl-box p{font-size:13px;font-weight:600;color:var(--deep);margin-bottom:4px}
+.hl-box ul{padding-left:15px}
+.hl-box ul li{font-size:12px;color:var(--mid);line-height:1.6}
+.video-wrap{margin-top:10px;border-radius:10px;overflow:hidden;border:1px solid var(--light)}
+.video-label{background:var(--deep);padding:5px 11px;font-size:11px;font-weight:600;color:var(--light);letter-spacing:.05em}
+.video-fallback{display:none;padding:14px;background:var(--lightest);text-align:center}
+.video-fallback a{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;background:var(--deep);color:var(--white);border-radius:8px;font-size:12px;font-weight:600;text-decoration:none}
 </style>
 </head>
 <body>
-<div class="app">
+<div class="app" id="app">
   <div class="header">
     <div class="logo">
-      <div class="logo-icon" style="background:none;">
-        <img src="logo.png" style="width:40px;height:40px;object-fit:contain;">
-      </div>
-
+      <img src="logo.png" alt="Dolomiti NordicSki">
       <span class="logo-sub">Vorstandssitzung 10.06.2026</span>
     </div>
     <div class="header-btns">
       <button class="btn-sm" id="tocBtn" onclick="toggleToc()">☰ Inhalt</button>
       <button class="btn-sm" id="langBtn" onclick="toggleLang()">IT</button>
-      <button class="btn-sm" id="fsBtn" onclick="toggleFullscreen()" title="Vollbild / Schermo intero">⛶</button>
+      <button class="btn-sm" id="fsBtn" onclick="toggleFs()">⛶</button>
     </div>
   </div>
-  <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+  <div class="progress-bar"><div class="progress-fill" id="prog"></div></div>
   <div class="toc" id="toc"></div>
   <div class="slide" id="slide"></div>
   <div class="nav">
@@ -148,520 +143,506 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 </div>
 
 <script>
-var lang="de", current=0;
+var lang='de', cur=0;
 
-var slides=[
-  // 1
-  {type:"section",num:"3.",tag:"Strategisches Ticketing",
-    de:{title:"Strategisches Ticketing- und Systemkonzept",sub:"DNS Zukunftsvision"},
-    it:{title:"Concetto strategico di ticketing e sistema",sub:"Visione futura DNS"}},
-  // 2
-  {type:"quad",tag:"Executive Summary",
-    de:{title:"Executive Summary",items:[
-      {h:"Offenes System",b:"DNS steht vor der Herausforderung eines offenen Systems – Langlauf kennt keine geschlossenen Zugänge wie Skigebiete."},
-      {h:"Kontrollgrenzen",b:"Vollständige Kontrolle ist weder möglich noch wirtschaftlich sinnvoll – klassische Modelle greifen nicht."},
-      {h:"Strategischer Ansatz",b:"Paradigmenwechsel: Weg von Kontrolle, hin zu einem intelligenten, adaptiven Systemansatz."},
-      {h:"Zielsystem",b:"Ein intelligentes, skalierbares System mit klarer Logik und minimaler Komplexität."}]},
-    it:{title:"Executive Summary",items:[
-      {h:"Sistema aperto",b:"DNS affronta la sfida di un sistema aperto – lo sci di fondo non conosce accessi chiusi come le aree sciistiche."},
-      {h:"Limiti di controllo",b:"Un controllo totale non è né possibile né economicamente sensato – i modelli classici non funzionano."},
-      {h:"Approccio strategico",b:"Cambio di paradigma: abbandonare il controllo per un sistema intelligente e adattivo."},
-      {h:"Sistema obiettivo",b:"Un sistema intelligente e scalabile con logica chiara e complessità minima."}]}},
-  // 3
-  {type:"text-img",tag:"Ausgangslage / Situazione iniziale",
-    de:{title:"Ausgangslage",body:"DNS ist ein Netzwerk verschiedener Langlaufregionen in den Dolomiten. Langlauf funktioniert als offenes System – Loipen sind frei zugänglich und schwer kontrollierbar.\n\nKlassische Ticketing-Modelle aus dem Alpin-Bereich lassen sich nicht übertragen. Die Herausforderung: Ein System entwickeln, das dieser offenen Struktur gerecht wird."},
-    it:{title:"Situazione iniziale",body:"DNS è una rete di diverse regioni di sci di fondo nelle Dolomiti. Lo sci di fondo funziona come sistema aperto – le piste sono liberamente accessibili e difficili da controllare.\n\nI modelli di ticketing classici del settore alpino non sono trasferibili. La sfida: sviluppare un sistema adeguato a questa struttura aperta."}},
-  // 4
-  {type:"section",tag:"Strategischer Ansatz",
-    de:{title:"Strategischer Ansatz",sub:""},
-    it:{title:"Approccio strategico",sub:""}},
-  // 5
-  {type:"quad",tag:"Daten als strategische Ressource",
-    de:{title:"Daten als strategische Ressource",items:[
-      {h:"Reale Nutzung",b:"Entscheidungen basieren auf echten Nutzungsdaten statt auf Annahmen."},
-      {h:"Angebotssteuerung",b:"Angebote können gezielt an Nachfrage und Nutzung angepasst werden."},
-      {h:"Verhaltensanalyse",b:"Frequenzen, Zeiten und Bewegungen werden sichtbar und messbar."},
-      {h:"Mehrwert Regionen",b:"Transparente Daten schaffen eine fundierte Grundlage für regionale Entscheidungen."}]},
-    it:{title:"I dati come risorsa strategica",items:[
-      {h:"Utilizzo reale",b:"Le decisioni si basano su dati reali invece che su ipotesi."},
-      {h:"Gestione dell'offerta",b:"Le offerte possono essere adattate in modo mirato alla domanda."},
-      {h:"Analisi comportamentale",b:"Frequenze, orari e movimenti diventano visibili e misurabili."},
-      {h:"Valore aggiunto regioni",b:"Dati trasparenti creano una base solida per le decisioni regionali."}]}},
-  // 6
-  {type:"listright",tag:"Zielsetzung / Obiettivi",
-    de:{title:"Zielsetzung",items:[
-      {h:"Klare Systemlogik",b:"Eindeutige Regeln und transparente Prozesse für alle Beteiligten."},
-      {h:"Minimale Komplexität",b:"Reduktion auf das Wesentliche für einfache Handhabung."},
-      {h:"Langfristige Skalierbarkeit",b:"Flexibles Wachstum ohne Systembrüche ermöglichen."},
-      {h:"Nachhaltige Architektur",b:"Zukunftssichere Struktur für kontinuierliche Weiterentwicklung."}]},
-    it:{title:"Obiettivi",items:[
-      {h:"Logica di sistema chiara",b:"Regole univoche e processi trasparenti per tutti i partecipanti."},
-      {h:"Complessità minima",b:"Riduzione all'essenziale per una gestione semplice."},
-      {h:"Scalabilità a lungo termine",b:"Crescita flessibile senza interruzioni di sistema."},
-      {h:"Architettura sostenibile",b:"Struttura a prova di futuro per uno sviluppo continuo."}]}},
-  // 7
-  {type:"product",tag:"Produktlogik / Logica di prodotto",
-    de:{title:"Produktlogik",items:[
-      {h:"Saisonkarte (DNS)",tech:"RFID/UHF-Card im Armband-Träger – netzwerkweit gültig",note:"Implementierung: PRIOT",icon:"rfid"},
-      {h:"Wochenkarte (DNS)",tech:"Digitales Ticket – gespeichert im Wallet (Apple, Google, Samsung)",note:"Implementierung: LTS Shop",icon:"qr"},
-      {h:"Tageskarten (Regionen)",tech:"Regionale Systeme / optional UHF-Polesticker",note:"Autonome Entscheidung pro Region",icon:"ticket"}]},
-    it:{title:"Logica di prodotto",items:[
-      {h:"Tessera stagionale (DNS)",tech:"Card RFID/UHF nel porta-card da braccio – valido su tutta la rete",note:"Implementazione: PRIOT",icon:"rfid"},
-      {h:"Tessera settimanale (DNS)",tech:"Biglietto digitale – salvato nel Wallet (Apple, Google, Samsung)",note:"Implementazione: LTS Shop",icon:"qr"},
-      {h:"Biglietti giornalieri (Regioni)",tech:"Sistemi regionali / opz. UHF-Polesticker",note:"Decisione autonoma per regione",icon:"ticket"}]}},
-  // 8
-  {type:"listright",tag:"Systemarchitektur",
-    de:{title:"Mehrstufiges\nModell",items:[
-      {h:"Saisonkarten",b:"RFID/UHF-Card im Armband-Träger – automatische Erkennung, DNS-Ebene"},
-      {h:"Wochenkarten",b:"Digitales Ticket im Wallet (Apple, Google, Samsung) – DNS-Ebene"},
-      {h:"Tageskarten",b:"Regionale Systeme – autonome Entscheidung pro Region"}]},
-    it:{title:"Modello\nmultilivello",items:[
-      {h:"Tessere stagionali",b:"Card RFID/UHF nel porta-card da braccio – riconoscimento automatico, livello DNS"},
-      {h:"Tessere settimanali",b:"Biglietto digitale nel Wallet (Apple, Google, Samsung) – livello DNS"},
-      {h:"Biglietti giornalieri",b:"Sistemi regionali – decisione autonoma per regione"}]}},
-  // 9
-  {type:"text-img",imgKey:9,tag:"Saisonkarte / Tessera stagionale",
-    de:{title:"Saisonkarte (DNS)",body:"Die DNS-Saisonkarte ist eine RFID/UHF-Card im Kreditkartenformat mit integriertem Chip. Sie wird in einer robusten Armband-Halterung am Handgelenk getragen und ist direkt mit dem persönlichen Nutzerkonto verknüpft.\n\nDie Kombination aus Card und Armband-Träger ermöglicht automatische Erkennung beim Passieren von Kontrollpunkten – ohne Anhalten, ohne Scannen. Nutzungsdaten werden erfasst und der Clearing-Prozess automatisiert.",note:"Implementierung: PRIOT"},
-    it:{title:"Tessera stagionale (DNS)",body:"La tessera stagionale DNS è una card RFID/UHF in formato carta di credito con chip integrato. Viene portata in un porta-card da braccio robusto e collegata direttamente all'account personale dell'utente.\n\nLa combinazione card + porta-card da braccio consente il riconoscimento automatico al passaggio dei punti di controllo – senza fermarsi, senza scansione. I dati di utilizzo vengono registrati e il processo di clearing automatizzato.",note:"Implementazione: PRIOT"}},
-  // 10
-  {type:"section",tag:"Technologischer Ansatz",
-    de:{title:"Der technologische Ansatz",sub:"PRIOT Smart Track"},
-    it:{title:"L'approccio tecnologico",sub:"PRIOT Smart Track"}},
-  // 11
-  {type:"text-img-points",imgKey:12,tag:"PRIOT Integration",
-    de:{title:"PRIOT Smart Track",body:"PRIOT ist ein slowenisches Unternehmen, das eine integrierte Hardware- und Software-Lösung für das nordische Skizentrum Planica entwickelt hat. Das System umfasst vernetzte Messstationen, mobile Validierungsgeräte und eine cloud-basierte Plattform zur Ticketverwaltung und Nutzungsanalyse.\n\nSeit mehreren Saisons im Einsatz, bildet PRIOT Smart Track die technologische Grundlage für Zutrittskontrolle und Datenmanagement im Langlaufbereich.",items:[
-      {h:"Cloud-basiertes System",b:"Zentrale Datenstruktur, vernetzte Messstationen (LTE)."},
-      {h:"Multi-Ticket-Support",b:"Verschiedene Tickettypen parallel im gleichen System."},
-      {h:"UHF-Technologie",b:"Automatische Erkennung ohne Anhalten des Nutzers."}]},
-    it:{title:"PRIOT Smart Track",body:"PRIOT è un'azienda slovena che ha sviluppato una soluzione integrata hardware e software per il centro nordico di Planica. Il sistema comprende stazioni di misurazione collegate, dispositivi di validazione mobili e una piattaforma cloud per la gestione dei biglietti e l'analisi dell'utilizzo.\n\nAttivo da diverse stagioni, PRIOT Smart Track costituisce la base tecnologica per il controllo degli accessi e la gestione dei dati nel fondo.",items:[
-      {h:"Sistema cloud-based",b:"Struttura dati centrale, stazioni collegate (LTE)."},
-      {h:"Multi-ticket support",b:"Diversi tipi di biglietto in parallelo nello stesso sistema."},
-      {h:"Tecnologia UHF",b:"Riconoscimento automatico senza fermare l'utente."}]}},
-  // 13
-  {type:"text-img",imgKey:13,tag:"Funktionsweise des Systems",
-    de:{title:"Funktionsweise\ndes Systems",body:"Tickets enthalten digitale Zugriffsrechte und werden über vernetzte Messstationen validiert.\n\nDie zentrale Datenbank arbeitet nach einer cloud-first Architektur und bietet Echtzeit-Überblick über Nutzung und Status. Inspektoren nutzen mobile Geräte mit integrierter Langstreckenantenne für die Zutrittskontrolle – die Ticketgültigkeit kann geprüft werden, ohne den Besucher anzuhalten."},
-    it:{title:"Funzionamento\ndel sistema",body:"I biglietti contengono diritti di accesso digitali e vengono validati tramite stazioni di misurazione collegate.\n\nIl database centrale lavora con architettura cloud-first e offre una panoramica in tempo reale di utilizzo e stato. Gli ispettori utilizzano dispositivi mobili con antenna integrata a lunga portata per il controllo degli accessi – la validità del biglietto può essere verificata senza fermare il visitatore."}},
-  // 14
-  {type:"listright",tag:"Erweiterte Möglichkeiten / Possibilità avanzate",
-    de:{title:"Erweiterte\nMöglichkeiten",items:[
-      {h:"Automatische Erkennung (UHF)",b:"Nutzer werden automatisch beim Passieren eines Kontrollpunkts erfasst."},
-      {h:"Tracking von Nutzung und Frequenzen",b:"Wann, wie oft und wo werden die Loipen genutzt?"},
-      {h:"Personalisierte Nutzer-Dashboards",b:"Optional: individuelle Statistiken für Karteninhaber."},
-      {h:"Integration von Services",b:"Angebote, Partner und regionale Services direkt verknüpfbar."}]},
-    it:{title:"Possibilità\navanzate",items:[
-      {h:"Riconoscimento automatico (UHF)",b:"Gli utenti vengono rilevati automaticamente al passaggio di un punto di controllo."},
-      {h:"Tracking di utilizzo e frequenze",b:"Quando, quanto spesso e dove vengono utilizzate le piste?"},
-      {h:"Dashboard utente personalizzate",b:"Opzionale: statistiche individuali per i titolari di tessera."},
-      {h:"Integrazione di servizi",b:"Offerte, partner e servizi regionali collegabili direttamente."}]}},
-  // 15
-  {type:"text-img",imgKey:"15ab",tag:"Armband / Braccialetto",
-    de:{title:"Armband-Träger",body:"Der Armband-Träger ist die physische Halterung für die DNS-Saisonkarte. Er wurde für maximale Robustheit und Funktionalität im Outdoor-Einsatz entwickelt und trägt die RFID/UHF-Card sicher am Handgelenk.\n\nDurch seine hohe Sichtbarkeit dient er gleichzeitig als Erkennungszeichen der DNS-Community und ermöglicht eine schnelle visuelle Identifikation bei Kontrollen. Die Card selbst bleibt jederzeit im Träger – kein Herausnehmen nötig.",note:"Hersteller/Implementierung: SAXE"},
-    it:{title:"Porta-card da braccio",body:"Il porta-card da braccio è il supporto fisico per la tessera stagionale DNS. È stato sviluppato per massima robustezza e funzionalità nell'uso outdoor e mantiene la card RFID/UHF al polso in modo sicuro.\n\nGrazie alla sua alta visibilità funge anche da segno di riconoscimento della community DNS e consente una rapida identificazione visiva durante i controlli. La card rimane sempre nel porta-card – non è necessario estrarla.",note:"Produttore/Implementazione: SAXE"}},
-  // 16
-  {type:"text-img",imgKey:16,tag:"Hausloipe / Pista di casa",
-    de:{title:"Hausloipe",body:"Die Hausloipe ist ein zentrales Element im Ticketing-System und muss beim Kauf einer Saisonkarte verpflichtend ausgewählt werden.\n\nSie definiert die primäre Nutzungsregion des Karteninhabers und wird über ein einfaches Dropdown-Menü im Kaufprozess festgelegt. Diese Auswahl bildet die Grundlage für das Clearing-System und die Umsatzverteilung.",note:"Implementierung: PRIOT Smart Track / FACTORY"},
-    it:{title:"Pista di casa (Hausloipe)",body:"La pista di casa è un elemento centrale nel sistema di ticketing e deve essere obbligatoriamente selezionata al momento dell'acquisto di una tessera stagionale.\n\nDefinisce la regione di utilizzo principale del titolare e viene stabilita tramite un semplice menu a tendina. Questa scelta è la base per il sistema di clearing e la distribuzione dei ricavi.",note:"Implementazione: PRIOT Smart Track / FACTORY"}},
-  // 17
-  {type:"quad",tag:"Clearing-System",
-    de:{title:"Clearing-System",items:[
-      {h:"Finanzneutralität",b:"DNS agiert als neutraler Systemkoordinator ohne eigene Gewinnabsicht. Alle Einnahmen fließen direkt an die Regionen."},
-      {h:"Hausloipe-Prinzip",b:"Die gewählte Hausloipe bestimmt die primäre Zuordnung der Erlöse. Sie ist der Schlüssel zur fairen Verteilung."},
-      {h:"Erlösverteilung",b:"Einnahmen werden nach klaren Regeln an die teilnehmenden Regionen verteilt. Nutzungsdaten bilden die Basis."},
-      {h:"Transparenz",b:"Vollständige Nachvollziehbarkeit aller Geldflüsse. Jede Region erhält detaillierte Abrechnungen."}]},
-    it:{title:"Sistema di clearing",items:[
-      {h:"Neutralità finanziaria",b:"DNS agisce come coordinatore neutrale senza scopo di lucro. Tutti i ricavi affluiscono direttamente alle regioni."},
-      {h:"Principio Hausloipe",b:"La pista di casa scelta determina l'attribuzione primaria dei ricavi. È la chiave per una distribuzione equa."},
-      {h:"Distribuzione dei ricavi",b:"I ricavi vengono distribuiti alle regioni secondo regole chiare. I dati di utilizzo sono la base."},
-      {h:"Trasparenza",b:"Piena tracciabilità di tutti i flussi finanziari. Ogni regione riceve rendiconti dettagliati."}]}},
-  // 18
-  {type:"text-img",imgKey:18,tag:"Wochenkarte DNS",
-    de:{title:"Wochenkarte DNS",body:"Die Wochenkarte ist ein vollständig digitales Ticket. Nach dem Kauf wird es direkt auf das Smartphone heruntergeladen und im digitalen Wallet gespeichert – kompatibel mit Apple Wallet, Google Wallet und Samsung Wallet.\n\nKeine physische Karte, kein Ausdrucken – das Ticket ist jederzeit am Smartphone verfügbar. Ideal für Gäste: schneller Kauf, sofortige Nutzung und maximale Flexibilität.",note:"Implementierung: LTS Shop"},
-    it:{title:"Tessera settimanale DNS",body:"La tessera settimanale è un biglietto completamente digitale. Dopo l'acquisto viene scaricato direttamente sullo smartphone e salvato nel wallet digitale – compatibile con Apple Wallet, Google Wallet e Samsung Wallet.\n\nNessuna tessera fisica, nessuna stampa – il biglietto è sempre disponibile sullo smartphone. Ideale per gli ospiti: acquisto rapido, utilizzo immediato e massima flessibilità.",note:"Implementazione: LTS Shop"}},
-  // 19
-  {type:"text-img",imgKey:19,tag:"Guest Card Integration",
-    de:{title:"Guest Card Integration",body:"Die Guest Card Integration ermöglicht eine nahtlose Erweiterung bestehender Systeme. Durch eine Add-on-Logik können regionale Gästekarten einfach mit dem DNS-Ticketing verknüpft werden.\n\nDies schafft Mehrwert für Gäste und Regionen gleichermaßen, ohne bestehende Strukturen zu ersetzen. Die modulare Architektur erlaubt flexible Anpassungen je nach regionalen Anforderungen.",note:"Implementierung: LTS Shop"},
-    it:{title:"Integrazione Guest Card",body:"L'integrazione della Guest Card consente un'estensione seamless dei sistemi esistenti. Tramite una logica add-on, le guest card regionali possono essere collegate facilmente al sistema di ticketing DNS.\n\nQuesto crea valore aggiunto per ospiti e regioni, senza sostituire le strutture esistenti. L'architettura modulare consente adattamenti flessibili in base alle esigenze regionali.",note:"Implementazione: LTS Shop"}},
-  // 20
-  {type:"text-img",imgKey:20,tag:"Tageskarten / Biglietti giornalieri",
-    de:{title:"Tageskarten",body:"Das Tageskartensystem bleibt vollständig regional organisiert. Jede Region behält die volle Kontrolle über ihr Tageskartenangebot und kann Preise, Gültigkeit und Vertriebswege eigenständig festlegen.\n\nGäste haben freie Systemwahl ohne DNS-Vorgaben. Diese dezentrale Struktur respektiert regionale Autonomie und ermöglicht flexible, bedarfsgerechte Lösungen vor Ort.",note:"Implementierung: bestehende regionale Systeme / optional UHF-Polesticker"},
-    it:{title:"Biglietti giornalieri",body:"Il sistema dei biglietti giornalieri rimane completamente organizzato a livello regionale. Ogni regione mantiene il pieno controllo sulla propria offerta e può stabilire autonomamente prezzi, validità e canali di distribuzione.\n\nGli ospiti hanno libera scelta del sistema senza vincoli DNS. Questa struttura decentralizzata rispetta l'autonomia regionale e consente soluzioni flessibili e adeguate alle esigenze locali.",note:"Implementazione: sistemi regionali esistenti / opz. UHF-Polesticker"}},
-  // 21
-  {type:"product",tag:"Nutzerlogik / Logica utenti",
-    de:{title:"Nutzerlogik – 3-Stufen-Modell",items:[
-      {h:"LOCAL – Regionale Nutzer",tech:"Einheimische mit Saisonkarte (RFID/UHF-Card im Armband-Träger) und Hausloipe-Bindung",note:"Stammkunden",icon:"local"},
-      {h:"GUEST – Einfacher Zugang",tech:"Gäste mit digitaler Wochenkarte und QR-Code / Tageskarte",note:"Urlauber",icon:"guest"},
-      {h:"PREMIUM – Langfristige Bindung",tech:"Treue Nutzer mit erweiterten Vorteilen und Anreizen",note:"Loyalitätsprogramm",icon:"premium"}]},
-    it:{title:"Logica utenti – modello a 3 livelli",items:[
-      {h:"LOCAL – Utenti regionali",tech:"Residenti con tessera stagionale (card RFID/UHF nel porta-card da braccio) e pista di casa",note:"Clienti fissi",icon:"local"},
-      {h:"GUEST – Accesso semplice",tech:"Ospiti con tessera settimanale digitale / biglietto giornaliero",note:"Turisti",icon:"guest"},
-      {h:"PREMIUM – Fidelizzazione",tech:"Utenti fedeli con vantaggi estesi e incentivi",note:"Programma fedeltà",icon:"premium"}]}},
-  // 22
-  {type:"listright",tag:"Nutzergruppen / Gruppi di utenti",
-    de:{title:"Nutzer-\ngruppen",items:[
-      {h:"LOCAL – Regionale Nutzer",b:"Einheimische mit Saisonkarte (RFID/UHF-Card im Armband-Träger) und Hausloipe-Bindung."},
-      {h:"GUEST – Einfacher Zugang",b:"Gäste mit digitaler Wochenkarte und QR-Code / Tageskarte."},
-      {h:"PREMIUM – Langfristige Bindung",b:"Treue Nutzer mit erweiterten Vorteilen und Anreizen."},
-      {h:"Unterschiedliche Bedürfnisse",b:"Jede Gruppe erfordert spezifische Systemlogik."}]},
-    it:{title:"Gruppi di\nutenti",items:[
-      {h:"LOCAL – Utenti regionali",b:"Residenti con tessera stagionale (card RFID/UHF nel porta-card da braccio) e legame con la pista di casa."},
-      {h:"GUEST – Accesso semplice",b:"Ospiti con tessera settimanale digitale e QR-Code / biglietto giornaliero."},
-      {h:"PREMIUM – Fidelizzazione",b:"Utenti fedeli con vantaggi estesi e incentivi."},
-      {h:"Esigenze diverse",b:"Ogni gruppo richiede una logica di sistema specifica."}]}},
-  // 23
-  {type:"quad",tag:"Kontrollstrategie / Strategia di controllo",
-    de:{title:"Kontrollstrategie",items:[
-      {h:"Keine Flächenkontrolle",b:"Verzicht auf flächendeckende Kontrollen. Ressourcenschonender Ansatz ohne permanente Überwachung aller Loipen."},
-      {h:"Strategische Punkte",b:"Fokussierung auf neuralgische Kontrollpunkte. Gezielte Präsenz an stark frequentierten Zugängen."},
-      {h:"Mobile Kontrolle",b:"Flexible Kontrollteams mit mobilen Geräten. Schnelle Reaktion und gezielte Einsätze nach Bedarf."},
-      {h:"Effiziente Umsetzung",b:"Schlanke Prozesse mit maximaler Wirkung. Minimaler Aufwand bei optimaler Durchsetzung der Ticketpflicht."}]},
-    it:{title:"Strategia di controllo",items:[
-      {h:"Nessun controllo a tappeto",b:"Rinuncia a controlli capillari. Approccio risparmioso di risorse senza sorveglianza permanente di tutte le piste."},
-      {h:"Punti strategici",b:"Concentrazione sui punti nevralgici. Presenza mirata agli accessi più frequentati."},
-      {h:"Controllo mobile",b:"Team di controllo flessibili con dispositivi mobili. Reazione rapida e interventi mirati."},
-      {h:"Attuazione efficiente",b:"Processi snelli con massimo effetto. Sforzo minimo per un'applicazione ottimale dell'obbligo di biglietto."}]}},
-  // 24
-  {type:"quad",tag:"Systemlogik Kontrolle / Logica di sistema controllo",
-    de:{title:"Systemlogik Kontrolle",items:[
-      {h:"RFID-Kontrolle",b:"Saisonkarten-Inhaber werden über RFID/NFC-Armbänder identifiziert. Schnelle, kontaktlose Erfassung an strategischen Kontrollpunkten."},
-      {h:"Kombinierte Nutzung",b:"Beide Systeme arbeiten parallel und ergänzen sich. Flexible Kontrolle je nach Ticketart und Situation vor Ort."},
-      {h:"QR-Kontrolle",b:"Wochenkarten nutzen digitale QR-Codes zur Verifikation. Einfaches Scannen per Smartphone oder stationärem Lesegerät."},
-      {h:"Nahtlose Verifikation",b:"Einheitliche Systemlogik ermöglicht reibungslose Verifikation. Minimaler Aufwand für Personal und Nutzer gleichermaßen."}]},
-    it:{title:"Logica di sistema controllo",items:[
-      {h:"Controllo RFID",b:"I titolari di tessera stagionale vengono identificati tramite braccialetti RFID/NFC. Rilevamento rapido e contactless."},
-      {h:"Utilizzo combinato",b:"Entrambi i sistemi funzionano in parallelo e si integrano. Controllo flessibile in base al tipo di biglietto."},
-      {h:"Controllo QR",b:"Le tessere settimanali utilizzano codici QR digitali per la verifica. Scansione semplice con smartphone o lettore fisso."},
-      {h:"Verifica seamless",b:"Logica di sistema uniforme consente una verifica fluida. Sforzo minimo per il personale e gli utenti."}]}},
-  // 25
-  {type:"text-img",tag:"Incentivierung / Incentivazione",
-    de:{title:"Incentivierung",body:"Das Scansystem basiert auf Freiwilligkeit und einfacher Logik. Nutzer werden durch ein attraktives Belohnungssystem motiviert, ihre Karten an Kontrollpunkten zu scannen.\n\nDurch gezielte Anreize wie Rabatte, Bonuspunkte oder exklusive Vorteile entsteht eine Win-Win-Situation: höhere Datenqualität für DNS bei gleichzeitigem Mehrwert für die Nutzer.",note:"Mögliche Erweiterungen"},
-    it:{title:"Incentivazione",body:"Il sistema di scansione si basa sulla volontarietà e su una logica semplice. Gli utenti sono motivati da un sistema di premi attrattivo a scansionare le loro tessere ai punti di controllo.\n\nGrazie a incentivi mirati come sconti, punti bonus o vantaggi esclusivi si crea una situazione win-win: maggiore qualità dei dati per DNS e valore aggiunto per gli utenti.",note:"Possibili estensioni"}},
-  // 26
-  {type:"quad",tag:"Operatives Modell / Modello operativo",
-    de:{title:"Operatives Modell",items:[
-      {h:"Zentrale Steuerung",b:"Zentrale Steuerungsmöglichkeit bei dezentraler Umsetzung. Einheitliche Standards und klare Verantwortlichkeiten."},
-      {h:"Geringe Komplexität",b:"Reduzierte Systemkomplexität durch klare Strukturen. Wenige Schnittstellen, einfache Wartung."},
-      {h:"Schlanke Prozesse",b:"Minimaler administrativer Aufwand durch automatisierte Abläufe. Fokus auf Kernprozesse ohne Overhead."},
-      {h:"Skalierbarkeit",b:"Flexible Erweiterung ohne Systemumbau. Wachstum ohne proportionalen Ressourcenanstieg."}]},
-    it:{title:"Modello operativo",items:[
-      {h:"Gestione centrale",b:"Possibilità di gestione centrale con attuazione decentralizzata. Standard uniformi e responsabilità chiare."},
-      {h:"Bassa complessità",b:"Complessità di sistema ridotta grazie a strutture chiare. Poche interfacce, manutenzione semplice."},
-      {h:"Processi snelli",b:"Sforzo amministrativo minimo grazie a processi automatizzati. Focus sui processi chiave senza overhead."},
-      {h:"Scalabilità",b:"Espansione flessibile senza ristrutturazione del sistema. Crescita senza aumento proporzionale delle risorse."}]}},
-  // 27
-  {type:"listright",tag:"Strategische Weichenstellungen / Orientamenti strategici",
-    de:{title:"Strategische\nWeichen-\nstellungen",items:[
-      {h:"Datenschutz & Rollenverteilung",b:"Klärung der Verantwortlichkeiten zwischen DNS, Regionen und PRIOT im Hinblick auf DSGVO und Datenverwaltung."},
-      {h:"Administrativer Aufwand",b:"Bewertung des zusätzlichen Aufwands für Verkaufsstellen, Kontrolleure, Regionen und DNS."},
-      {h:"Langfristige Betriebskosten",b:"Abschätzung der jährlichen Kosten für Betrieb, Wartung, Lizenzen und Weiterentwicklung."},
-      {h:"Governance-Modell DNS / Regionen",b:"Definition der Aufgaben und Zuständigkeiten zwischen DNS und den einzelnen Regionen."},
-      {h:"Erkenntnisse aus dem Pilot",b:"Bewertung von Technologie, Akzeptanz, Datenqualität und Skalierbarkeit als Grundlage für weitere Entscheidungen."}]},
-    it:{title:"Orientamenti\nstrategici",items:[
-      {h:"Privacy & ripartizione dei ruoli",b:"Chiarimento delle responsabilità tra DNS, regioni e PRIOT in merito al GDPR e alla gestione dei dati."},
-      {h:"Onere amministrativo",b:"Valutazione del carico aggiuntivo per punti vendita, controllori, regioni e DNS."},
-      {h:"Costi operativi a lungo termine",b:"Stima dei costi annuali per operazioni, manutenzione, licenze e sviluppo."},
-      {h:"Modello di governance DNS / Regioni",b:"Definizione dei compiti e delle responsabilità tra DNS e le singole regioni."},
-      {h:"Conoscenze dal pilota",b:"Valutazione di tecnologia, accettazione, qualità dei dati e scalabilità come base per ulteriori decisioni."}]}},
-  // 28
-  {type:"section",tag:"Zukunft & Vision",
-    de:{title:"Zukunft & Vision",sub:"Wir wollen das System sein, an dem sich andere orientieren."},
-    it:{title:"Futuro & Visione",sub:"Vogliamo essere il sistema di riferimento per gli altri."}},
-  // 29
-  {type:"text-img",imgKey:25,tag:"Von der Vision zur Realität",
-    de:{title:"Von der Vision zur Realität",body:"Val Casies / Gsiesertal als erster Schritt.\n\nMit dem Pilot in einer einzelnen Region schaffen wir die Grundlage für ein skalierbares System, das schrittweise auf das gesamte DNS-Netzwerk ausgeweitet werden kann."},
-    it:{title:"Dalla visione alla realtà",body:"Val Casies / Gsiesertal come primo passo.\n\nCon il pilota in una singola regione creiamo le basi per un sistema scalabile che può essere esteso gradualmente all'intera rete DNS."}},
-  // 30
-  {type:"quad",tag:"Was bereits läuft / Cosa è già in corso",
-    de:{title:"Was bereits läuft",items:[
-      {h:"PRIOT",b:"Ticketing & Validierung – Pilotvorschlag 2026/27"},
-      {h:"Prinoth",b:"Infrastruktur & Flächenmanagement"},
-      {h:"Skadii Flow (Prinoth)",b:"Besucherzählung aktiv seit Winter 2025/26"},
-      {h:"DNS",b:"Strategische Koordination & Governance"}]},
-    it:{title:"Cosa è già in corso",items:[
-      {h:"PRIOT",b:"Ticketing & validazione – proposta pilota 2026/27"},
-      {h:"Prinoth",b:"Infrastruttura & gestione delle superfici"},
-      {h:"Skadii Flow (Prinoth)",b:"Conteggio visitatori attivo dall'inverno 2025/26"},
-      {h:"DNS",b:"Coordinamento strategico & governance"}]}},
-  // 31
-  {type:"pilot",tag:"Pilot Gsiesertal 2026/27",
-    de:{title:"Pilot\nGsiesertal\n2026/27",items:[
-      {h:"RFID Tagesticket (Polesticker)",b:"Ausgabe an 2 offiziellen Verkaufsstellen. Sticker am Skistock für zuverlässige UHF-Erkennung."},
-      {h:"Hybrides System",b:"Bestehende Tickets laufen in allen anderen Kanälen weiter. Keine Unterbrechung des Betriebs – zeitlich begrenzt."},
-      {h:"Mobile Validierung",b:"2 Handheld-Geräte mit 5–7m UHF-Reichweite. Ticketüberprüfung ohne Anhalten."},
-      {h:"Fundament legen",b:"Einfacher Start mit Fokus auf Funktionalität."}]},
-    it:{title:"Pilot\nGsiesertal\n2026/27",items:[
-      {h:"Biglietto giornaliero RFID (Polesticker)",b:"Emissione in 2 punti vendita ufficiali. Sticker sul bastoncino per rilevamento UHF affidabile."},
-      {h:"Sistema ibrido",b:"I biglietti esistenti continuano in tutti gli altri canali. Nessuna interruzione – a tempo limitato."},
-      {h:"Validazione mobile",b:"2 dispositivi portatili con portata UHF 5–7m. Verifica biglietti senza fermarsi."},
-      {h:"Gettare le basi",b:"Avvio semplice con focus sulla funzionalità."}]}},
-  // 32
-  {type:"roadmap",tag:"Entwicklungs-Roadmap / Roadmap di sviluppo",
-    de:{title:"Entwicklungs-Roadmap",note:"Die Roadmap ist eine mögliche Entwicklungsperspektive und kein bereits beschlossener Umsetzungsplan.",steps:[
-      {year:"2026/27",h:"Pilot Gsiesertal",b:"RFID/NFC + RFID Tagesticket Sticker. Handgeräte + 1 Messstation + Software und Workshops. Go-live Oktober 2026.",col:"#AAD0D1",tc:"#0D4D5E"},
-      {year:"2027/28",h:"DNS Season Card",b:"UHF-Armband netzwerkweit. Automatische Erkennung. Clearing-System aktiv. QR-Code Implementierung.",col:"#417483",tc:"#fff"},
-      {year:"2028+",h:"Nordic Intelligence Network",b:"Interreg Alpine Space. Skadii Flow + PRIOT + Wissenschaft. DNS als europäisches Referenzsystem.",col:"#0D4D5E",tc:"#fff"}]},
-    it:{title:"Roadmap di sviluppo",note:"La roadmap è una prospettiva di sviluppo possibile e non un piano di attuazione già deliberato.",steps:[
-      {year:"2026/27",h:"Pilot Gsiesertal",b:"RFID/NFC + sticker biglietti giornalieri. Dispositivi + 1 stazione + software e workshop. Go-live ottobre 2026.",col:"#AAD0D1",tc:"#0D4D5E"},
-      {year:"2027/28",h:"DNS Season Card",b:"Bracciale UHF su tutta la rete. Riconoscimento automatico. Clearing attivo. Implementazione QR-Code.",col:"#417483",tc:"#fff"},
-      {year:"2028+",h:"Nordic Intelligence Network",b:"Interreg Alpine Space. Skadii Flow + PRIOT + Scienza. DNS come riferimento europeo.",col:"#0D4D5E",tc:"#fff"}]}},
-  // 33
-  {type:"quad",tag:"Pilotziele / Obiettivi del pilota",
-    de:{title:"Pilotziele",items:[
-      {h:"Technologie",b:"Funktioniert UHF-Erkennung unter realen alpinen Winterbedingungen zuverlässig?"},
-      {h:"Nutzerakzeptanz",b:"Wie reagieren Gäste und Einheimische auf das neue System?"},
-      {h:"Workflow",b:"Ist der operative Ablauf an der Verkaufsstelle und auf der Loipe praktikabel?"},
-      {h:"Skalierbarkeit",b:"Kann die Hardware direkt als Baustein des DNS-Netzwerk-Rollouts weitergenutzt werden? Bestätigt von PRIOT: ja."}]},
-    it:{title:"Obiettivi del pilota",items:[
-      {h:"Tecnologia",b:"Il riconoscimento UHF funziona in modo affidabile nelle reali condizioni invernali alpine?"},
-      {h:"Accettazione utenti",b:"Come reagiscono ospiti e residenti al nuovo sistema?"},
-      {h:"Workflow",b:"Il processo operativo al punto vendita e in pista è praticabile?"},
-      {h:"Scalabilità",b:"L'hardware può essere riutilizzato come componente del rollout della rete DNS? Confermato da PRIOT: sì."}]}},
-  // 34
-  {type:"risiko",tag:"Risikobegrenzung / Limitazione del rischio",
-    de:{title:"Risikobegrenzung",items:[
-      "Pilot in nur einer Region",
-      "Bestehende Systeme bleiben parallel aktiv",
-      "Keine DNS-weite Einführung ohne neue Entscheidung",
-      "Hardware und Software teilweise für spätere Phasen wiederverwendbar"]},
-    it:{title:"Limitazione del rischio",items:[
-      "Pilota in una sola regione",
-      "I sistemi esistenti rimangono attivi in parallelo",
-      "Nessuna introduzione DNS-wide senza nuova decisione",
-      "Hardware e software parzialmente riutilizzabili per fasi successive"]}},
-  // 35
-  {type:"invest",tag:"Investition Pilot / Investimento pilota",
-    de:{title:"Investition Pilot",
-      rows:[
-        {el:"Software & Plattform",val:"11.500 €"},
-        {el:"5.000 RFID Polesticker Tickets (0,86 € / Stk.)",val:"4.300 €"},
-        {el:"2 Handheld Validatoren + 2 USB Reader",val:"4.000 €"},
-        {el:"Messstation (1 Standort) – Fakultativ",val:"7.000 €",opt:true},
-        {el:"Workshop, Setup & Schulung",val:"7.000 €"},
-        {el:"Gesamt Pilot (inkl. Messstation)",val:"33.800 € + MwSt",bold:true},
-        {el:"Ohne Messstation",val:"26.800 € + MwSt",bold:true}],
-      alt:{h:"Alternativ: Mietmodell",b:"Hardware bleibt Eigentum von PRIOT. Jährliche Kosten ca. 40–45 % des Kaufwertes. Geringere Anfangsinvestition, höhere laufende Kosten."}},
-    it:{title:"Investimento pilota",
-      rows:[
-        {el:"Software & Piattaforma",val:"11.500 €"},
-        {el:"5.000 biglietti RFID Polesticker (0,86 € / pz.)",val:"4.300 €"},
-        {el:"2 Handheld + 2 USB Reader",val:"4.000 €"},
-        {el:"Stazione di misurazione – Facoltativo",val:"7.000 €",opt:true},
-        {el:"Workshop, Setup & Formazione",val:"7.000 €"},
-        {el:"Totale pilota (incl. stazione)",val:"33.800 € + IVA",bold:true},
-        {el:"Senza stazione di misurazione",val:"26.800 € + IVA",bold:true}],
-      alt:{h:"Alternativa: Modello a noleggio",b:"L'hardware rimane di proprietà PRIOT. Costi annuali ca. 40–45 % del valore d'acquisto. Investimento iniziale inferiore, costi correnti più alti."}}},
-  // 36 — SLIDE 40 PDF: Finanzierungsmodell
-  {type:"finanzierung",tag:"Finanzierungsmodell Pilot / Modello di finanziamento pilota",
-    de:{title:"Finanzierungsmodell Pilot – Diskussionsgrundlage",
-      dns:{title:"DNS – Strategische Investition",rows:[
-        {el:"Software Bundle",val:"4.500 €"},
-        {el:"Real-Time Data Platform",val:"7.000 €"},
-        {el:"Kick-off Workshop",val:"2.500 €"},
-        {el:"On-Site Setup & Schulung",val:"4.500 €"},
-        {el:"Tot DNS",val:"18.500 €",bold:true}]},
-      gsies:{title:"Gsiesertal – Operative Pilotumsetzung",rows:[
-        {el:"5.000 RFID Sticker Tickets",val:"4.300 €"},
-        {el:"2 Handheld Validatoren",val:"3.600 €"},
-        {el:"2 USB Reader",val:"400 €"},
-        {el:"Tot Gsiesertal",val:"8.300 €",bold:true}]}},
-    it:{title:"Modello di finanziamento pilota – Base di discussione",
-      dns:{title:"DNS – Investimento strategico",rows:[
-        {el:"Software Bundle",val:"4.500 €"},
-        {el:"Real-Time Data Platform",val:"7.000 €"},
-        {el:"Kick-off Workshop",val:"2.500 €"},
-        {el:"On-Site Setup & Formazione",val:"4.500 €"},
-        {el:"Tot DNS",val:"18.500 €",bold:true}]},
-      gsies:{title:"Gsiesertal – Attuazione operativa pilota",rows:[
-        {el:"5.000 biglietti RFID Sticker",val:"4.300 €"},
-        {el:"2 Handheld Validatori",val:"3.600 €"},
-        {el:"2 USB Reader",val:"400 €"},
-        {el:"Tot Gsiesertal",val:"8.300 €",bold:true}]}}},
-  // 37
-  {type:"decision-quote",tag:"Die Entscheidung – Quote",
-    de:{quote:"Mit einer einmaligen Investition schaffen wir die Grundlage, um Technologie, Prozesse und Akzeptanz zu validieren, bevor über einen möglichen DNS-weiten Rollout entschieden wird."},
-    it:{quote:"Con un investimento una tantum creiamo le basi per validare tecnologia, processi e accettazione prima di decidere su un possibile rollout DNS-wide."}},
-  // 38 — SLIDE 42 PDF: Phase 2 DNS Season Card
-  {type:"phase2",tag:"Phase 2 – DNS Season Card / Fase 2",
-    de:{title:"Phase 2 – DNS Season Card",
-      rows:[
-        {el:"Messstation (einmalig)",val:"~4.500 €"},
-        {el:"Handheld Validator (einmalig)",val:"~1.400 €"},
-        {el:"USB Reader (einmalig)",val:"~200 €"},
-        {el:"DNS Saisonkarte RFID",val:"~2,20 € / Stk."},
-        {el:"Tageskarte RFID",val:"~0,70 € / Stk."},
-        {el:"Software Lizenz (jährlich)",val:"~5.000 € / Jahr / Org. inkl. DNS"}],
-      modules:{title:"Phase 2 – Modulares DNS-Modell",intro:"Nach erfolgreichem Pilotbetrieb kann das System schrittweise erweitert werden. Jede Region entscheidet selbst, welche Module sie nutzen möchte.",items:[
-        "DNS Core: DNS Saisonkarte, Clearing & Reporting",
-        "Validation Module: Mobile Kontrolle und Ticketvalidierung (DNS-Kompetenz!)",
-        "Measurement Module: Besucherzählung und Nutzungsanalysen",
-        "Regional Ticketing Module: Integration regionaler Produkte"],
-      note:"Ziel: Maximale Flexibilität für die Regionen bei gleichzeitiger Nutzung einer gemeinsamen DNS-Infrastruktur. PRIOT: OK!"}},
-    it:{title:"Fase 2 – DNS Season Card",
-      rows:[
-        {el:"Stazione di misurazione (una tantum)",val:"~4.500 €"},
-        {el:"Handheld Validator (una tantum)",val:"~1.400 €"},
-        {el:"USB Reader (una tantum)",val:"~200 €"},
-        {el:"Tessera stagionale DNS RFID",val:"~2,20 € / pz."},
-        {el:"Biglietto giornaliero RFID",val:"~0,70 € / pz."},
-        {el:"Licenza software (annuale)",val:"~5.000 € / anno / org. incl. DNS"}],
-      modules:{title:"Fase 2 – Modello DNS modulare",intro:"Dopo un pilota riuscito il sistema può essere esteso gradualmente. Ogni regione decide autonomamente quali moduli utilizzare.",items:[
-        "DNS Core: Tessera stagionale DNS, Clearing & Reporting",
-        "Validation Module: Controllo mobile e validazione biglietti",
-        "Measurement Module: Conteggio visitatori e analisi utilizzo",
-        "Regional Ticketing Module: Integrazione prodotti regionali"],
-      note:"Obiettivo: massima flessibilità per le regioni con utilizzo di un'infrastruttura DNS comune. PRIOT: OK!"}}},
-  // 39
-  {type:"decision",tag:"Die Entscheidung / La decisione",
-    de:{title:"Die Entscheidung",items:[
-      {h:"Der Pilot",b:"PRIOT Smart Track in Gsiesertal. Saison 2026/27. Angebot gültig bis 24. Juni. Vorbehaltlich der Zustimmung der Pilotregion Gsiesertal."},
-      {h:"Warum jetzt",b:"Skadii Flow läuft bereits. Die Daten kommen. Was fehlt, ist das Ticketing."},
-      {h:"Was wir bitten",b:"Genehmigung des PRIOT-Pilots in Gsiesertal für Saison 2026/27."},
-      {h:"Nächste Schritte",b:"Vorstandsbeschluss heute → Finanzierungsmodell → Kick-off Workshop Juli 2026. Go-live Oktober 2026."}],
-      quote:"Mit einer einmaligen Investition schaffen wir die Grundlage, um Technologie, Prozesse und Akzeptanz zu validieren, bevor über einen möglichen DNS-weiten Rollout entschieden wird."},
-    it:{title:"La decisione",items:[
-      {h:"Il pilota",b:"PRIOT Smart Track a Gsiesertal. Stagione 2026/27. Offerta valida fino al 24 giugno. Con riserva del consenso della regione pilota Gsiesertal."},
-      {h:"Perché adesso",b:"Skadii Flow è già in funzione. I dati arrivano. Ciò che manca è il ticketing."},
-      {h:"Cosa chiediamo",b:"Approvazione del pilota PRIOT a Gsiesertal per la stagione 2026/27."},
-      {h:"Prossimi passi",b:"Delibera del consiglio oggi → Modello di finanziamento → Workshop di avvio luglio 2026. Go-live ottobre 2026."}],
-      quote:"Con un investimento una tantum creiamo le basi per validare tecnologia, processi e accettazione prima di decidere su un possibile rollout DNS-wide."}},
-  // 40 — SLIDE 44 PDF: Was heute entschieden wird – und was nicht
-  {type:"bullet",tag:"Was heute entschieden wird – und was nicht",
-    de:{title:"Was heute entschieden wird – und was nicht",
-      intro:"Heute entscheiden wir nicht über die Einführung eines neuen DNS-Ticketingsystems. Heute entscheiden wir über einen technologischen Pilotversuch in einer einzelnen Region, um zu prüfen:",
-      checks:["Funktioniert die Technologie unter realen Bedingungen?","Sind Verkauf und Kontrolle operativ praktikabel?","Liefert das System brauchbare Daten für zukünftige Entscheidungen?"],
-      mid1:"Die eigentliche Frage ist nicht die Technologie.",
-      mid2:"Die zentrale Frage lautet: Wie soll DNS künftig organisiert werden?",
-      boxTitle:"Der Pilot soll konkrete Erfahrungen liefern für:",
-      boxItems:["Governance","Datenmanagement","Vertrieb","Clearing","Rolle von DNS und Regionen"]},
-    it:{title:"Cosa viene deciso oggi – e cosa no",
-      intro:"Oggi non decidiamo l'introduzione di un nuovo sistema di ticketing DNS. Oggi decidiamo su un esperimento pilota tecnologico in una singola regione, per verificare:",
-      checks:["La tecnologia funziona in condizioni reali?","Vendita e controllo sono operativamente praticabili?","Il sistema fornisce dati utili per decisioni future?"],
-      mid1:"La vera questione non è la tecnologia.",
-      mid2:"La domanda centrale è: come dovrà essere organizzato DNS in futuro?",
-      boxTitle:"Il pilota deve fornire esperienze concrete per:",
-      boxItems:["Governance","Gestione dei dati","Distribuzione","Clearing","Ruolo di DNS e regioni"]}}
-];
-
-function d(s){return s[lang]||s.de;}
-
-var imgMap={
-  9: '9.png',
-  12:'12.png',
-  13:'13.png',
-  15:'15.png',
-  '15a':'15 a.png',
-  '15b':'15B.jpeg',
-  16:'16.png',
-  18:'18.png',
-  19:'19.jpeg',
-  20:'20.png',
-  25:'25.png'
-};
-
-function imgEl(key,h){
-  h=h||220;
-  var src=imgMap[key];
-  if(!src) return '<div class="img-placeholder"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#417483" stroke-width="1.6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><div class="img-caption">DOLOMITI NORDICSKI</div></div>';
-  return '<img src="'+src+'" style="width:100%;height:'+h+'px;object-fit:contain;border-radius:0;background:transparent;" onerror="this.style.display=\'none\'">';
-}
-
-function imgSlider(keyA,keyB,h){
-  h=h||220;
-  var srcA=imgMap[keyA], srcB=imgMap[keyB];
-  return '<div style="position:relative;width:100%;height:'+h+'px;background:transparent;">'+
-    '<img id="sliderImgA" src="'+srcA+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .3s;opacity:1;" onerror="this.style.display=\'none\'">'+
-    '<img id="sliderImgB" src="'+srcB+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .3s;opacity:0;" onerror="this.style.display=\'none\'">'+
-    '<div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:8px;align-items:center;background:rgba(13,77,94,.7);border-radius:20px;padding:4px 12px">'+
-    '<button onclick="switchImg(0)" id="sliderBtn0" style="font-size:11px;font-weight:600;color:#AAD0D1;background:rgba(255,255,255,.25);border:none;border-radius:12px;padding:3px 10px;cursor:pointer;">1</button>'+
-    '<button onclick="switchImg(1)" id="sliderBtn1" style="font-size:11px;font-weight:600;color:rgba(170,208,209,.5);background:transparent;border:none;border-radius:12px;padding:3px 10px;cursor:pointer;">2</button>'+
-    '</div></div>';
-}
-
-var icons={
-  rfid:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0D4D5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 11h2v2H7z"/><path d="M15 11h2"/><path d="M15 13h2"/></svg>',
+/* ── ICONS ── */
+var IC={
+  rfid:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0D4D5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 11h2v2H7z"/><path d="M15 11h2M15 13h2"/></svg>',
   qr:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0D4D5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="5" y="5" width="3" height="3"/><rect x="16" y="5" width="3" height="3"/><rect x="5" y="16" width="3" height="3"/><path d="M14 14h3v3h-3zM17 17h3v3h-3zM14 20h3"/></svg>',
   ticket:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0D4D5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1a2 2 0 0 0 0 4v1a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-1a2 2 0 0 0 0-4V9z"/><line x1="9" y1="7" x2="9" y2="17" stroke-dasharray="2 2"/></svg>',
   local:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0D4D5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
   guest:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0D4D5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>',
   premium:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0D4D5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>'
 };
-function getIcon(name){return icons[name]||'';}
 
-function renderSlide(s){
+/* ── IMAGES ── */
+var IMG={
+  9:'9.png', 12:'12.png', 13:'13.png',
+  '15a':'15 a.png', '15b':'15B.jpeg',
+  16:'16.png', 18:'18.png', 19:'19.jpeg', 20:'20.png', 25:'25.png'
+};
+
+function imgEl(k,h){
+  h=h||220;
+  if(!IMG[k]) return '';
+  return '<img src="'+IMG[k]+'" style="width:100%;height:'+h+'px;object-fit:contain;display:block;" onerror="this.style.display=\'none\'">';
+}
+
+function imgSlider(a,b,h){
+  h=h||220;
+  return '<div style="position:relative;width:100%;height:'+h+'px;">'+
+    '<img id="sA" src="'+IMG[a]+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .3s;opacity:1;">'+
+    '<img id="sB" src="'+IMG[b]+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .3s;opacity:0;">'+
+    '<div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:6px;background:rgba(13,77,94,.7);border-radius:20px;padding:3px 10px">'+
+    '<button onclick="sw(0)" id="sb0" style="font-size:11px;font-weight:600;color:#AAD0D1;background:rgba(255,255,255,.25);border:none;border-radius:10px;padding:2px 9px;cursor:pointer">1</button>'+
+    '<button onclick="sw(1)" id="sb1" style="font-size:11px;font-weight:600;color:rgba(170,208,209,.5);background:transparent;border:none;border-radius:10px;padding:2px 9px;cursor:pointer">2</button>'+
+    '</div></div>';
+}
+
+function sw(i){
+  var a=document.getElementById('sA'),b=document.getElementById('sB');
+  var b0=document.getElementById('sb0'),b1=document.getElementById('sb1');
+  if(!a||!b) return;
+  a.style.opacity=i===0?'1':'0'; b.style.opacity=i===1?'1':'0';
+  b0.style.background=i===0?'rgba(255,255,255,.25)':'transparent'; b0.style.color=i===0?'#AAD0D1':'rgba(170,208,209,.5)';
+  b1.style.background=i===1?'rgba(255,255,255,.25)':'transparent'; b1.style.color=i===1?'#AAD0D1':'rgba(170,208,209,.5)';
+}
+
+function videoWidget(url){
+  if(!url) return '';
+  var id=url.split('v=')[1]||(url.split('/').pop());
+  var lbl=lang==='de'?'Video ansehen':'Guarda il video';
+  return '<div class="video-wrap">'+
+    '<div class="video-label">▶ PRIOT Smart Track – Planica</div>'+
+    '<iframe id="yt" width="100%" height="175" src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" onload="document.getElementById(\'vfb\').style.display=\'none\'" onerror="document.getElementById(\'vfb\').style.display=\'block\'"></iframe>'+
+    '<div class="video-fallback" id="vfb">'+
+    '<a href="'+url+'" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:5px"><polygon points="5 3 19 12 5 21 5 3"/></svg>'+lbl+'</a></div></div>';
+}
+
+/* ── SLIDES DATA ── */
+var S=[
+  /* 1 */ {type:'section',num:'3.',tag:'Strategisches Ticketing & Systemkonzept',
+    de:{title:'Strategisches Ticketing- und Systemkonzept',sub:'DNS Zukunftsvision'},
+    it:{title:'Concetto strategico di ticketing e sistema',sub:'Visione futura DNS'}},
+
+  /* 2 */ {type:'quad',tag:'Executive Summary',
+    de:{title:'Executive Summary',items:[
+      {h:'Offenes System',b:'DNS steht vor der Herausforderung eines offenen Systems – Langlauf kennt keine geschlossenen Zugänge wie Skigebiete.'},
+      {h:'Kontrollgrenzen',b:'Vollständige Kontrolle ist weder möglich noch wirtschaftlich sinnvoll – klassische Modelle greifen nicht.'},
+      {h:'Strategischer Ansatz',b:'Paradigmenwechsel: Weg von Kontrolle, hin zu einem intelligenten, adaptiven Systemansatz.'},
+      {h:'Zielsystem',b:'Ein intelligentes, skalierbares System mit klarer Logik und minimaler Komplexität.'}]},
+    it:{title:'Executive Summary',items:[
+      {h:'Sistema aperto',b:'DNS affronta la sfida di un sistema aperto – lo sci di fondo non conosce accessi chiusi come le aree sciistiche.'},
+      {h:'Limiti di controllo',b:'Un controllo totale non è né possibile né economicamente sensato – i modelli classici non funzionano.'},
+      {h:'Approccio strategico',b:'Cambio di paradigma: abbandonare il controllo per un sistema intelligente e adattivo.'},
+      {h:'Sistema obiettivo',b:'Un sistema intelligente e scalabile con logica chiara e complessità minima.'}]}},
+
+  /* 3 */ {type:'text-img',imgKey:null,tag:'Ausgangslage / Situazione iniziale',
+    de:{title:'Ausgangslage',body:'DNS ist ein Netzwerk verschiedener Langlaufregionen in den Dolomiten. Langlauf funktioniert als offenes System – Loipen sind frei zugänglich und schwer kontrollierbar.\n\nKlassische Ticketing-Modelle aus dem Alpin-Bereich lassen sich nicht übertragen. Die Herausforderung: Ein System entwickeln, das dieser offenen Struktur gerecht wird.'},
+    it:{title:'Situazione iniziale',body:'DNS è una rete di diverse regioni di sci di fondo nelle Dolomiti. Lo sci di fondo funziona come sistema aperto – le piste sono liberamente accessibili e difficili da controllare.\n\nI modelli di ticketing classici del settore alpino non sono trasferibili. La sfida: sviluppare un sistema adeguato a questa struttura aperta.'}},
+
+  /* 4 */ {type:'section',tag:'Strategischer Ansatz / Approccio strategico',
+    de:{title:'Strategischer Ansatz',sub:''},
+    it:{title:'Approccio strategico',sub:''}},
+
+  /* 5 */ {type:'quad',tag:'Daten als strategische Ressource / I dati come risorsa',
+    de:{title:'Daten als strategische Ressource',items:[
+      {h:'Reale Nutzung',b:'Entscheidungen basieren auf echten Nutzungsdaten statt auf Annahmen.'},
+      {h:'Angebotssteuerung',b:'Angebote können gezielt an Nachfrage und Nutzung angepasst werden.'},
+      {h:'Verhaltensanalyse',b:'Frequenzen, Zeiten und Bewegungen werden sichtbar und messbar.'},
+      {h:'Mehrwert Regionen',b:'Transparente Daten schaffen eine fundierte Grundlage für regionale Entscheidungen.'}]},
+    it:{title:'I dati come risorsa strategica',items:[
+      {h:'Utilizzo reale',b:'Le decisioni si basano su dati reali invece che su ipotesi.'},
+      {h:'Gestione dell\'offerta',b:'Le offerte possono essere adattate in modo mirato alla domanda.'},
+      {h:'Analisi comportamentale',b:'Frequenze, orari e movimenti diventano visibili e misurabili.'},
+      {h:'Valore aggiunto regioni',b:'Dati trasparenti creano una base solida per le decisioni regionali.'}]}},
+
+  /* 6 */ {type:'listright',tag:'Zielsetzung / Obiettivi',
+    de:{title:'Zielsetzung',items:[
+      {h:'Klare Systemlogik',b:'Eindeutige Regeln und transparente Prozesse für alle Beteiligten.'},
+      {h:'Minimale Komplexität',b:'Reduktion auf das Wesentliche für einfache Handhabung.'},
+      {h:'Langfristige Skalierbarkeit',b:'Flexibles Wachstum ohne Systembrüche ermöglichen.'},
+      {h:'Nachhaltige Architektur',b:'Zukunftssichere Struktur für kontinuierliche Weiterentwicklung.'}]},
+    it:{title:'Obiettivi',items:[
+      {h:'Logica di sistema chiara',b:'Regole univoche e processi trasparenti per tutti i partecipanti.'},
+      {h:'Complessità minima',b:'Riduzione all\'essenziale per una gestione semplice.'},
+      {h:'Scalabilità a lungo termine',b:'Crescita flessibile senza interruzioni di sistema.'},
+      {h:'Architettura sostenibile',b:'Struttura a prova di futuro per uno sviluppo continuo.'}]}},
+
+  /* 7 */ {type:'product',tag:'Produktlogik / Logica di prodotto',
+    de:{title:'Produktlogik',items:[
+      {h:'Saisonkarte (DNS)',tech:'RFID/UHF-Card im Armband-Träger – netzwerkweit gültig',note:'Implementierung: PRIOT',icon:'rfid'},
+      {h:'Wochenkarte (DNS)',tech:'Digitales Ticket – gespeichert im Wallet (Apple, Google, Samsung)',note:'Implementierung: LTS Shop',icon:'qr'},
+      {h:'Tageskarten (Regionen)',tech:'Regionale Systeme / optional UHF-Polesticker',note:'Autonome Entscheidung pro Region',icon:'ticket'}]},
+    it:{title:'Logica di prodotto',items:[
+      {h:'Tessera stagionale (DNS)',tech:'Card RFID/UHF nel porta-card da braccio – valido su tutta la rete',note:'Implementazione: PRIOT',icon:'rfid'},
+      {h:'Tessera settimanale (DNS)',tech:'Biglietto digitale – salvato nel Wallet (Apple, Google, Samsung)',note:'Implementazione: LTS Shop',icon:'qr'},
+      {h:'Biglietti giornalieri (Regioni)',tech:'Sistemi regionali / opz. UHF-Polesticker',note:'Decisione autonoma per regione',icon:'ticket'}]}},
+
+  /* 8 */ {type:'listright',tag:'Systemarchitektur / Architettura di sistema',
+    de:{title:'Mehr-\nstufiges\nModell',items:[
+      {h:'Saisonkarten',b:'RFID/UHF-Card im Armband-Träger – automatische Erkennung, DNS-Ebene'},
+      {h:'Wochenkarten',b:'Digitales Ticket im Wallet (Apple, Google, Samsung) – DNS-Ebene'},
+      {h:'Tageskarten',b:'Regionale Systeme – autonome Entscheidung pro Region'}]},
+    it:{title:'Modello\nmulti-\nlivello',items:[
+      {h:'Tessere stagionali',b:'Card RFID/UHF nel porta-card da braccio – riconoscimento automatico, livello DNS'},
+      {h:'Tessere settimanali',b:'Biglietto digitale nel Wallet (Apple, Google, Samsung) – livello DNS'},
+      {h:'Biglietti giornalieri',b:'Sistemi regionali – decisione autonoma per regione'}]}},
+
+  /* 9 */ {type:'text-img',imgKey:9,tag:'Saisonkarte / Tessera stagionale',
+    de:{title:'Saisonkarte (DNS)',body:'Die DNS-Saisonkarte ist eine RFID/UHF-Card im Kreditkartenformat mit integriertem Chip. Sie wird in einer robusten Armband-Halterung am Handgelenk getragen und ist direkt mit dem persönlichen Nutzerkonto verknüpft.\n\nDie Kombination aus Card und Armband-Träger ermöglicht automatische Erkennung beim Passieren von Kontrollpunkten – ohne Anhalten, ohne Scannen. Nutzungsdaten werden erfasst und der Clearing-Prozess automatisiert.',note:'Implementierung: PRIOT'},
+    it:{title:'Tessera stagionale (DNS)',body:'La tessera stagionale DNS è una card RFID/UHF in formato carta di credito con chip integrato. Viene portata in un porta-card da braccio robusto e collegata direttamente all\'account personale dell\'utente.\n\nLa combinazione card + porta-card da braccio consente il riconoscimento automatico al passaggio dei punti di controllo – senza fermarsi, senza scansione. I dati di utilizzo vengono registrati e il processo di clearing automatizzato.',note:'Implementazione: PRIOT'}},
+
+  /* 10 */ {type:'section',tag:'Der technologische Ansatz / L\'approccio tecnologico',
+    de:{title:'Der technologische Ansatz',sub:'PRIOT Smart Track'},
+    it:{title:'L\'approccio tecnologico',sub:'PRIOT Smart Track'}},
+
+  /* 11 */ {type:'text-img-points',imgKey:12,tag:'PRIOT Smart Track',
+    de:{title:'PRIOT Smart Track',body:'PRIOT ist ein slowenisches Unternehmen, das eine integrierte Hardware- und Software-Lösung für das nordische Skizentrum Planica entwickelt hat. Das System umfasst vernetzte Messstationen, mobile Validierungsgeräte und eine cloud-basierte Plattform zur Ticketverwaltung und Nutzungsanalyse.\n\nSeit mehreren Saisons im Einsatz, bildet PRIOT Smart Track die technologische Grundlage für Zutrittskontrolle und Datenmanagement im Langlaufbereich.',items:[
+      {h:'Cloud-basiertes System',b:'Zentrale Datenstruktur, vernetzte Messstationen (LTE).'},
+      {h:'Multi-Ticket-Support',b:'Verschiedene Tickettypen parallel im gleichen System.'},
+      {h:'UHF-Technologie',b:'Automatische Erkennung ohne Anhalten des Nutzers.'}]},
+    it:{title:'PRIOT Smart Track',body:'PRIOT è un\'azienda slovena che ha sviluppato una soluzione integrata hardware e software per il centro nordico di Planica. Il sistema comprende stazioni di misurazione collegate, dispositivi di validazione mobili e una piattaforma cloud per la gestione dei biglietti e l\'analisi dell\'utilizzo.\n\nAttivo da diverse stagioni, PRIOT Smart Track costituisce la base tecnologica per il controllo degli accessi e la gestione dei dati nel fondo.',items:[
+      {h:'Sistema cloud-based',b:'Struttura dati centrale, stazioni collegate (LTE).'},
+      {h:'Multi-ticket support',b:'Diversi tipi di biglietto in parallelo nello stesso sistema.'},
+      {h:'Tecnologia UHF',b:'Riconoscimento automatico senza fermare l\'utente.'}]}},
+
+  /* 12 */ {type:'text-img',imgKey:13,tag:'Funktionsweise des Systems',
+    video:'https://www.youtube.com/watch?v=3nJNKg5Tz5c',
+    de:{title:'Funktionsweise\ndes Systems',body:'Tickets enthalten digitale Zugriffsrechte und werden über vernetzte Messstationen validiert.\n\nDie zentrale Datenbank arbeitet nach einer cloud-first Architektur und bietet Echtzeit-Überblick über Nutzung und Status. Inspektoren nutzen mobile Geräte mit integrierter Langstreckenantenne – die Ticketgültigkeit kann geprüft werden, ohne den Besucher anzuhalten.'},
+    it:{title:'Funzionamento\ndel sistema',body:'I biglietti contengono diritti di accesso digitali e vengono validati tramite stazioni di misurazione collegate.\n\nIl database centrale lavora con architettura cloud-first e offre una panoramica in tempo reale. Gli ispettori utilizzano dispositivi mobili con antenna integrata – la validità del biglietto può essere verificata senza fermare il visitatore.'}},
+
+  /* 13 */ {type:'listright',tag:'Erweiterte Möglichkeiten / Possibilità avanzate',
+    de:{title:'Erweiterte\nMöglich-\nkeiten',items:[
+      {h:'Automatische Erkennung (UHF)',b:'Nutzer werden automatisch beim Passieren erfasst.'},
+      {h:'Tracking von Nutzung',b:'Wann, wie oft und wo werden die Loipen genutzt?'},
+      {h:'Nutzer-Dashboards',b:'Optional: individuelle Statistiken für Karteninhaber.'},
+      {h:'Integration von Services',b:'Angebote und regionale Services direkt verknüpfbar.'}]},
+    it:{title:'Possibilità\navanzate',items:[
+      {h:'Riconoscimento automatico (UHF)',b:'Gli utenti vengono rilevati automaticamente al passaggio.'},
+      {h:'Tracking di utilizzo',b:'Quando, quanto spesso e dove vengono utilizzate le piste?'},
+      {h:'Dashboard utente',b:'Opzionale: statistiche individuali per i titolari di tessera.'},
+      {h:'Integrazione servizi',b:'Offerte e servizi regionali collegabili direttamente.'}]}},
+
+  /* 14 */ {type:'text-img',imgKey:'15a',tag:'Armband-Träger / Porta-card da braccio',
+    de:{title:'Armband-Träger',body:'Der Armband-Träger ist die physische Halterung für die DNS-Saisonkarte. Er wurde für maximale Robustheit und Funktionalität im Outdoor-Einsatz entwickelt und trägt die RFID/UHF-Card sicher am Handgelenk.\n\nDurch seine hohe Sichtbarkeit dient er gleichzeitig als Erkennungszeichen der DNS-Community und ermöglicht eine schnelle visuelle Identifikation bei Kontrollen. Die Card bleibt jederzeit im Träger – kein Herausnehmen nötig.',note:'Hersteller/Implementierung: SAXE'},
+    it:{title:'Porta-card da braccio',body:'Il porta-card da braccio è il supporto fisico per la tessera stagionale DNS. È stato sviluppato per massima robustezza e funzionalità nell\'uso outdoor e mantiene la card RFID/UHF al polso in modo sicuro.\n\nGrazie alla sua alta visibilità funge anche da segno di riconoscimento della community DNS. La card rimane sempre nel porta-card – non è necessario estrarla.',note:'Produttore/Implementazione: SAXE'}},
+
+  /* 15 */ {type:'text-img',imgKey:'15ab',tag:'Armband-Träger Detail / Dettaglio porta-card',
+    de:{title:'Armband-Träger\nDetail',body:'Die Kombination aus DNS-Saisonkarte (RFID/UHF-Card) und Armband-Träger bildet das physische Herzstück des Ticketing-Systems.\n\nDer Träger ist robust, wasserdicht und für den Outdoor-Einsatz optimiert. Die Card wird einmalig eingelegt und bleibt für die gesamte Saison im Träger.'},
+    it:{title:'Porta-card\nDettaglio',body:'La combinazione tra tessera stagionale DNS (card RFID/UHF) e porta-card da braccio costituisce il cuore fisico del sistema di ticketing.\n\nIl porta-card è robusto, impermeabile e ottimizzato per l\'uso outdoor. La card viene inserita una volta e rimane nel porta-card per tutta la stagione.'}},
+
+  /* 16 */ {type:'text-img',imgKey:16,tag:'Hausloipe / Pista di casa',
+    de:{title:'Hausloipe',body:'Die Hausloipe ist ein zentrales Element im Ticketing-System und muss beim Kauf einer Saisonkarte verpflichtend ausgewählt werden.\n\nSie definiert die primäre Nutzungsregion des Karteninhabers und wird über ein einfaches Dropdown-Menü im Kaufprozess festgelegt. Diese Auswahl bildet die Grundlage für das Clearing-System und die Umsatzverteilung.',note:'Implementierung: PRIOT Smart Track / FACTORY'},
+    it:{title:'Pista di casa (Hausloipe)',body:'La pista di casa è un elemento centrale nel sistema di ticketing e deve essere obbligatoriamente selezionata al momento dell\'acquisto di una tessera stagionale.\n\nDefinisce la regione di utilizzo principale del titolare e viene stabilita tramite un semplice menu a tendina. Questa scelta è la base per il sistema di clearing e la distribuzione dei ricavi.',note:'Implementazione: PRIOT Smart Track / FACTORY'}},
+
+  /* 17 */ {type:'quad',tag:'Clearing-System',
+    de:{title:'Clearing-System',items:[
+      {h:'Finanzneutralität',b:'DNS agiert als neutraler Systemkoordinator ohne eigene Gewinnabsicht. Alle Einnahmen fließen direkt an die Regionen.'},
+      {h:'Hausloipe-Prinzip',b:'Die gewählte Hausloipe bestimmt die primäre Zuordnung der Erlöse. Sie ist der Schlüssel zur fairen Verteilung.'},
+      {h:'Erlösverteilung',b:'Einnahmen werden nach klaren Regeln an die teilnehmenden Regionen verteilt. Nutzungsdaten bilden die Basis.'},
+      {h:'Transparenz',b:'Vollständige Nachvollziehbarkeit aller Geldflüsse. Jede Region erhält detaillierte Abrechnungen.'}]},
+    it:{title:'Sistema di clearing',items:[
+      {h:'Neutralità finanziaria',b:'DNS agisce come coordinatore neutrale. Tutti i ricavi affluiscono direttamente alle regioni.'},
+      {h:'Principio Hausloipe',b:'La pista di casa scelta determina l\'attribuzione primaria dei ricavi.'},
+      {h:'Distribuzione dei ricavi',b:'I ricavi vengono distribuiti alle regioni secondo regole chiare. I dati di utilizzo sono la base.'},
+      {h:'Trasparenza',b:'Piena tracciabilità di tutti i flussi finanziari. Ogni regione riceve rendiconti dettagliati.'}]}},
+
+  /* 18 */ {type:'text-img',imgKey:18,tag:'Wochenkarte DNS / Tessera settimanale',
+    de:{title:'Wochenkarte DNS',body:'Die Wochenkarte ist ein vollständig digitales Ticket. Nach dem Kauf wird es direkt auf das Smartphone heruntergeladen und im digitalen Wallet gespeichert – kompatibel mit Apple Wallet, Google Wallet und Samsung Wallet.\n\nKeine physische Karte, kein Ausdrucken – das Ticket ist jederzeit am Smartphone verfügbar. Ideal für Gäste: schneller Kauf, sofortige Nutzung und maximale Flexibilität.',note:'Implementierung: LTS Shop'},
+    it:{title:'Tessera settimanale DNS',body:'La tessera settimanale è un biglietto completamente digitale. Dopo l\'acquisto viene scaricato sullo smartphone e salvato nel wallet digitale – compatibile con Apple Wallet, Google Wallet e Samsung Wallet.\n\nNessuna tessera fisica, nessuna stampa – il biglietto è sempre disponibile sullo smartphone. Ideale per gli ospiti: acquisto rapido, utilizzo immediato e massima flessibilità.',note:'Implementazione: LTS Shop'}},
+
+  /* 19 */ {type:'text-img',imgKey:19,tag:'Guest Card Integration',
+    de:{title:'Guest Card Integration',body:'Die Guest Card Integration ermöglicht eine nahtlose Erweiterung bestehender Systeme. Durch eine Add-on-Logik können regionale Gästekarten einfach mit dem DNS-Ticketing verknüpft werden.\n\nDies schafft Mehrwert für Gäste und Regionen gleichermaßen, ohne bestehende Strukturen zu ersetzen.',note:'Implementierung: LTS Shop'},
+    it:{title:'Integrazione Guest Card',body:'L\'integrazione della Guest Card consente un\'estensione seamless dei sistemi esistenti. Tramite una logica add-on, le guest card regionali possono essere collegate facilmente al sistema di ticketing DNS.\n\nQuesto crea valore aggiunto per ospiti e regioni, senza sostituire le strutture esistenti.',note:'Implementazione: LTS Shop'}},
+
+  /* 20 */ {type:'text-img',imgKey:20,tag:'Tageskarten / Biglietti giornalieri',
+    de:{title:'Tageskarten',body:'Das Tageskartensystem bleibt vollständig regional organisiert. Jede Region behält die volle Kontrolle über ihr Tageskartenangebot und kann Preise, Gültigkeit und Vertriebswege eigenständig festlegen.\n\nGäste haben freie Systemwahl ohne DNS-Vorgaben.',note:'Implementierung: bestehende regionale Systeme / optional UHF-Polesticker'},
+    it:{title:'Biglietti giornalieri',body:'Il sistema dei biglietti giornalieri rimane completamente organizzato a livello regionale. Ogni regione mantiene il pieno controllo sulla propria offerta e può stabilire autonomamente prezzi, validità e canali di distribuzione.\n\nGli ospiti hanno libera scelta del sistema senza vincoli DNS.',note:'Implementazione: sistemi regionali esistenti / opz. UHF-Polesticker'}},
+
+  /* 21 */ {type:'product',tag:'Nutzerlogik / Logica utenti',
+    de:{title:'Nutzerlogik – 3-Stufen-Modell',items:[
+      {h:'LOCAL – Regionale Nutzer',tech:'Einheimische mit RFID/UHF-Card im Armband-Träger und Hausloipe-Bindung',note:'Stammkunden',icon:'local'},
+      {h:'GUEST – Einfacher Zugang',tech:'Gäste mit digitalem Wallet-Ticket (Wochenkarte) oder Tageskarte',note:'Urlauber',icon:'guest'},
+      {h:'PREMIUM – Langfristige Bindung',tech:'Treue Nutzer mit erweiterten Vorteilen und Anreizen',note:'Loyalitätsprogramm',icon:'premium'}]},
+    it:{title:'Logica utenti – modello a 3 livelli',items:[
+      {h:'LOCAL – Utenti regionali',tech:'Residenti con card RFID/UHF nel porta-card da braccio e pista di casa',note:'Clienti fissi',icon:'local'},
+      {h:'GUEST – Accesso semplice',tech:'Ospiti con biglietto digitale nel Wallet o biglietto giornaliero',note:'Turisti',icon:'guest'},
+      {h:'PREMIUM – Fidelizzazione',tech:'Utenti fedeli con vantaggi estesi e incentivi',note:'Programma fedeltà',icon:'premium'}]}},
+
+  /* 22 */ {type:'listright',tag:'Nutzergruppen / Gruppi di utenti',
+    de:{title:'Nutzer-\ngruppen',items:[
+      {h:'LOCAL – Regionale Nutzer',b:'Einheimische mit RFID/UHF-Card im Armband-Träger und Hausloipe-Bindung.'},
+      {h:'GUEST – Einfacher Zugang',b:'Gäste mit digitalem Wallet-Ticket (Wochenkarte) oder Tageskarte.'},
+      {h:'PREMIUM – Langfristige Bindung',b:'Treue Nutzer mit erweiterten Vorteilen und Anreizen.'},
+      {h:'Unterschiedliche Bedürfnisse',b:'Jede Gruppe erfordert spezifische Systemlogik.'}]},
+    it:{title:'Gruppi di\nutenti',items:[
+      {h:'LOCAL – Utenti regionali',b:'Residenti con card RFID/UHF nel porta-card da braccio e pista di casa.'},
+      {h:'GUEST – Accesso semplice',b:'Ospiti con biglietto digitale nel Wallet o biglietto giornaliero.'},
+      {h:'PREMIUM – Fidelizzazione',b:'Utenti fedeli con vantaggi estesi e incentivi.'},
+      {h:'Esigenze diverse',b:'Ogni gruppo richiede una logica di sistema specifica.'}]}},
+
+  /* 23 */ {type:'quad',tag:'Kontrollstrategie / Strategia di controllo',
+    de:{title:'Kontrollstrategie',items:[
+      {h:'Keine Flächenkontrolle',b:'Verzicht auf flächendeckende Kontrollen. Ressourcenschonender Ansatz ohne permanente Überwachung.'},
+      {h:'Strategische Punkte',b:'Fokussierung auf neuralgische Kontrollpunkte an stark frequentierten Zugängen.'},
+      {h:'Mobile Kontrolle',b:'Flexible Kontrollteams mit mobilen Geräten. Schnelle Reaktion nach Bedarf.'},
+      {h:'Effiziente Umsetzung',b:'Schlanke Prozesse mit maximaler Wirkung bei minimaler Ticketpflicht-Durchsetzung.'}]},
+    it:{title:'Strategia di controllo',items:[
+      {h:'Nessun controllo a tappeto',b:'Rinuncia a controlli capillari. Approccio risparmioso senza sorveglianza permanente.'},
+      {h:'Punti strategici',b:'Concentrazione sui punti nevralgici agli accessi più frequentati.'},
+      {h:'Controllo mobile',b:'Team di controllo flessibili con dispositivi mobili. Reazione rapida e interventi mirati.'},
+      {h:'Attuazione efficiente',b:'Processi snelli con massimo effetto e sforzo minimo.'}]}},
+
+  /* 24 */ {type:'quad',tag:'Systemlogik Kontrolle / Logica di sistema controllo',
+    de:{title:'Systemlogik Kontrolle',items:[
+      {h:'RFID-Kontrolle',b:'Saisonkarten-Inhaber werden über RFID/UHF-Card identifiziert. Schnelle, kontaktlose Erfassung.'},
+      {h:'Kombinierte Nutzung',b:'Beide Systeme arbeiten parallel. Flexible Kontrolle je nach Ticketart.'},
+      {h:'QR/Wallet-Kontrolle',b:'Wochenkarten werden über digitales Wallet-Ticket verifiziert. Einfaches Scannen.'},
+      {h:'Nahtlose Verifikation',b:'Einheitliche Systemlogik. Minimaler Aufwand für Personal und Nutzer.'}]},
+    it:{title:'Logica di sistema controllo',items:[
+      {h:'Controllo RFID',b:'I titolari di tessera stagionale vengono identificati tramite card RFID/UHF. Rilevamento rapido.'},
+      {h:'Utilizzo combinato',b:'Entrambi i sistemi funzionano in parallelo. Controllo flessibile in base al tipo di biglietto.'},
+      {h:'Controllo QR/Wallet',b:'Le tessere settimanali vengono verificate tramite biglietto digitale nel Wallet.'},
+      {h:'Verifica seamless',b:'Logica di sistema uniforme. Sforzo minimo per il personale e gli utenti.'}]}},
+
+  /* 25 */ {type:'text-img',imgKey:null,tag:'Incentivierung / Incentivazione',
+    de:{title:'Incentivierung',body:'Das Scansystem basiert auf Freiwilligkeit und einfacher Logik. Nutzer werden durch ein attraktives Belohnungssystem motiviert, ihre Karten an Kontrollpunkten zu scannen.\n\nDurch gezielte Anreize wie Rabatte, Bonuspunkte oder exklusive Vorteile entsteht eine Win-Win-Situation: höhere Datenqualität für DNS bei gleichzeitigem Mehrwert für die Nutzer.',note:'Mögliche Erweiterungen'},
+    it:{title:'Incentivazione',body:'Il sistema di scansione si basa sulla volontarietà e su una logica semplice. Gli utenti sono motivati da un sistema di premi attrattivo a scansionare le loro tessere.\n\nGrazie a incentivi mirati come sconti, punti bonus o vantaggi esclusivi si crea una situazione win-win: maggiore qualità dei dati per DNS e valore aggiunto per gli utenti.',note:'Possibili estensioni'}},
+
+  /* 26 */ {type:'quad',tag:'Operatives Modell / Modello operativo',
+    de:{title:'Operatives Modell',items:[
+      {h:'Zentrale Steuerung',b:'Zentrale Steuerungsmöglichkeit bei dezentraler Umsetzung. Einheitliche Standards.'},
+      {h:'Geringe Komplexität',b:'Reduzierte Systemkomplexität durch klare Strukturen. Einfache Wartung.'},
+      {h:'Schlanke Prozesse',b:'Minimaler administrativer Aufwand durch automatisierte Abläufe.'},
+      {h:'Skalierbarkeit',b:'Flexible Erweiterung ohne Systemumbau. Wachstum ohne Ressourcenanstieg.'}]},
+    it:{title:'Modello operativo',items:[
+      {h:'Gestione centrale',b:'Possibilità di gestione centrale con attuazione decentralizzata.'},
+      {h:'Bassa complessità',b:'Complessità ridotta grazie a strutture chiare. Manutenzione semplice.'},
+      {h:'Processi snelli',b:'Sforzo amministrativo minimo grazie a processi automatizzati.'},
+      {h:'Scalabilità',b:'Espansione flessibile senza ristrutturazione. Crescita senza aumento di risorse.'}]}},
+
+  /* 27 */ {type:'listright',tag:'Strategische Weichenstellungen / Orientamenti strategici',
+    de:{title:'Strategische\nWeichen-\nstellungen',items:[
+      {h:'Datenschutz & Rollenverteilung',b:'Klärung der Verantwortlichkeiten zwischen DNS, Regionen und PRIOT (DSGVO).'},
+      {h:'Administrativer Aufwand',b:'Bewertung des Aufwands für Verkaufsstellen, Kontrolleure und Regionen.'},
+      {h:'Langfristige Betriebskosten',b:'Abschätzung der jährlichen Kosten für Betrieb, Wartung und Lizenzen.'},
+      {h:'Governance-Modell DNS / Regionen',b:'Definition der Aufgaben und Zuständigkeiten zwischen DNS und Regionen.'},
+      {h:'Erkenntnisse aus dem Pilot',b:'Bewertung von Technologie, Akzeptanz, Datenqualität und Skalierbarkeit.'}]},
+    it:{title:'Orientamenti\nstrategici',items:[
+      {h:'Privacy & ripartizione ruoli',b:'Chiarimento delle responsabilità tra DNS, regioni e PRIOT (GDPR).'},
+      {h:'Onere amministrativo',b:'Valutazione del carico aggiuntivo per punti vendita, controllori e regioni.'},
+      {h:'Costi operativi a lungo termine',b:'Stima dei costi annuali per operazioni, manutenzione e licenze.'},
+      {h:'Modello di governance DNS / Regioni',b:'Definizione dei compiti e delle responsabilità tra DNS e regioni.'},
+      {h:'Conoscenze dal pilota',b:'Valutazione di tecnologia, accettazione, qualità dei dati e scalabilità.'}]}},
+
+  /* 28 */ {type:'section',tag:'Zukunft & Vision / Futuro & Visione',
+    de:{title:'Zukunft & Vision',sub:'Wir wollen das System sein, an dem sich andere orientieren.'},
+    it:{title:'Futuro & Visione',sub:'Vogliamo essere il sistema di riferimento per gli altri.'}},
+
+  /* 29 */ {type:'text-img',imgKey:25,tag:'Von der Vision zur Realität / Dalla visione alla realtà',
+    de:{title:'Von der Vision zur Realität',body:'Val Casies / Gsiesertal als erster Schritt.\n\nMit dem Pilot in einer einzelnen Region schaffen wir die Grundlage für ein skalierbares System, das schrittweise auf das gesamte DNS-Netzwerk ausgeweitet werden kann.'},
+    it:{title:'Dalla visione alla realtà',body:'Val Casies / Gsiesertal come primo passo.\n\nCon il pilota in una singola regione creiamo le basi per un sistema scalabile che può essere esteso gradualmente all\'intera rete DNS.'}},
+
+  /* 30 */ {type:'quad',tag:'Was bereits läuft / Cosa è già in corso',
+    de:{title:'Was bereits läuft',items:[
+      {h:'PRIOT',b:'Ticketing & Validierung – Pilotvorschlag 2026/27'},
+      {h:'Prinoth',b:'Infrastruktur & Flächenmanagement'},
+      {h:'Skadii Flow (Prinoth)',b:'Besucherzählung aktiv seit Winter 2025/26'},
+      {h:'DNS',b:'Strategische Koordination & Governance'}]},
+    it:{title:'Cosa è già in corso',items:[
+      {h:'PRIOT',b:'Ticketing & validazione – proposta pilota 2026/27'},
+      {h:'Prinoth',b:'Infrastruttura & gestione delle superfici'},
+      {h:'Skadii Flow (Prinoth)',b:'Conteggio visitatori attivo dall\'inverno 2025/26'},
+      {h:'DNS',b:'Coordinamento strategico & governance'}]}},
+
+  /* 31 */ {type:'pilot',tag:'Pilot Gsiesertal 2026/27',
+    de:{title:'Pilot\nGsiesertal\n2026/27',items:[
+      {h:'RFID Tagesticket (Polesticker)',b:'Ausgabe an 2 offiziellen Verkaufsstellen. Sticker am Skistock für zuverlässige UHF-Erkennung.'},
+      {h:'Hybrides System',b:'Bestehende Tickets laufen in allen anderen Kanälen weiter. Keine Unterbrechung des Betriebs.'},
+      {h:'Mobile Validierung',b:'2 Handheld-Geräte mit 5–7m UHF-Reichweite. Ticketüberprüfung ohne Anhalten.'},
+      {h:'Fundament legen',b:'Einfacher Start mit Fokus auf Funktionalität.'}]},
+    it:{title:'Pilot\nGsiesertal\n2026/27',items:[
+      {h:'Biglietto giornaliero RFID (Polesticker)',b:'Emissione in 2 punti vendita ufficiali. Sticker sul bastoncino per rilevamento UHF affidabile.'},
+      {h:'Sistema ibrido',b:'I biglietti esistenti continuano in tutti gli altri canali. Nessuna interruzione.'},
+      {h:'Validazione mobile',b:'2 dispositivi portatili con portata UHF 5–7m. Verifica biglietti senza fermarsi.'},
+      {h:'Gettare le basi',b:'Avvio semplice con focus sulla funzionalità.'}]}},
+
+  /* 32 */ {type:'roadmap',tag:'Entwicklungs-Roadmap / Roadmap di sviluppo',
+    de:{title:'Entwicklungs-Roadmap',note:'Die Roadmap ist eine mögliche Entwicklungsperspektive und kein bereits beschlossener Umsetzungsplan.',steps:[
+      {year:'2026/27',h:'Pilot Gsiesertal',b:'RFID/NFC + RFID Tagesticket Sticker. Handgeräte + 1 Messstation + Workshops. Go-live Oktober 2026.',col:'#AAD0D1',tc:'#0D4D5E'},
+      {year:'2027/28',h:'DNS Season Card',b:'UHF-Card im Armband-Träger netzwerkweit. Automatische Erkennung. Clearing-System aktiv.',col:'#417483',tc:'#fff'},
+      {year:'2028+',h:'Nordic Intelligence Network',b:'Interreg Alpine Space. Skadii Flow + PRIOT + Wissenschaft. DNS als europäisches Referenzsystem.',col:'#0D4D5E',tc:'#fff'}]},
+    it:{title:'Roadmap di sviluppo',note:'La roadmap è una prospettiva di sviluppo possibile e non un piano di attuazione già deliberato.',steps:[
+      {year:'2026/27',h:'Pilot Gsiesertal',b:'RFID/NFC + sticker biglietti. Dispositivi + 1 stazione + workshop. Go-live ottobre 2026.',col:'#AAD0D1',tc:'#0D4D5E'},
+      {year:'2027/28',h:'DNS Season Card',b:'Card UHF nel porta-card, su tutta la rete. Riconoscimento automatico. Clearing attivo.',col:'#417483',tc:'#fff'},
+      {year:'2028+',h:'Nordic Intelligence Network',b:'Interreg Alpine Space. Skadii Flow + PRIOT + Scienza. DNS come riferimento europeo.',col:'#0D4D5E',tc:'#fff'}]}},
+
+  /* 33 */ {type:'quad',tag:'Pilotziele / Obiettivi del pilota',
+    de:{title:'Pilotziele',items:[
+      {h:'Technologie',b:'Funktioniert UHF-Erkennung unter realen alpinen Winterbedingungen zuverlässig?'},
+      {h:'Nutzerakzeptanz',b:'Wie reagieren Gäste und Einheimische auf das neue System?'},
+      {h:'Workflow',b:'Ist der operative Ablauf an der Verkaufsstelle und auf der Loipe praktikabel?'},
+      {h:'Skalierbarkeit',b:'Kann die Hardware als Baustein des DNS-Rollouts weitergenutzt werden? PRIOT: ja.'}]},
+    it:{title:'Obiettivi del pilota',items:[
+      {h:'Tecnologia',b:'Il riconoscimento UHF funziona in modo affidabile nelle reali condizioni invernali alpine?'},
+      {h:'Accettazione utenti',b:'Come reagiscono ospiti e residenti al nuovo sistema?'},
+      {h:'Workflow',b:'Il processo operativo al punto vendita e in pista è praticabile?'},
+      {h:'Scalabilità',b:'L\'hardware può essere riutilizzato come componente del rollout DNS? PRIOT: sì.'}]}},
+
+  /* 34 */ {type:'risiko',tag:'Risikobegrenzung / Limitazione del rischio',
+    de:{title:'Risikobegrenzung',items:['Pilot in nur einer Region','Bestehende Systeme bleiben parallel aktiv','Keine DNS-weite Einführung ohne neue Entscheidung','Hardware und Software teilweise für spätere Phasen wiederverwendbar']},
+    it:{title:'Limitazione del rischio',items:['Pilota in una sola regione','I sistemi esistenti rimangono attivi in parallelo','Nessuna introduzione DNS-wide senza nuova decisione','Hardware e software parzialmente riutilizzabili per fasi successive']}},
+
+  /* 35 */ {type:'invest',tag:'Investition Pilot / Investimento pilota',
+    de:{title:'Investition Pilot',
+      rows:[
+        {el:'Software & Plattform',val:'11.500 €'},
+        {el:'5.000 RFID Polesticker Tickets (0,86 € / Stk.)',val:'4.300 €'},
+        {el:'2 Handheld Validatoren + 2 USB Reader',val:'4.000 €'},
+        {el:'Messstation (1 Standort) – Fakultativ',val:'7.000 €',opt:true},
+        {el:'Workshop, Setup & Schulung',val:'7.000 €'},
+        {el:'Gesamt (inkl. Messstation)',val:'33.800 € + MwSt',bold:true},
+        {el:'Ohne Messstation',val:'26.800 € + MwSt',bold:true}],
+      alt:{h:'Alternativ: Mietmodell',b:'Hardware bleibt Eigentum von PRIOT. Jährliche Kosten ca. 40–45 % des Kaufwertes. Geringere Anfangsinvestition, höhere laufende Kosten.'}},
+    it:{title:'Investimento pilota',
+      rows:[
+        {el:'Software & Piattaforma',val:'11.500 €'},
+        {el:'5.000 biglietti RFID Polesticker (0,86 € / pz.)',val:'4.300 €'},
+        {el:'2 Handheld + 2 USB Reader',val:'4.000 €'},
+        {el:'Stazione di misurazione – Facoltativo',val:'7.000 €',opt:true},
+        {el:'Workshop, Setup & Formazione',val:'7.000 €'},
+        {el:'Totale (incl. stazione)',val:'33.800 € + IVA',bold:true},
+        {el:'Senza stazione',val:'26.800 € + IVA',bold:true}],
+      alt:{h:'Alternativa: Modello a noleggio',b:'L\'hardware rimane di proprietà PRIOT. Costi annuali ca. 40–45 % del valore d\'acquisto. Investimento iniziale inferiore, costi correnti più alti.'}}},
+
+  /* 36 */ {type:'finanzierung',tag:'Finanzierungsmodell / Modello di finanziamento',
+    de:{title:'Finanzierungsmodell Pilot – Diskussionsgrundlage',
+      dns:{title:'DNS – Strategische Investition',rows:[
+        {el:'Software Bundle',val:'4.500 €'},{el:'Real-Time Data Platform',val:'7.000 €'},
+        {el:'Kick-off Workshop',val:'2.500 €'},{el:'On-Site Setup & Schulung',val:'4.500 €'},
+        {el:'Tot DNS',val:'18.500 €',bold:true}]},
+      gsies:{title:'Gsiesertal – Operative Pilotumsetzung',rows:[
+        {el:'5.000 RFID Sticker Tickets',val:'4.300 €'},{el:'2 Handheld Validatoren',val:'3.600 €'},
+        {el:'2 USB Reader',val:'400 €'},{el:'Tot Gsiesertal',val:'8.300 €',bold:true}]}},
+    it:{title:'Modello di finanziamento pilota – Base di discussione',
+      dns:{title:'DNS – Investimento strategico',rows:[
+        {el:'Software Bundle',val:'4.500 €'},{el:'Real-Time Data Platform',val:'7.000 €'},
+        {el:'Kick-off Workshop',val:'2.500 €'},{el:'On-Site Setup & Formazione',val:'4.500 €'},
+        {el:'Tot DNS',val:'18.500 €',bold:true}]},
+      gsies:{title:'Gsiesertal – Attuazione operativa',rows:[
+        {el:'5.000 biglietti RFID Sticker',val:'4.300 €'},{el:'2 Handheld Validatori',val:'3.600 €'},
+        {el:'2 USB Reader',val:'400 €'},{el:'Tot Gsiesertal',val:'8.300 €',bold:true}]}}},
+
+  /* 37 */ {type:'dquote',tag:'Investitionsentscheidung / Decisione di investimento',
+    de:{quote:'Mit einer einmaligen Investition schaffen wir die Grundlage, um Technologie, Prozesse und Akzeptanz zu validieren, bevor über einen möglichen DNS-weiten Rollout entschieden wird.'},
+    it:{quote:'Con un investimento una tantum creiamo le basi per validare tecnologia, processi e accettazione prima di decidere su un possibile rollout DNS-wide.'}},
+
+  /* 38 */ {type:'phase2',tag:'Phase 2 – DNS Season Card / Fase 2',
+    de:{title:'Phase 2 – DNS Season Card',
+      rows:[
+        {el:'Messstation (einmalig)',val:'~4.500 €'},{el:'Handheld Validator (einmalig)',val:'~1.400 €'},
+        {el:'USB Reader (einmalig)',val:'~200 €'},{el:'DNS Saisonkarte RFID/UHF-Card',val:'~2,20 € / Stk.'},
+        {el:'Tageskarte RFID',val:'~0,70 € / Stk.'},{el:'Software Lizenz (jährlich)',val:'~5.000 € / Jahr / Org.'}],
+      modules:{title:'Phase 2 – Modulares DNS-Modell',intro:'Nach erfolgreichem Pilotbetrieb kann das System schrittweise erweitert werden. Jede Region entscheidet selbst, welche Module sie nutzen möchte.',items:['DNS Core: DNS Saisonkarte, Clearing & Reporting','Validation Module: Mobile Kontrolle und Ticketvalidierung','Measurement Module: Besucherzählung und Nutzungsanalysen','Regional Ticketing Module: Integration regionaler Produkte'],note:'Ziel: Maximale Flexibilität bei gemeinsamer DNS-Infrastruktur. PRIOT: OK!'}},
+    it:{title:'Fase 2 – DNS Season Card',
+      rows:[
+        {el:'Stazione di misurazione (una tantum)',val:'~4.500 €'},{el:'Handheld Validator (una tantum)',val:'~1.400 €'},
+        {el:'USB Reader (una tantum)',val:'~200 €'},{el:'Tessera stagionale DNS RFID/UHF',val:'~2,20 € / pz.'},
+        {el:'Biglietto giornaliero RFID',val:'~0,70 € / pz.'},{el:'Licenza software (annuale)',val:'~5.000 € / anno / org.'}],
+      modules:{title:'Fase 2 – Modello DNS modulare',intro:'Dopo un pilota riuscito il sistema può essere esteso gradualmente. Ogni regione decide autonomamente quali moduli utilizzare.',items:['DNS Core: Tessera stagionale DNS, Clearing & Reporting','Validation Module: Controllo mobile e validazione biglietti','Measurement Module: Conteggio visitatori e analisi utilizzo','Regional Ticketing Module: Integrazione prodotti regionali'],note:'Obiettivo: massima flessibilità con infrastruttura DNS comune. PRIOT: OK!'}}},
+
+  /* 39 */ {type:'decision',tag:'Die Entscheidung / La decisione',
+    de:{title:'Die Entscheidung',items:[
+      {h:'Der Pilot',b:'PRIOT Smart Track in Gsiesertal. Saison 2026/27. Angebot gültig bis 24. Juni. Vorbehaltlich der Zustimmung der Pilotregion Gsiesertal.'},
+      {h:'Warum jetzt',b:'Skadii Flow läuft bereits. Die Daten kommen. Was fehlt, ist das Ticketing.'},
+      {h:'Was wir bitten',b:'Genehmigung des PRIOT-Pilots in Gsiesertal für Saison 2026/27.'},
+      {h:'Nächste Schritte',b:'Vorstandsbeschluss heute → Finanzierungsmodell → Kick-off Workshop Juli 2026. Go-live Oktober 2026.'}],
+      quote:'Mit einer einmaligen Investition schaffen wir die Grundlage, um Technologie, Prozesse und Akzeptanz zu validieren, bevor über einen möglichen DNS-weiten Rollout entschieden wird.'},
+    it:{title:'La decisione',items:[
+      {h:'Il pilota',b:'PRIOT Smart Track a Gsiesertal. Stagione 2026/27. Offerta valida fino al 24 giugno. Con riserva del consenso della regione pilota Gsiesertal.'},
+      {h:'Perché adesso',b:'Skadii Flow è già in funzione. I dati arrivano. Ciò che manca è il ticketing.'},
+      {h:'Cosa chiediamo',b:'Approvazione del pilota PRIOT a Gsiesertal per la stagione 2026/27.'},
+      {h:'Prossimi passi',b:'Delibera del consiglio oggi → Modello di finanziamento → Workshop luglio 2026. Go-live ottobre 2026.'}],
+      quote:'Con un investimento una tantum creiamo le basi per validare tecnologia, processi e accettazione prima di decidere su un possibile rollout DNS-wide.'}},
+
+  /* 40 */ {type:'bullet',tag:'Was heute entschieden wird – und was nicht',
+    de:{title:'Was heute entschieden wird – und was nicht',
+      intro:'Heute entscheiden wir nicht über die Einführung eines neuen DNS-Ticketingsystems. Heute entscheiden wir über einen technologischen Pilotversuch in einer einzelnen Region, um zu prüfen:',
+      checks:['Funktioniert die Technologie unter realen Bedingungen?','Sind Verkauf und Kontrolle operativ praktikabel?','Liefert das System brauchbare Daten für zukünftige Entscheidungen?'],
+      mid1:'Die eigentliche Frage ist nicht die Technologie.',
+      mid2:'Die zentrale Frage lautet: Wie soll DNS künftig organisiert werden?',
+      boxTitle:'Der Pilot soll konkrete Erfahrungen liefern für:',
+      boxItems:['Governance','Datenmanagement','Vertrieb','Clearing','Rolle von DNS und Regionen']},
+    it:{title:'Cosa viene deciso oggi – e cosa no',
+      intro:'Oggi non decidiamo l\'introduzione di un nuovo sistema di ticketing DNS. Oggi decidiamo su un esperimento pilota tecnologico in una singola regione, per verificare:',
+      checks:['La tecnologia funziona in condizioni reali?','Vendita e controllo sono operativamente praticabili?','Il sistema fornisce dati utili per decisioni future?'],
+      mid1:'La vera questione non è la tecnologia.',
+      mid2:'La domanda centrale è: come dovrà essere organizzato DNS in futuro?',
+      boxTitle:'Il pilota deve fornire esperienze concrete per:',
+      boxItems:['Governance','Gestione dei dati','Distribuzione','Clearing','Ruolo di DNS e regioni']}}
+];
+
+/* ── RENDER ── */
+function d(s){return s[lang]||s.de;}
+
+function finTbl(t){
+  return '<div class="fin-wrap"><h3>'+t.title+'</h3><table class="fin-table"><tbody>'+
+    t.rows.map(function(r){return'<tr class="'+(r.bold?'bold':'')+'"><td>'+r.el+'</td><td style="text-align:right">'+r.val+'</td></tr>';}).join('')+
+    '</tbody></table></div>';
+}
+
+function render(s){
   var data=d(s);
   switch(s.type){
-    case"section":
-      return '<div class="section-slide">'+(s.num?'<div class="section-num">'+s.num+'</div>':'')+
+    case'section':
+      return '<div class="section-wrap">'+(s.num?'<div class="section-num">'+s.num+'</div>':'')+
         '<div class="section-title">'+data.title+'</div>'+
         (data.sub?'<div class="section-sub">'+data.sub+'</div>':'')+
         '</div>';
-    case"quad":
+
+    case'quad':
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="slide-title">'+data.title+'</div>'+
-        '<div class="quad-grid">'+data.items.map(function(it){
-          return'<div class="quad-card"><h3>'+it.h+'</h3><p>'+it.b+'</p></div>';
+        '<div class="quad-grid">'+data.items.map(function(i){
+          return'<div class="qcard"><h3>'+i.h+'</h3><p>'+i.b+'</p></div>';
         }).join('')+'</div>';
-    case"text-img-points":
-      var imgTop=s.imgKey?imgEl(s.imgKey,140):'';
+
+    case'listright':
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
-        '<div class="two-col"><div>'+
+        '<div class="list-right">'+
+        '<div class="list-right-title">'+data.title.replace(/\n/g,'<br>')+'</div>'+
+        '<div class="list-items">'+data.items.map(function(i){
+          return'<div class="list-item"><h3>'+i.h+'</h3><p>'+i.b+'</p></div>';
+        }).join('')+'</div></div>';
+
+    case'product':
+      return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="slide-title">'+data.title+'</div>'+
-        data.body.split('\n\n').map(function(p){return'<p class="text-body">'+p+'</p>';}).join('')+
-        (data.note?'<div class="text-note">'+data.note+'</div>':'')+
-        '</div><div>'+imgTop+
-        '<div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">'+
-        data.items.map(function(it){
-          return'<div style="border-left:3px solid var(--light);padding-left:12px">'+
-            '<div style="font-size:12px;font-weight:700;color:var(--deep)">'+it.h+'</div>'+
-            '<div style="font-size:12px;color:var(--muted);line-height:1.5">'+it.b+'</div></div>';
-        }).join('')+
-        '</div></div></div>';
-    case"text-img":
-    case"text-img":
-      var imgRight2='';
-      if(s.imgKey==='15ab'){
-        imgRight2=imgSlider('15a','15b',220);
-      } else if(s.imgKey){
-        imgRight2=imgEl(s.imgKey,220);
-      } else {
-        imgRight2='<div class="img-placeholder"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#417483" stroke-width="1.6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><div class="img-caption">DOLOMITI NORDICSKI</div></div>';
-      }
-      var videoWidget='';
-      if(s.de && s.de.video){
-        var videoId=s.de.video.split('v=')[1];
-        videoWidget='<div style="margin-top:12px;border-radius:10px;overflow:hidden;border:1px solid var(--light);">'+
-        '<div style="background:var(--deep);padding:6px 12px;font-size:11px;font-weight:600;color:var(--light);letter-spacing:.05em">▶ PRIOT Smart Track – Planica</div>'+
-        '<iframe width="100%" height="175" src="https://www.youtube-nocookie.com/embed/'+videoId+'?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" style="display:block;"></iframe></div>';
-      }
+        '<div class="product-list">'+data.items.map(function(i){
+          return'<div class="product-item">'+
+            '<div class="product-icon">'+(IC[i.icon]||'')+'</div>'+
+            '<div style="flex:1"><h3>'+i.h+'</h3><div class="tech">'+i.tech+'</div></div>'+
+            '<div class="product-note">'+i.note+'</div></div>';
+        }).join('')+'</div>';
+
+    case'text-img':{
+      var right='';
+      if(s.imgKey==='15ab') right=imgSlider('15a','15b',220);
+      else if(s.imgKey) right=imgEl(s.imgKey,220);
+      var vid=s.video?videoWidget(s.video):'';
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="two-col"><div>'+
         '<div class="slide-title">'+data.title.replace(/\n/g,'<br>')+'</div>'+
         data.body.split('\n\n').map(function(p){return'<p class="text-body">'+p+'</p>';}).join('')+
         (data.note?'<div class="text-note">'+data.note+'</div>':'')+
-        '</div><div>'+imgRight2+videoWidget+'</div></div>';
-    case"product":
+        '</div><div>'+right+vid+'</div></div>';
+    }
+
+    case'text-img-points':{
+      var top=s.imgKey?imgEl(s.imgKey,130):'';
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
+        '<div class="two-col"><div>'+
         '<div class="slide-title">'+data.title+'</div>'+
-        '<div class="product-list">'+data.items.map(function(it){
-          return'<div class="product-item">'+
-            '<div class="product-icon">'+getIcon(it.icon)+'</div>'+
-            '<div style="flex:1"><h3>'+it.h+'</h3><div class="tech">'+it.tech+'</div></div>'+
-            '<div class="product-note">'+it.note+'</div></div>';
-        }).join('')+'</div>';
-    case"listright":
-      return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
-        '<div class="list-right-grid">'+
-        '<div class="list-right-title">'+data.title.replace(/\n/g,'<br>')+'</div>'+
-        '<div class="list-items">'+data.items.map(function(it){
-          return'<div class="list-item"><h3>'+it.h+'</h3><p>'+it.b+'</p></div>';
-        }).join('')+'</div></div>';
-    case"pilot":
+        data.body.split('\n\n').map(function(p){return'<p class="text-body">'+p+'</p>';}).join('')+
+        '</div><div>'+top+
+        '<div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">'+
+        data.items.map(function(i){
+          return'<div style="border-left:3px solid var(--light);padding-left:11px">'+
+            '<div style="font-size:12px;font-weight:700;color:var(--deep)">'+i.h+'</div>'+
+            '<div style="font-size:12px;color:var(--muted);line-height:1.5">'+i.b+'</div></div>';
+        }).join('')+'</div></div></div>';
+    }
+
+    case'pilot':
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="pilot-grid">'+
-        '<div class="pilot-title-box"><h2>'+data.title.replace(/\n/g,'<br>')+'</h2></div>'+
-        '<div class="pilot-items">'+data.items.map(function(it){
-          return'<div class="pilot-item"><h3>'+it.h+'</h3><p>'+it.b+'</p></div>';
+        '<div class="pilot-box"><h2>'+data.title.replace(/\n/g,'<br>')+'</h2></div>'+
+        '<div class="pilot-items">'+data.items.map(function(i){
+          return'<div class="pilot-item"><h3>'+i.h+'</h3><p>'+i.b+'</p></div>';
         }).join('')+'</div></div>';
-    case"roadmap":
+
+    case'roadmap':
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="slide-title">'+data.title+'</div>'+
         '<div class="roadmap-note">'+data.note+'</div>'+
@@ -670,144 +651,127 @@ function renderSlide(s){
             '<div class="roadmap-year" style="background:'+st.col+'"><span style="color:'+st.tc+'">'+st.year+'</span></div>'+
             '<div class="roadmap-content"><h3>'+st.h+'</h3><p>'+st.b+'</p></div></div>';
         }).join('')+'</div>';
-    case"risiko":
+
+    case'risiko':
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="slide-title">'+data.title+'</div>'+
-        '<div class="risiko-list">'+data.items.map(function(it){
-          return'<div class="risiko-item"><div class="risiko-dot"></div><p>'+it+'</p></div>';
+        '<div class="risiko-list">'+data.items.map(function(i){
+          return'<div class="risiko-item"><div class="risiko-dot"></div><p>'+i+'</p></div>';
         }).join('')+'</div>';
-    case"invest":
+
+    case'invest':
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="slide-title">'+data.title+'</div>'+
         '<div class="invest-grid">'+
-        '<table class="invest-table"><tbody>'+data.rows.map(function(r){
-          return'<tr class="'+(r.bold?"bold":"")+(r.opt?" opt":"")+'"><td>'+r.el+'</td><td style="text-align:right">'+r.val+'</td></tr>';
+        '<table class="inv-table"><tbody>'+data.rows.map(function(r){
+          return'<tr class="'+(r.bold?'bold':'')+(r.opt?' opt':'')+'"><td>'+r.el+'</td><td style="text-align:right">'+r.val+'</td></tr>';
         }).join('')+'</tbody></table>'+
         '<div class="alt-box"><h3>'+data.alt.h+'</h3><p>'+data.alt.b+'</p></div></div>';
-    case"finanzierung":
-      function finTable(t){
-        return'<div class="fin-table-wrap"><h3>'+t.title+'</h3>'+
-          '<table class="fin-table"><tbody>'+t.rows.map(function(r){
-            return'<tr class="'+(r.bold?"bold":"")+'"><td>'+r.el+'</td><td style="text-align:right">'+r.val+'</td></tr>';
-          }).join('')+'</tbody></table></div>';
-      }
+
+    case'finanzierung':
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="slide-title">'+data.title+'</div>'+
-        '<div class="fin-grid">'+finTable(data.dns)+finTable(data.gsies)+'</div>';
-    case"decision-quote":
+        '<div class="fin-grid">'+finTbl(data.dns)+finTbl(data.gsies)+'</div>';
+
+    case'dquote':
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div style="display:flex;align-items:center;justify-content:center;min-height:280px">'+
-        '<div class="decision-quote" style="max-width:580px">'+
-        '<p style="font-size:18px;line-height:1.7">„'+data.quote+'"</p></div></div>';
-    case"phase2":
+        '<div class="dec-quote" style="max-width:580px"><p style="font-size:17px;line-height:1.75">„'+data.quote+'"</p></div></div>';
+
+    case'phase2':
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="slide-title">'+data.title+'</div>'+
         '<div class="phase2-grid">'+
-        '<div class="phase2-table-wrap"><table class="fin-table"><tbody>'+
-        data.rows.map(function(r){return'<tr><td>'+r.el+'</td><td style="text-align:right;color:var(--deep)">'+r.val+'</td></tr>';}).join('')+
-        '</tbody></table></div>'+
-        '<div class="phase2-modules"><h3>'+data.modules.title+'</h3><p>'+data.modules.intro+'</p>'+
+        '<table class="fin-table"><tbody>'+data.rows.map(function(r){
+          return'<tr><td>'+r.el+'</td><td style="text-align:right;color:var(--deep);font-weight:500">'+r.val+'</td></tr>';
+        }).join('')+'</tbody></table>'+
+        '<div class="phase2-mod"><h3>'+data.modules.title+'</h3><p>'+data.modules.intro+'</p>'+
         '<ul>'+data.modules.items.map(function(i){return'<li>'+i+'</li>';}).join('')+'</ul>'+
-        '<p style="font-size:11px;color:var(--mid);margin-top:10px;font-style:italic">'+data.modules.note+'</p>'+
-        '</div></div>';
-    case"decision":
+        '<p style="font-size:11px;color:var(--mid);margin-top:8px;font-style:italic">'+data.modules.note+'</p></div></div>';
+
+    case'decision':
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="slide-title">'+data.title+'</div>'+
-        '<div class="decision-items">'+data.items.map(function(it){
-          return'<div class="decision-item"><h3>'+it.h+'</h3><p>'+it.b+'</p></div>';
+        '<div class="decision-items">'+data.items.map(function(i){
+          return'<div class="dec-item"><h3>'+i.h+'</h3><p>'+i.b+'</p></div>';
         }).join('')+'</div>'+
-        '<div class="decision-quote"><p>„'+data.quote+'"</p></div>';
-    case"bullet":
+        '<div class="dec-quote"><p>„'+data.quote+'"</p></div>';
+
+    case'bullet':
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="slide-title">'+data.title+'</div>'+
         '<div class="bullet-slide">'+
         '<p>'+data.intro+'</p>'+
         '<ul>'+data.checks.map(function(c){return'<li>'+c+'</li>';}).join('')+'</ul>'+
         '<h2>'+data.mid1+'</h2>'+
-        '<h2 style="color:var(--mid)">'+data.mid2+'</h2>'+
-        '<div class="highlight-box"><p>'+data.boxTitle+'</p>'+
-        '<ul>'+data.boxItems.map(function(i){return'<li>'+i+'</li>';}).join('')+'</ul>'+
-        '</div></div>';
+        '<h2 style="color:var(--mid);margin-bottom:4px">'+data.mid2+'</h2>'+
+        '<div class="hl-box"><p>'+data.boxTitle+'</p>'+
+        '<ul>'+data.boxItems.map(function(i){return'<li>'+i+'</li>';}).join('')+'</ul></div></div>';
+
     default: return '';
   }
 }
 
+/* ── UI ── */
 function buildToc(){
-  var toc=document.getElementById('toc');
-  toc.innerHTML=slides.map(function(s,i){
-    var label=s.tag||(d(s).title)||'';
-    return'<button class="toc-item'+(i===current?' active':'')+'" onclick="goTo('+i+')">'+
-      '<span class="toc-num">'+(i+1)+'.</span>'+label.substring(0,36)+'</button>';
+  document.getElementById('toc').innerHTML=S.map(function(s,i){
+    return'<button class="toc-item'+(i===cur?' active':'')+'" onclick="goTo('+i+')">'+
+      '<span class="toc-num">'+(i+1)+'.</span>'+s.tag.substring(0,36)+'</button>';
   }).join('');
 }
 
-function render(){
-  document.getElementById('slide').innerHTML=renderSlide(slides[current]);
-  document.getElementById('progress').style.width=((current+1)/slides.length*100)+'%';
+function paint(){
+  document.getElementById('slide').innerHTML=render(S[cur]);
+  document.getElementById('prog').style.width=((cur+1)/S.length*100)+'%';
   var L=lang==='de'
-    ?{prev:'← Zurück',next:'Weiter →',slide:'Folie',of:'von',lang:'IT'}
-    :{prev:'← Indietro',next:'Avanti →',slide:'Diapositiva',of:'di',lang:'DE'};
-  document.getElementById('prevBtn').textContent=L.prev;
-  document.getElementById('nextBtn').textContent=L.next;
-  document.getElementById('langBtn').textContent=L.lang;
-  document.getElementById('counter').textContent=L.slide+' '+(current+1)+' '+L.of+' '+slides.length;
-  document.getElementById('prevBtn').disabled=current===0;
-  document.getElementById('nextBtn').disabled=current===slides.length-1;
+    ?{p:'← Zurück',n:'Weiter →',s:'Folie',o:'von',l:'IT'}
+    :{p:'← Indietro',n:'Avanti →',s:'Diapositiva',o:'di',l:'DE'};
+  document.getElementById('prevBtn').textContent=L.p;
+  document.getElementById('nextBtn').textContent=L.n;
+  document.getElementById('langBtn').textContent=L.l;
+  document.getElementById('counter').textContent=L.s+' '+(cur+1)+' '+L.o+' '+S.length;
+  document.getElementById('prevBtn').disabled=cur===0;
+  document.getElementById('nextBtn').disabled=cur===S.length-1;
   buildToc();
 }
 
-function switchImg(idx){
-  var a=document.getElementById('sliderImgA');
-  var b=document.getElementById('sliderImgB');
-  var b0=document.getElementById('sliderBtn0');
-  var b1=document.getElementById('sliderBtn1');
-  if(!a||!b) return;
-  a.style.opacity=idx===0?'1':'0';
-  b.style.opacity=idx===1?'1':'0';
-  b0.style.background=idx===0?'rgba(255,255,255,.25)':'transparent';
-  b0.style.color=idx===0?'#AAD0D1':'rgba(170,208,209,.5)';
-  b1.style.background=idx===1?'rgba(255,255,255,.25)':'transparent';
-  b1.style.color=idx===1?'#AAD0D1':'rgba(170,208,209,.5)';
-}
-
-function go(dir){current=Math.max(0,Math.min(slides.length-1,current+dir));render();}
-function goTo(i){current=i;document.getElementById('toc').classList.remove('open');document.getElementById('tocBtn').classList.remove('active');render();}
+function go(d){cur=Math.max(0,Math.min(S.length-1,cur+d));paint();}
+function goTo(i){cur=i;document.getElementById('toc').classList.remove('open');document.getElementById('tocBtn').classList.remove('active');paint();}
 function toggleToc(){document.getElementById('toc').classList.toggle('open');document.getElementById('tocBtn').classList.toggle('active');buildToc();}
-function toggleLang(){lang=lang==='de'?'it':'de';render();}
-document.addEventListener('keydown',function(e){
-  if(e.key==='ArrowRight'||e.key==='ArrowDown')go(1);
-  if(e.key==='ArrowLeft'||e.key==='ArrowUp')go(-1);
-  if(e.key==='f'||e.key==='F')toggleFullscreen();
-  if(e.key==='Escape'&&document.fullscreenElement)document.exitFullscreen();
-});
+function toggleLang(){lang=lang==='de'?'it':'de';paint();}
 
-function toggleFullscreen(){
+/* ── FULLSCREEN ── */
+function toggleFs(){
   var el=document.documentElement;
-  if(!document.fullscreenElement){
+  if(!document.fullscreenElement)
     (el.requestFullscreen||el.webkitRequestFullscreen||el.mozRequestFullScreen||el.msRequestFullscreen).call(el);
-  } else {
+  else
     (document.exitFullscreen||document.webkitExitFullscreen||document.mozCancelFullScreen||document.msExitFullscreen).call(document);
-  }
 }
-
 document.addEventListener('fullscreenchange',function(){
   var btn=document.getElementById('fsBtn');
-  var app=document.querySelector('.app');
+  var app=document.getElementById('app');
   var body=document.body;
   if(document.fullscreenElement){
-    btn.textContent='✕ Vollbild';
-    var scaleX=window.screen.width/820;
-    var scaleY=window.screen.height/700;
-    var scale=Math.min(scaleX,scaleY,2);
+    btn.textContent='✕';
+    var sc=Math.min(window.screen.width/820,window.screen.height/700,2);
     body.style.cssText='margin:0;padding:0;background:#0D4D5E;display:flex;align-items:center;justify-content:center;min-height:100vh;';
-    app.style.cssText='width:800px;max-width:800px;border-radius:16px;box-shadow:none;transform:scale('+scale+');transform-origin:center center;';
+    app.style.cssText='width:800px;max-width:800px;border-radius:16px;box-shadow:none;transform:scale('+sc+');transform-origin:center center;';
   } else {
     btn.textContent='⛶';
     body.style.cssText='font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f0f6f7;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;';
     app.style.cssText='width:100%;max-width:800px;background:var(--white);border-radius:16px;box-shadow:0 4px 32px rgba(13,77,94,.12);overflow:hidden;';
   }
 });
-render();
+
+document.addEventListener('keydown',function(e){
+  if(e.key==='ArrowRight'||e.key==='ArrowDown') go(1);
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp') go(-1);
+  if(e.key==='f'||e.key==='F') toggleFs();
+  if(e.key==='Escape'&&document.fullscreenElement) document.exitFullscreen();
+});
+
+paint();
 </script>
 </body>
 </html>
