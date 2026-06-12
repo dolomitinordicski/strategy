@@ -135,7 +135,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
   <div class="header">
     <div class="logo">
       <img src="logo.png" alt="DNS">
-      <span class="logo-sub">Stand 10.06.2026</span>
+      <span class="logo-sub">Vorstandssitzung 10.06.2026</span>
     </div>
     <div class="header-btns">
       <button class="btn-sm" id="tocBtn" onclick="toggleToc()">☰ Inhalt</button>
@@ -543,21 +543,19 @@ var S=[
       {h:'Prossimi passi',b:'Delibera del consiglio oggi → Modello di finanziamento → Workshop luglio 2026. Go-live ottobre 2026.'}],
       quote:'Con un investimento una tantum creiamo le basi per validare tecnologia, processi e accettazione prima di decidere su un possibile rollout DNS-wide.'}},
 
-  {type:'bullet',tag:'Was heute entschieden wird – und was nicht',
-    de:{title:'Was heute entschieden wird – und was nicht',
-      intro:'Heute entscheiden wir nicht über die Einführung eines neuen DNS-Ticketingsystems. Heute entscheiden wir über einen technologischen Pilotversuch in einer einzelnen Region, um zu prüfen:',
-      checks:['Funktioniert die Technologie unter realen Bedingungen?','Sind Verkauf und Kontrolle operativ praktikabel?','Liefert das System brauchbare Daten für zukünftige Entscheidungen?'],
-      mid1:'Die eigentliche Frage ist nicht die Technologie.',
-      mid2:'Die zentrale Frage lautet: Wie soll DNS künftig organisiert werden?',
-      boxTitle:'Der Pilot soll konkrete Erfahrungen liefern für:',
-      boxItems:['Governance','Datenmanagement','Vertrieb','Clearing','Rolle von DNS und Regionen']},
-    it:{title:'Cosa viene deciso oggi – e cosa no',
-      intro:'Oggi non decidiamo l\'introduzione di un nuovo sistema di ticketing DNS. Oggi decidiamo su un esperimento pilota tecnologico in una singola regione, per verificare:',
-      checks:['La tecnologia funziona in condizioni reali?','Vendita e controllo sono operativamente praticabili?','Il sistema fornisce dati utili per decisioni future?'],
-      mid1:'La vera questione non è la tecnologia.',
-      mid2:'La domanda centrale è: come dovrà essere organizzato DNS in futuro?',
-      boxTitle:'Il pilota deve fornire esperienze concrete per:',
-      boxItems:['Governance','Gestione dei dati','Distribuzione','Clearing','Ruolo di DNS e regioni']}}
+  {type:'questions',tag:'Offene Fragen / Domande aperte',
+    de:{title:'Offene Fragen – Was der Pilot beantworten muss',items:[
+      {h:'Governance',b:'Wie werden Aufgaben und Verantwortlichkeiten zwischen DNS und den einzelnen Regionen definiert?'},
+      {h:'Datenschutz & DSGVO',b:'Wie werden die Verantwortlichkeiten zwischen DNS, Regionen und PRIOT im Hinblick auf DSGVO und Datenverwaltung geklärt?'},
+      {h:'Rolle von DNS',b:'Welche Rolle übernimmt DNS als Systemkoordinator – und welche Autonomie behalten die Regionen?'},
+      {h:'Administrativer Aufwand',b:'Ist der operative Mehraufwand für Verkaufsstellen, Kontrolleure und Regionen vertretbar?'},
+      {h:'Langfristige Kosten',b:'Wie entwickeln sich die Betriebskosten bei einem möglichen DNS-weiten Rollout?'}]},
+    it:{title:'Domande aperte – Cosa deve rispondere il pilota',items:[
+      {h:'Governance',b:'Come vengono definiti compiti e responsabilità tra DNS e le singole regioni?'},
+      {h:'Privacy & GDPR',b:'Come vengono chiarite le responsabilità tra DNS, regioni e PRIOT in merito al GDPR e alla gestione dei dati?'},
+      {h:'Ruolo di DNS',b:'Quale ruolo assume DNS come coordinatore di sistema – e quale autonomia mantengono le regioni?'},
+      {h:'Onere amministrativo',b:'Il carico operativo aggiuntivo per punti vendita, controllori e regioni è sostenibile?'},
+      {h:'Costi a lungo termine',b:'Come si sviluppano i costi operativi in caso di un possibile rollout DNS-wide?'}]}}
 ];
 
 function d(s){return s[lang]||s.de;}
@@ -711,6 +709,20 @@ function render(s){
           return '<div class="dec-item"><h3>'+i.h+'</h3><p>'+i.b+'</p></div>';
         }).join('')+'</div>'+
         '<div class="dec-quote"><p>&#8222;'+data.quote+'&#8220;</p></div>';
+
+    case 'questions':
+      return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
+        '<div class="slide-title">'+data.title+'</div>'+
+        '<div style="display:flex;flex-direction:column;gap:9px">'+
+        data.items.map(function(i,idx){
+          var accent=idx===0?'var(--deep)':idx===1?'var(--mid)':idx===2?'#2a6b7c':idx===3?'var(--mid)':'var(--light)';
+          var tc=idx<3?'var(--white)':'var(--deep)';
+          return '<div style="display:flex;align-items:stretch;border-radius:10px;overflow:hidden;border:1px solid var(--lighter)">'+
+            '<div style="background:'+accent+';padding:10px 14px;min-width:160px;display:flex;align-items:center;justify-content:center;flex-shrink:0">'+
+            '<span style="font-size:13px;font-weight:700;color:'+tc+';text-align:center">'+i.h+'</span></div>'+
+            '<div style="background:var(--lightest);padding:10px 14px;display:flex;align-items:center;flex:1">'+
+            '<p style="font-size:12px;color:var(--text);line-height:1.55">'+i.b+'</p></div></div>';
+        }).join('')+'</div>';
 
     case 'bullet':
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
