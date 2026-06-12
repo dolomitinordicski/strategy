@@ -201,11 +201,11 @@ var slides=[
   // 7
   {type:"product",tag:"Produktlogik / Logica di prodotto",
     de:{title:"Produktlogik",items:[
-      {h:"Saisonkarte (DNS)",tech:"RFID/UHF-Armband – netzwerkweit gültig",note:"Implementierung: PRIOT",icon:"rfid"},
+      {h:"Saisonkarte (DNS)",tech:"RFID/UHF- Card – netzwerkweit gültig",note:"Implementierung: PRIOT?",icon:"rfid"},
       {h:"Wochenkarte (DNS)",tech:"QR-Code digital – kein physischer Träger",note:"Implementierung: LTS Shop",icon:"qr"},
       {h:"Tageskarten (Regionen)",tech:"Regionale Systeme / optional UHF-Polesticker",note:"Autonome Entscheidung pro Region",icon:"ticket"}]},
     it:{title:"Logica di prodotto",items:[
-      {h:"Tessera stagionale (DNS)",tech:"Bracciale RFID/UHF – valido su tutta la rete",note:"Implementazione: PRIOT",icon:"rfid"},
+      {h:"Tessera stagionale (DNS)",tech:"Card RFID/UHF – valido su tutta la rete",note:"Implementazione: PRIOT",icon:"rfid"},
       {h:"Tessera settimanale (DNS)",tech:"Codice QR digitale – nessun supporto fisico",note:"Implementazione: LTS Shop",icon:"qr"},
       {h:"Biglietti giornalieri (Regioni)",tech:"Sistemi regionali / opz. UHF-Polesticker",note:"Decisione autonoma per regione",icon:"ticket"}]}},
   // 8
@@ -215,13 +215,13 @@ var slides=[
       {h:"Wochenkarten",b:"QR (digitale Nutzung) – DNS-Ebene"},
       {h:"Tageskarten",b:"Regionale Systeme – autonome Entscheidung pro Region"}]},
     it:{title:"Modello\nmultilivello",items:[
-      {h:"Tessere stagionali",b:"UHF (riconoscimento automatico) – livello DNS"},
+      {h:"Tessere stagionali",b:"UHF (riconoscimento automatico) – livello DNS" con chip},
       {h:"Tessere settimanali",b:"QR (utilizzo digitale) – livello DNS"},
       {h:"Biglietti giornalieri",b:"Sistemi regionali – decisione autonoma per regione"}]}},
   // 9
   {type:"text-img",imgKey:9,tag:"Saisonkarte / Tessera stagionale",
-    de:{title:"Saisonkarte (DNS)",body:"Die DNS-Saisonkarte basiert auf einem RFID/NFC-Armband als physischem Trägermedium. Dieses ist direkt mit dem persönlichen Nutzerkonto verknüpft und ermöglicht langfristigen Zugang zum gesamten Loipennetzwerk.\n\nDurch die digitale Verknüpfung werden Nutzungsdaten erfasst und der Clearing-Prozess automatisiert. Das System bietet maximalen Komfort bei minimalem Verwaltungsaufwand.",note:"Implementierung: PRIOT"},
-    it:{title:"Tessera stagionale (DNS)",body:"La tessera stagionale DNS si basa su un braccialetto RFID/NFC come supporto fisico. È collegato direttamente all'account personale e consente l'accesso a lungo termine all'intera rete di piste.\n\nGrazie al collegamento digitale, i dati di utilizzo vengono registrati e il processo di clearing automatizzato. Il sistema offre massimo comfort con minimo sforzo amministrativo.",note:"Implementazione: PRIOT"}},
+    de:{title:"Saisonkarte (DNS)",body:"Die DNS-Saisonkarte basiert auf einem RFID/UHF-Card. Ein Armband gilt als physisches Trägermedium. Dieses ist direkt mit dem persönlichen Nutzerkonto verknüpft und ermöglicht langfristigen Zugang zum gesamten Loipennetzwerk.\n\nDurch die digitale Verknüpfung werden Nutzungsdaten erfasst und der Clearing-Prozess automatisiert. Das System bietet maximalen Komfort bei minimalem Verwaltungsaufwand.",note:"Implementierung: PRIOT"},
+    it:{title:"Tessera stagionale (DNS)",body:"La tessera stagionale DNS si basa su una card (tipo carta credito) con chip RFID/UHF indossata tramite una fascia a braccio come supporto fisico. È collegato direttamente all'account personale e consente l'accesso a lungo termine all'intera rete di piste.\n\nGrazie al collegamento digitale, i dati di utilizzo vengono registrati e il processo di clearing automatizzato. Il sistema offre massimo comfort con minimo sforzo amministrativo.",note:"Implementazione: PRIOT"}},
   // 10
   {type:"section",tag:"Technologie PRIOT",
     de:{title:"Technologie",sub:"PRIOT Smart Track"},
@@ -265,9 +265,9 @@ var slides=[
       {h:"Dashboard utente personalizzate",b:"Opzionale: statistiche individuali per i titolari di tessera."},
       {h:"Integrazione di servizi",b:"Offerte, partner e servizi regionali collegabili direttamente."}]}},
   // 15
-  {type:"text-img",imgKey:"15ab",tag:"Armband / Braccialetto",
-    de:{title:"Armband",body:"Das Armband wird der physische Träger des DNS-Saisontickets. Es wird für maximale Robustheit und Funktionalität im Outdoor-Einsatz entwickelt.\n\nDurch seine hohe Sichtbarkeit vor Ort dient es gleichzeitig als Erkennungszeichen der DNS-Community und ermöglicht eine schnelle visuelle Identifikation bei Kontrollen.",note:"Hersteller/Implementierung: SAXE"},
-    it:{title:"Braccialetto",body:"Il braccialetto sarà il supporto fisico del biglietto stagionale DNS. Viene sviluppato per massima robustezza e funzionalità nell'uso outdoor.\n\nGrazie alla sua alta visibilità in loco, funge anche da segno di riconoscimento della community DNS e consente una rapida identificazione visiva durante i controlli.",note:"Produttore/Implementazione: SAXE"}},
+  {type:"text-img",imgKey:"15ab",tag:"Armband / fascia a braccio",
+    de:{title:"Armband",body:"Das Armband wird der physische Träger der DNS-Saisonkarte. Es wird für maximale Robustheit und Funktionalität im Outdoor-Einsatz entwickelt.\n\nDurch seine hohe Sichtbarkeit vor Ort dient es gleichzeitig als Erkennungszeichen der DNS-Community und ermöglicht eine schnelle visuelle Identifikation bei Kontrollen.",note:"Hersteller/Implementierung: SAXE"},
+    it:{title:"Braccialetto",body:" sarà il supporto fisico della card stagionale DNS. Viene sviluppato per massima robustezza e funzionalità nell'uso outdoor.\n\nGrazie alla sua alta visibilità in loco, funge anche da segno di riconoscimento della community DNS e consente una rapida identificazione visiva durante i controlli.",note:"Produttore/Implementazione: SAXE"}},
   // 16
   {type:"text-img",imgKey:16,tag:"Hausloipe / Pista di casa",
     de:{title:"Hausloipe",body:"Die Hausloipe ist ein zentrales Element im Ticketing-System und muss beim Kauf einer Saisonkarte verpflichtend ausgewählt werden.\n\nSie definiert die primäre Nutzungsregion des Karteninhabers und wird über ein einfaches Dropdown-Menü im Kaufprozess festgelegt. Diese Auswahl bildet die Grundlage für das Clearing-System und die Umsatzverteilung.",note:"Implementierung: PRIOT Smart Track / FACTORY"},
@@ -286,8 +286,8 @@ var slides=[
       {h:"Trasparenza",b:"Piena tracciabilità di tutti i flussi finanziari. Ogni regione riceve rendiconti dettagliati."}]}},
   // 18
   {type:"text-img",imgKey:18,tag:"Wochenkarte DNS",
-    de:{title:"Wochenkarte DNS",body:"Die Wochenkarte ist vollständig digital und wird als QR-Code bereitgestellt. Es ist keine physische Karte erforderlich – der Code kann direkt auf dem Smartphone gespeichert werden.\n\nDiese Lösung ist ideal für Gäste: schneller Kauf, sofortige Nutzung und maximale Flexibilität ohne zusätzlichen Aufwand bei der Abholung oder Rückgabe.",note:"Implementierung: LTS Shop"},
-    it:{title:"Tessera settimanale DNS",body:"La tessera settimanale è completamente digitale e viene fornita come codice QR. Non è necessaria una tessera fisica – il codice può essere salvato direttamente sullo smartphone.\n\nQuesta soluzione è ideale per gli ospiti: acquisto rapido, utilizzo immediato e massima flessibilità senza l'onere del ritiro o della restituzione.",note:"Implementazione: LTS Shop"}},
+    de:{title:"Wochenkarte DNS",body:"Die Wochenkarte ist vollständig digital und wird als QR-Code bereitgestellt. Es ist keine physische Karte erforderlich – der Code kann direkt auf dem Smartphone gespeichert werden (google Wallet oder ànhniches".\n\nDiese Lösung ist ideal für Gäste: schneller Kauf, sofortige Nutzung und maximale Flexibilität ohne zusätzlichen Aufwand bei der Abholung oder Rückgabe.",note:"Implementierung: LTS Shop"},
+    it:{title:"Tessera settimanale DNS",body:"La tessera settimanale è completamente digitale e viene fornita come codice QR. Non è necessaria una tessera fisica – il codice può essere salvato direttamente sullo smartphone (google wallet o simile".\n\nQuesta soluzione è ideale per gli ospiti: acquisto rapido, utilizzo immediato e massima flessibilità senza l'onere del ritiro o della restituzione.",note:"Implementazione: LTS Shop"}},
   // 19
   {type:"text-img",imgKey:19,tag:"Guest Card Integration",
     de:{title:"Guest Card Integration",body:"Die Guest Card Integration ermöglicht eine nahtlose Erweiterung bestehender Systeme. Durch eine Add-on-Logik können regionale Gästekarten einfach mit dem DNS-Ticketing verknüpft werden.\n\nDies schafft Mehrwert für Gäste und Regionen gleichermaßen, ohne bestehende Strukturen zu ersetzen. Die modulare Architektur erlaubt flexible Anpassungen je nach regionalen Anforderungen.",note:"Implementierung: LTS Shop"},
