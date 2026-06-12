@@ -297,20 +297,22 @@ var S=[
       {h:'Automatische Erkennung (UHF)',b:'Nutzer werden automatisch beim Passieren erfasst.'},
       {h:'Tracking von Nutzung',b:'Wann, wie oft und wo werden die Loipen genutzt?'},
       {h:'Nutzer-Dashboards',b:'Optional: individuelle Statistiken für Karteninhaber.'},
-      {h:'Integration von Services',b:'Angebote und regionale Services direkt verknüpfbar.'}]},
+      {h:'Integration von Services',b:'Angebote und regionale Services direkt verknüpfbar.'}],
+      links:[
+        {label:'Ticket Issuance – Planica (letzte 2 Saisons)',url:'https://claude.ai/public/artifacts/7ab44b72-2e6c-4736-86a0-b0a8aab9a244'},
+        {label:'Detection Analytics – Planica (letzte 4 Saisons)',url:'https://claude.ai/public/artifacts/ad45962c-e670-40e2-8c99-ce9d04c20676'}]},
     it:{title:'Possibilità\navanzate',items:[
       {h:'Riconoscimento automatico (UHF)',b:'Gli utenti vengono rilevati automaticamente al passaggio.'},
       {h:'Tracking di utilizzo',b:'Quando, quanto spesso e dove vengono utilizzate le piste?'},
       {h:'Dashboard utente',b:'Opzionale: statistiche individuali per i titolari di tessera.'},
-      {h:'Integrazione servizi',b:'Offerte e servizi regionali collegabili direttamente.'}]}},
+      {h:'Integrazione servizi',b:'Offerte e servizi regionali collegabili direttamente.'}],
+      links:[
+        {label:'Ticket Issuance – Planica (ultime 2 stagioni)',url:'https://claude.ai/public/artifacts/7ab44b72-2e6c-4736-86a0-b0a8aab9a244'},
+        {label:'Detection Analytics – Planica (ultime 4 stagioni)',url:'https://claude.ai/public/artifacts/ad45962c-e670-40e2-8c99-ce9d04c20676'}]}},
 
-  /* 14 */ {type:'text-img',imgKey:'15a',tag:'Armband-Träger / Porta-card da braccio',
-    de:{title:'Armband-Träger',body:'Der Armband-Träger ist die physische Halterung für die DNS-Saisonkarte. Er wurde für maximale Robustheit und Funktionalität im Outdoor-Einsatz entwickelt und trägt die RFID/UHF-Card sicher am Handgelenk.\n\nDurch seine hohe Sichtbarkeit dient er gleichzeitig als Erkennungszeichen der DNS-Community und ermöglicht eine schnelle visuelle Identifikation bei Kontrollen. Die Card bleibt jederzeit im Träger – kein Herausnehmen nötig.',note:'Hersteller/Implementierung: SAXE'},
-    it:{title:'Porta-card da braccio',body:'Il porta-card da braccio è il supporto fisico per la tessera stagionale DNS. È stato sviluppato per massima robustezza e funzionalità nell\'uso outdoor e mantiene la card RFID/UHF al polso in modo sicuro.\n\nGrazie alla sua alta visibilità funge anche da segno di riconoscimento della community DNS. La card rimane sempre nel porta-card – non è necessario estrarla.',note:'Produttore/Implementazione: SAXE'}},
-
-  /* 15 */ {type:'text-img',imgKey:'15ab',tag:'Armband-Träger Detail / Dettaglio porta-card',
-    de:{title:'Armband-Träger\nDetail',body:'Die Kombination aus DNS-Saisonkarte (RFID/UHF-Card) und Armband-Träger bildet das physische Herzstück des Ticketing-Systems.\n\nDer Träger ist robust, wasserdicht und für den Outdoor-Einsatz optimiert. Die Card wird einmalig eingelegt und bleibt für die gesamte Saison im Träger.'},
-    it:{title:'Porta-card\nDettaglio',body:'La combinazione tra tessera stagionale DNS (card RFID/UHF) e porta-card da braccio costituisce il cuore fisico del sistema di ticketing.\n\nIl porta-card è robusto, impermeabile e ottimizzato per l\'uso outdoor. La card viene inserita una volta e rimane nel porta-card per tutta la stagione.'}},
+  /* 14 */ {type:'text-img',imgKey:'15ab',tag:'Armband-Träger / Porta-card da braccio',
+    de:{title:'Armband-Träger',body:'Der Armband-Träger ist die physische Halterung für die DNS-Saisonkarte (RFID/UHF-Card im Kreditkartenformat). Er wurde für maximale Robustheit und Funktionalität im Outdoor-Einsatz entwickelt und trägt die Card sicher am Handgelenk.\n\nDurch seine hohe Sichtbarkeit dient er gleichzeitig als Erkennungszeichen der DNS-Community. Die Card bleibt jederzeit im Träger – kein Herausnehmen nötig. Robust, wasserdicht, für die gesamte Saison.',note:'Hersteller/Implementierung: SAXE'},
+    it:{title:'Porta-card da braccio',body:'Il porta-card da braccio è il supporto fisico per la tessera stagionale DNS (card RFID/UHF in formato carta di credito). È stato sviluppato per massima robustezza e funzionalità nell\'uso outdoor e mantiene la card al polso in modo sicuro.\n\nGrazie alla sua alta visibilità funge anche da segno di riconoscimento della community DNS. La card rimane sempre nel porta-card – non è necessario estrarla. Robusto, impermeabile, per tutta la stagione.',note:'Produttore/Implementazione: SAXE'}},
 
   /* 16 */ {type:'text-img',imgKey:16,tag:'Hausloipe / Pista di casa',
     de:{title:'Hausloipe',body:'Die Hausloipe ist ein zentrales Element im Ticketing-System und muss beim Kauf einer Saisonkarte verpflichtend ausgewählt werden.\n\nSie definiert die primäre Nutzungsregion des Karteninhabers und wird über ein einfaches Dropdown-Menü im Kaufprozess festgelegt. Diese Auswahl bildet die Grundlage für das Clearing-System und die Umsatzverteilung.',note:'Implementierung: PRIOT Smart Track / FACTORY'},
@@ -340,27 +342,15 @@ var S=[
     de:{title:'Tageskarten',body:'Das Tageskartensystem bleibt vollständig regional organisiert. Jede Region behält die volle Kontrolle über ihr Tageskartenangebot und kann Preise, Gültigkeit und Vertriebswege eigenständig festlegen.\n\nGäste haben freie Systemwahl ohne DNS-Vorgaben.',note:'Implementierung: bestehende regionale Systeme / optional UHF-Polesticker'},
     it:{title:'Biglietti giornalieri',body:'Il sistema dei biglietti giornalieri rimane completamente organizzato a livello regionale. Ogni regione mantiene il pieno controllo sulla propria offerta e può stabilire autonomamente prezzi, validità e canali di distribuzione.\n\nGli ospiti hanno libera scelta del sistema senza vincoli DNS.',note:'Implementazione: sistemi regionali esistenti / opz. UHF-Polesticker'}},
 
-  /* 21 */ {type:'product',tag:'Nutzerlogik / Logica utenti',
-    de:{title:'Nutzerlogik – 3-Stufen-Modell',items:[
-      {h:'LOCAL – Regionale Nutzer',tech:'Einheimische mit RFID/UHF-Card im Armband-Träger und Hausloipe-Bindung',note:'Stammkunden',icon:'local'},
-      {h:'GUEST – Einfacher Zugang',tech:'Gäste mit digitalem Wallet-Ticket (Wochenkarte) oder Tageskarte',note:'Urlauber',icon:'guest'},
-      {h:'PREMIUM – Langfristige Bindung',tech:'Treue Nutzer mit erweiterten Vorteilen und Anreizen',note:'Loyalitätsprogramm',icon:'premium'}]},
-    it:{title:'Logica utenti – modello a 3 livelli',items:[
-      {h:'LOCAL – Utenti regionali',tech:'Residenti con card RFID/UHF nel porta-card da braccio e pista di casa',note:'Clienti fissi',icon:'local'},
-      {h:'GUEST – Accesso semplice',tech:'Ospiti con biglietto digitale nel Wallet o biglietto giornaliero',note:'Turisti',icon:'guest'},
-      {h:'PREMIUM – Fidelizzazione',tech:'Utenti fedeli con vantaggi estesi e incentivi',note:'Programma fedeltà',icon:'premium'}]}},
-
-  /* 22 */ {type:'listright',tag:'Nutzergruppen / Gruppi di utenti',
-    de:{title:'Nutzer-\ngruppen',items:[
-      {h:'LOCAL – Regionale Nutzer',b:'Einheimische mit RFID/UHF-Card im Armband-Träger und Hausloipe-Bindung.'},
-      {h:'GUEST – Einfacher Zugang',b:'Gäste mit digitalem Wallet-Ticket (Wochenkarte) oder Tageskarte.'},
-      {h:'PREMIUM – Langfristige Bindung',b:'Treue Nutzer mit erweiterten Vorteilen und Anreizen.'},
-      {h:'Unterschiedliche Bedürfnisse',b:'Jede Gruppe erfordert spezifische Systemlogik.'}]},
-    it:{title:'Gruppi di\nutenti',items:[
-      {h:'LOCAL – Utenti regionali',b:'Residenti con card RFID/UHF nel porta-card da braccio e pista di casa.'},
-      {h:'GUEST – Accesso semplice',b:'Ospiti con biglietto digitale nel Wallet o biglietto giornaliero.'},
-      {h:'PREMIUM – Fidelizzazione',b:'Utenti fedeli con vantaggi estesi e incentivi.'},
-      {h:'Esigenze diverse',b:'Ogni gruppo richiede una logica di sistema specifica.'}]}},
+  /* 20 */ {type:'product',tag:'Nutzergruppen / Gruppi di utenti',
+    de:{title:'Nutzergruppen – 3-Stufen-Modell',items:[
+      {h:'LOCAL – Regionale Nutzer',tech:'Einheimische mit RFID/UHF-Card im Armband-Träger und Hausloipe-Bindung. Stammkunden mit saisonalem Zugang zum gesamten DNS-Netzwerk.',note:'Saisonkarte',icon:'local'},
+      {h:'GUEST – Einfacher Zugang',tech:'Gäste mit digitalem Wallet-Ticket (Wochenkarte) oder regionaler Tageskarte. Schneller Kauf, sofortige Nutzung, kein physischer Träger.',note:'Wochen-/Tageskarte',icon:'guest'},
+      {h:'PREMIUM – Langfristige Bindung',tech:'Treue Nutzer mit erweiterten Vorteilen, Bonuspunkten und exklusiven Anreizen. Jede Gruppe erfordert spezifische Systemlogik.',note:'Loyalitätsprogramm',icon:'premium'}]},
+    it:{title:'Gruppi di utenti – modello a 3 livelli',items:[
+      {h:'LOCAL – Utenti regionali',tech:'Residenti con card RFID/UHF nel porta-card da braccio e pista di casa. Clienti fissi con accesso stagionale all\'intera rete DNS.',note:'Tessera stagionale',icon:'local'},
+      {h:'GUEST – Accesso semplice',tech:'Ospiti con biglietto digitale nel Wallet (tessera settimanale) o biglietto giornaliero regionale. Acquisto rapido, utilizzo immediato.',note:'Tessera sett./giorn.',icon:'guest'},
+      {h:'PREMIUM – Fidelizzazione',tech:'Utenti fedeli con vantaggi estesi, punti bonus e incentivi esclusivi. Ogni gruppo richiede una logica di sistema specifica.',note:'Programma fedeltà',icon:'premium'}]}},
 
   /* 23 */ {type:'quad',tag:'Kontrollstrategie / Strategia di controllo',
     de:{title:'Kontrollstrategie',items:[
@@ -589,12 +579,21 @@ function render(s){
         }).join('')+'</div>';
 
     case'listright':
+      var links='';
+      if(data.links){
+        links='<div style="display:flex;flex-direction:column;gap:7px;margin-top:14px">'+
+          data.links.map(function(l){
+            return'<a href="'+l.url+'" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;padding:7px 13px;background:var(--lightest);border:1px solid var(--light);border-radius:8px;font-size:12px;font-weight:600;color:var(--deep);text-decoration:none;">'+
+            '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>'+
+            l.label+'</a>';
+          }).join('')+'</div>';
+      }
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="list-right">'+
         '<div class="list-right-title">'+data.title.replace(/\n/g,'<br>')+'</div>'+
         '<div class="list-items">'+data.items.map(function(i){
           return'<div class="list-item"><h3>'+i.h+'</h3><p>'+i.b+'</p></div>';
-        }).join('')+'</div></div>';
+        }).join('')+links+'</div></div>';
 
     case'product':
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
