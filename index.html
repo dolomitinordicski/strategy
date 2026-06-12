@@ -129,11 +129,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     <div class="header-btns">
       <button class="btn-sm" id="tocBtn" onclick="toggleToc()">☰ Inhalt</button>
       <button class="btn-sm" id="langBtn" onclick="toggleLang()">IT</button>
+      <button class="btn-sm" id="srcBtn" onclick="toggleSrc()" style="border-color:var(--light);color:var(--deep);font-weight:600;">📎 DOCS</button>
       <button class="btn-sm" id="fsBtn" onclick="toggleFs()">⛶</button>
     </div>
   </div>
   <div class="progress-bar"><div class="progress-fill" id="prog"></div></div>
   <div class="toc" id="toc"></div>
+
+  <!-- QUELLEN OVERLAY -->
+  <div id="srcOverlay" style="display:none;position:fixed;inset:0;background:rgba(13,77,94,.55);z-index:100;align-items:center;justify-content:center;">
+    <div style="background:var(--white);border-radius:16px;width:90%;max-width:520px;box-shadow:0 8px 40px rgba(13,77,94,.25);overflow:hidden">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:var(--deep)">
+        <span id="srcTitle" style="font-size:14px;font-weight:700;color:var(--white)">Quellen & Materialien</span>
+        <button onclick="toggleSrc()" style="background:transparent;border:none;color:var(--light);font-size:18px;cursor:pointer;line-height:1">×</button>
+      </div>
+      <div style="padding:18px 20px;display:flex;flex-direction:column;gap:6px" id="srcList"></div>
+    </div>
+  </div>
   <div class="slide" id="slide"></div>
   <div class="nav">
     <button class="btn-nav btn-prev" id="prevBtn" onclick="go(-1)">← Zurück</button>
@@ -293,6 +305,7 @@ var S=[
 
   /* 12 */ {type:'text-img',imgKey:13,tag:'Funktionsweise des Systems',
     video:'https://www.youtube.com/watch?v=3nJNKg5Tz5c',
+    link:{label:'Smart Tracks – System Overview (PDF)',url:'https://github.com/dolomitinordicski/strategy/blob/main/Smart%20Tracks.pdf'},
     de:{title:'Funktionsweise\ndes Systems',body:'Tickets enthalten digitale Zugriffsrechte und werden über vernetzte Messstationen validiert.\n\nDie zentrale Datenbank arbeitet nach einer cloud-first Architektur und bietet Echtzeit-Überblick über Nutzung und Status. Inspektoren nutzen mobile Geräte mit integrierter Langstreckenantenne – die Ticketgültigkeit kann geprüft werden, ohne den Besucher anzuhalten.'},
     it:{title:'Funzionamento\ndel sistema',body:'I biglietti contengono diritti di accesso digitali e vengono validati tramite stazioni di misurazione collegate.\n\nIl database centrale lavora con architettura cloud-first e offre una panoramica in tempo reale. Gli ispettori utilizzano dispositivi mobili con antenna integrata – la validità del biglietto può essere verificata senza fermare il visitatore.'}},
 
@@ -615,11 +628,13 @@ function render(s){
       if(s.imgKey==='15ab') right=imgSlider('15a','15b',220);
       else if(s.imgKey) right=imgEl(s.imgKey,220);
       var vid=s.video?videoWidget(s.video):'';
+      var lnk2=s.link?'<a href="'+s.link.url+'" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:6px 12px;background:var(--lightest);border:1px solid var(--light);border-radius:8px;font-size:12px;font-weight:600;color:var(--deep);text-decoration:none;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>'+s.link.label+'</a>':'';
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="two-col"><div>'+
         '<div class="slide-title">'+data.title.replace(/\n/g,'<br>')+'</div>'+
         data.body.split('\n\n').map(function(p){return'<p class="text-body">'+p+'</p>';}).join('')+
         (data.note?'<div class="text-note">'+data.note+'</div>':'')+
+        lnk2+
         '</div><div>'+right+vid+'</div></div>';
     }
 
@@ -721,7 +736,48 @@ function render(s){
   }
 }
 
-/* ── UI ── */
+/* ── SOURCES ── */
+var SOURCES=[
+  {cat:'Technologie',de:'PRIOT Smart Track – Website',it:'PRIOT Smart Track – Sito web',url:'https://www.priot.io/'},
+  {cat:'Technologie',de:'Smart Tracks – System Overview (PDF)',it:'Smart Tracks – Panoramica del sistema (PDF)',url:'https://github.com/dolomitinordicski/strategy/blob/main/Smart%20Tracks.pdf'},
+  {cat:'Angebot / Offerta',de:'Pilotangebot PN26-016-DNS (PDF)',it:'Offerta pilota PN26-016-DNS (PDF)',url:'https://github.com/dolomitinordicski/strategy/blob/main/PN26-016-DNS%20Dolomiti%20NordicSki%20x%20PRIOT%20Smart%20Track%20Pilot.pdf'},
+  {cat:'Analytics / Analitiche',de:'Ticket Issuance – Planica (letzte 2 Saisons)',it:'Ticket Issuance – Planica (ultime 2 stagioni)',url:'https://claude.ai/public/artifacts/7ab44b72-2e6c-4736-86a0-b0a8aab9a244'},
+  {cat:'Analytics / Analitiche',de:'Detection Analytics – Planica (letzte 4 Saisons)',it:'Detection Analytics – Planica (ultime 4 stagioni)',url:'https://claude.ai/public/artifacts/ad45962c-e670-40e2-8c99-ce9d04c20676'},
+  {cat:'Video',de:'PRIOT Smart Track – Demonstrationsvideo',it:'PRIOT Smart Track – Video dimostrativo',url:'https://www.youtube.com/watch?v=3nJNKg5Tz5c'}
+];
+
+function toggleSrc(){
+  var ov=document.getElementById('srcOverlay');
+  var btn=document.getElementById('srcBtn');
+  var open=ov.style.display==='flex';
+  if(open){
+    ov.style.display='none';
+    btn.classList.remove('active');
+  } else {
+    // build list
+    var html='';
+    var lastCat='';
+    SOURCES.forEach(function(s){
+      if(s.cat!==lastCat){
+        html+='<div style="font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--mid);text-transform:uppercase;margin-top:'+(lastCat?'10px':'0')+'">'+s.cat+'</div>';
+        lastCat=s.cat;
+      }
+      html+='<a href="'+s.url+'" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:8px 12px;background:var(--lightest);border:1px solid var(--lighter);border-radius:8px;font-size:12px;font-weight:500;color:var(--deep);text-decoration:none;">'+
+        '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>'+
+        (lang==='de'?s.de:s.it)+'</a>';
+    });
+    document.getElementById('srcList').innerHTML=html;
+    document.getElementById('srcTitle').textContent='DOCS';
+    document.getElementById('srcBtn').textContent='📎 DOCS';
+    ov.style.display='flex';
+    btn.classList.add('active');
+  }
+}
+
+// close overlay clicking outside
+document.getElementById('srcOverlay').addEventListener('click',function(e){
+  if(e.target===this) toggleSrc();
+});
 function buildToc(){
   document.getElementById('toc').innerHTML=S.map(function(s,i){
     return'<button class="toc-item'+(i===cur?' active':'')+'" onclick="goTo('+i+')">'+
@@ -739,9 +795,9 @@ function paint(){
   document.getElementById('nextBtn').textContent=L.n;
   document.getElementById('langBtn').textContent=L.l;
   document.getElementById('counter').textContent=L.s+' '+(cur+1)+' '+L.o+' '+S.length;
+  document.getElementById('srcBtn').textContent='📎 DOCS';
   document.getElementById('prevBtn').disabled=cur===0;
   document.getElementById('nextBtn').disabled=cur===S.length-1;
-  buildToc();
 }
 
 function go(d){cur=Math.max(0,Math.min(S.length-1,cur+d));paint();}
