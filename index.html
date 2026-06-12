@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DNS – Strategisches Ticketing & Systemkonzept | Stand 10.06.2026</title>
+<title>DNS – Strategisches Ticketing & Systemkonzept | Vorstandssitzung 10.06.2026</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f0f6f7;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
@@ -128,7 +128,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         <img src="logo.png" style="width:40px;height:40px;object-fit:contain;">
       </div>
 
-      <span class="logo-sub">Stand 10.06.2026</span>
+      <span class="logo-sub">Vorstandssitzung 10.06.2026</span>
     </div>
     <div class="header-btns">
       <button class="btn-sm" id="tocBtn" onclick="toggleToc()">☰ Inhalt</button>
@@ -201,53 +201,41 @@ var slides=[
   // 7
   {type:"product",tag:"Produktlogik / Logica di prodotto",
     de:{title:"Produktlogik",items:[
-      {h:"Saisonkarte (DNS)",tech:"RFID/UHF- Card – netzwerkweit gültig",note:"Implementierung: PRIOT",icon:"rfid"},
-      {h:"Wochenkarte (DNS)",tech:"QR-Code digital – kein physischer Träger",note:"Implementierung: LTS Shop",icon:"qr"},
+      {h:"Saisonkarte (DNS)",tech:"RFID/UHF-Card im Armband-Träger – netzwerkweit gültig",note:"Implementierung: PRIOT",icon:"rfid"},
+      {h:"Wochenkarte (DNS)",tech:"Digitales Ticket – gespeichert im Wallet (Apple, Google, Samsung)",note:"Implementierung: LTS Shop",icon:"qr"},
       {h:"Tageskarten (Regionen)",tech:"Regionale Systeme / optional UHF-Polesticker",note:"Autonome Entscheidung pro Region",icon:"ticket"}]},
     it:{title:"Logica di prodotto",items:[
-      {h:"Tessera stagionale (DNS)",tech:"Card RFID/UHF – valido su tutta la rete",note:"Implementazione: PRIOT",icon:"rfid"},
-      {h:"Tessera settimanale (DNS)",tech:"Codice QR digitale – nessun supporto fisico",note:"Implementazione: LTS Shop",icon:"qr"},
+      {h:"Tessera stagionale (DNS)",tech:"Card RFID/UHF nel porta-card da braccio – valido su tutta la rete",note:"Implementazione: PRIOT",icon:"rfid"},
+      {h:"Tessera settimanale (DNS)",tech:"Biglietto digitale – salvato nel Wallet (Apple, Google, Samsung)",note:"Implementazione: LTS Shop",icon:"qr"},
       {h:"Biglietti giornalieri (Regioni)",tech:"Sistemi regionali / opz. UHF-Polesticker",note:"Decisione autonoma per regione",icon:"ticket"}]}},
   // 8
   {type:"listright",tag:"Systemarchitektur",
     de:{title:"Mehrstufiges\nModell",items:[
-      {h:"Saisonkarten",b:"UHF (automatische Erkennung) – DNS-Ebene"},
-      {h:"Wochenkarten",b:"QR (digitale Nutzung) – DNS-Ebene"},
+      {h:"Saisonkarten",b:"RFID/UHF-Card im Armband-Träger – automatische Erkennung, DNS-Ebene"},
+      {h:"Wochenkarten",b:"Digitales Ticket im Wallet (Apple, Google, Samsung) – DNS-Ebene"},
       {h:"Tageskarten",b:"Regionale Systeme – autonome Entscheidung pro Region"}]},
     it:{title:"Modello\nmultilivello",items:[
-      {h:"Tessere stagionali",b:"UHF (riconoscimento automatico) – livello DNS con chip"},
-      {h:"Tessere settimanali",b:"QR (utilizzo digitale) – livello DNS"},
+      {h:"Tessere stagionali",b:"Card RFID/UHF nel porta-card da braccio – riconoscimento automatico, livello DNS"},
+      {h:"Tessere settimanali",b:"Biglietto digitale nel Wallet (Apple, Google, Samsung) – livello DNS"},
       {h:"Biglietti giornalieri",b:"Sistemi regionali – decisione autonoma per regione"}]}},
   // 9
   {type:"text-img",imgKey:9,tag:"Saisonkarte / Tessera stagionale",
-    de:{title:"Saisonkarte (DNS)",body:"Die DNS-Saisonkarte basiert auf einem RFID/UHF-Card. Ein Armband gilt als physisches Trägermedium. Dieses ist direkt mit dem persönlichen Nutzerkonto verknüpft und ermöglicht langfristigen Zugang zum gesamten Loipennetzwerk.\n\nDurch die digitale Verknüpfung werden Nutzungsdaten erfasst und der Clearing-Prozess automatisiert. Das System bietet maximalen Komfort bei minimalem Verwaltungsaufwand.",note:"Implementierung: PRIOT"},
-    it:{title:"Tessera stagionale (DNS)",body:"La tessera stagionale DNS si basa su una card (tipo carta credito) con chip RFID/UHF indossata tramite una fascia a braccio come supporto fisico. È collegato direttamente all'account personale e consente l'accesso a lungo termine all'intera rete di piste.\n\nGrazie al collegamento digitale, i dati di utilizzo vengono registrati e il processo di clearing automatizzato. Il sistema offre massimo comfort con minimo sforzo amministrativo.",note:"Implementazione: PRIOT"}},
+    de:{title:"Saisonkarte (DNS)",body:"Die DNS-Saisonkarte ist eine RFID/UHF-Card im Kreditkartenformat mit integriertem Chip. Sie wird in einer robusten Armband-Halterung am Handgelenk getragen und ist direkt mit dem persönlichen Nutzerkonto verknüpft.\n\nDie Kombination aus Card und Armband-Träger ermöglicht automatische Erkennung beim Passieren von Kontrollpunkten – ohne Anhalten, ohne Scannen. Nutzungsdaten werden erfasst und der Clearing-Prozess automatisiert.",note:"Implementierung: PRIOT"},
+    it:{title:"Tessera stagionale (DNS)",body:"La tessera stagionale DNS è una card RFID/UHF in formato carta di credito con chip integrato. Viene portata in un porta-card da braccio robusto e collegata direttamente all'account personale dell'utente.\n\nLa combinazione card + porta-card da braccio consente il riconoscimento automatico al passaggio dei punti di controllo – senza fermarsi, senza scansione. I dati di utilizzo vengono registrati e il processo di clearing automatizzato.",note:"Implementazione: PRIOT"}},
   // 10
-  {type:"section",tag:"Technologie PRIOT",
-    de:{title:"Technologie",sub:"PRIOT Smart Track"},
-    it:{title:"Tecnologia",sub:"PRIOT Smart Track"}},
+  {type:"section",tag:"Technologischer Ansatz",
+    de:{title:"Der technologische Ansatz",sub:"PRIOT Smart Track"},
+    it:{title:"L'approccio tecnologico",sub:"PRIOT Smart Track"}},
   // 11
-  {type:"quad",tag:"PRIOT Integration",
-    de:{title:"PRIOT Integration",items:[
-      {h:"Technologiebasis",b:"PRIOT bildet das technologische Fundament des gesamten Ticketing-Systems für Dolomiti NordicSki."},
-      {h:"PRIOT System (Planica – SLO)",b:"Bewährte Technologie für Zutrittskontrolle und Datenmanagement im Skibereich."},
-      {h:"Hardware + Software",b:"Kombinierte Lösung aus robuster Hardware-Infrastruktur und flexibler Software-Plattform."},
-      {h:"Zentrale Datenstruktur",b:"Einheitliche Datenarchitektur ermöglicht nahtlose Integration aller Systemkomponenten."}]},
-    it:{title:"Integrazione PRIOT",items:[
-      {h:"Base tecnologica",b:"PRIOT costituisce il fondamento tecnologico dell'intero sistema di ticketing per Dolomiti NordicSki."},
-      {h:"Sistema PRIOT (Planica – SLO)",b:"Tecnologia collaudata per il controllo degli accessi e la gestione dei dati nel settore sciistico."},
-      {h:"Hardware + Software",b:"Soluzione combinata di infrastruttura hardware robusta e piattaforma software flessibile."},
-      {h:"Struttura dati centrale",b:"Architettura dati uniforme consente l'integrazione seamless di tutti i componenti di sistema."}]}},
-  // 12
-  {type:"listright",tag:"Technologische Basis / Base tecnologica",
-    de:{title:"PRIOT\nSmart Track",items:[
-      {h:"Cloud-basiertes System",b:"Zentrale Datenstruktur, vernetzte Messstationen (LTE) in mehreren Regionen."},
-      {h:"Multi-Ticket-Support",b:"Unterstützung verschiedener Tickettypen im gleichen System."},
-      {h:"UHF-Technologie",b:"Grundlage für automatische Erkennung ohne Anhalten des Nutzers."}]},
-    it:{title:"PRIOT\nSmart Track",items:[
-      {h:"Sistema cloud-based",b:"Struttura dati centrale, stazioni di misurazione collegate (LTE) in più regioni."},
-      {h:"Multi-ticket support",b:"Supporto di diversi tipi di biglietto nello stesso sistema."},
-      {h:"Tecnologia UHF",b:"Base per il riconoscimento automatico senza fermare l'utente."}]}},
+  {type:"text-img-points",imgKey:12,tag:"PRIOT Integration",
+    de:{title:"PRIOT Smart Track",body:"PRIOT ist ein slowenisches Unternehmen, das eine integrierte Hardware- und Software-Lösung für das nordische Skizentrum Planica entwickelt hat. Das System umfasst vernetzte Messstationen, mobile Validierungsgeräte und eine cloud-basierte Plattform zur Ticketverwaltung und Nutzungsanalyse.\n\nSeit mehreren Saisons im Einsatz, bildet PRIOT Smart Track die technologische Grundlage für Zutrittskontrolle und Datenmanagement im Langlaufbereich.",items:[
+      {h:"Cloud-basiertes System",b:"Zentrale Datenstruktur, vernetzte Messstationen (LTE)."},
+      {h:"Multi-Ticket-Support",b:"Verschiedene Tickettypen parallel im gleichen System."},
+      {h:"UHF-Technologie",b:"Automatische Erkennung ohne Anhalten des Nutzers."}]},
+    it:{title:"PRIOT Smart Track",body:"PRIOT è un'azienda slovena che ha sviluppato una soluzione integrata hardware e software per il centro nordico di Planica. Il sistema comprende stazioni di misurazione collegate, dispositivi di validazione mobili e una piattaforma cloud per la gestione dei biglietti e l'analisi dell'utilizzo.\n\nAttivo da diverse stagioni, PRIOT Smart Track costituisce la base tecnologica per il controllo degli accessi e la gestione dei dati nel fondo.",items:[
+      {h:"Sistema cloud-based",b:"Struttura dati centrale, stazioni collegate (LTE)."},
+      {h:"Multi-ticket support",b:"Diversi tipi di biglietto in parallelo nello stesso sistema."},
+      {h:"Tecnologia UHF",b:"Riconoscimento automatico senza fermare l'utente."}]}},
   // 13
   {type:"text-img",imgKey:13,tag:"Funktionsweise des Systems",
     de:{title:"Funktionsweise\ndes Systems",body:"Tickets enthalten digitale Zugriffsrechte und werden über vernetzte Messstationen validiert.\n\nDie zentrale Datenbank arbeitet nach einer cloud-first Architektur und bietet Echtzeit-Überblick über Nutzung und Status. Inspektoren nutzen mobile Geräte mit integrierter Langstreckenantenne für die Zutrittskontrolle – die Ticketgültigkeit kann geprüft werden, ohne den Besucher anzuhalten."},
@@ -265,9 +253,9 @@ var slides=[
       {h:"Dashboard utente personalizzate",b:"Opzionale: statistiche individuali per i titolari di tessera."},
       {h:"Integrazione di servizi",b:"Offerte, partner e servizi regionali collegabili direttamente."}]}},
   // 15
-  {type:"text-img",imgKey:"15ab",tag:"Armband / fascia a braccio",
-    de:{title:"Armband",body:"Das Armband wird der physische Träger der DNS-Saisonkarte. Es wird für maximale Robustheit und Funktionalität im Outdoor-Einsatz entwickelt.\n\nDurch seine hohe Sichtbarkeit vor Ort dient es gleichzeitig als Erkennungszeichen der DNS-Community und ermöglicht eine schnelle visuelle Identifikation bei Kontrollen.",note:"Hersteller/Implementierung: SAXE"},
-    it:{title:"Braccialetto",body:" sarà il supporto fisico della card stagionale DNS. Viene sviluppato per massima robustezza e funzionalità nell'uso outdoor.\n\nGrazie alla sua alta visibilità in loco, funge anche da segno di riconoscimento della community DNS e consente una rapida identificazione visiva durante i controlli.",note:"Produttore/Implementazione: SAXE"}},
+  {type:"text-img",imgKey:"15ab",tag:"Armband / Braccialetto",
+    de:{title:"Armband-Träger",body:"Der Armband-Träger ist die physische Halterung für die DNS-Saisonkarte. Er wurde für maximale Robustheit und Funktionalität im Outdoor-Einsatz entwickelt und trägt die RFID/UHF-Card sicher am Handgelenk.\n\nDurch seine hohe Sichtbarkeit dient er gleichzeitig als Erkennungszeichen der DNS-Community und ermöglicht eine schnelle visuelle Identifikation bei Kontrollen. Die Card selbst bleibt jederzeit im Träger – kein Herausnehmen nötig.",note:"Hersteller/Implementierung: SAXE"},
+    it:{title:"Porta-card da braccio",body:"Il porta-card da braccio è il supporto fisico per la tessera stagionale DNS. È stato sviluppato per massima robustezza e funzionalità nell'uso outdoor e mantiene la card RFID/UHF al polso in modo sicuro.\n\nGrazie alla sua alta visibilità funge anche da segno di riconoscimento della community DNS e consente una rapida identificazione visiva durante i controlli. La card rimane sempre nel porta-card – non è necessario estrarla.",note:"Produttore/Implementazione: SAXE"}},
   // 16
   {type:"text-img",imgKey:16,tag:"Hausloipe / Pista di casa",
     de:{title:"Hausloipe",body:"Die Hausloipe ist ein zentrales Element im Ticketing-System und muss beim Kauf einer Saisonkarte verpflichtend ausgewählt werden.\n\nSie definiert die primäre Nutzungsregion des Karteninhabers und wird über ein einfaches Dropdown-Menü im Kaufprozess festgelegt. Diese Auswahl bildet die Grundlage für das Clearing-System und die Umsatzverteilung.",note:"Implementierung: PRIOT Smart Track / FACTORY"},
@@ -286,9 +274,8 @@ var slides=[
       {h:"Trasparenza",b:"Piena tracciabilità di tutti i flussi finanziari. Ogni regione riceve rendiconti dettagliati."}]}},
   // 18
   {type:"text-img",imgKey:18,tag:"Wochenkarte DNS",
-    de:{title:"Wochenkarte DNS",body:"Die Wochenkarte ist vollständig digital und wird als QR-Code bereitgestellt. Es ist keine physische Karte erforderlich – der Code kann direkt auf dem Smartphone gespeichert werden (Google Wallet oder ähnliches).\n\nDiese Lösung ist ideal für Gäste: schneller Kauf, sofortige Nutzung und maximale Flexibilität ohne zusätzlichen Aufwand bei der Abholung oder Rückgabe.",note:"Implementierung: LTS Shop"
-},
-it:{title:"Tessera settimanale DNS",body:"La tessera settimanale è completamente digitale e viene fornita come codice QR. Non è necessaria una tessera fisica – il codice può essere salvato direttamente sullo smartphone (Google Wallet o simili).\n\nQuesta soluzione è ideale per gli ospiti: acquisto rapido, utilizzo immediato e massima flessibilità senza l'onere del ritiro o della restituzione.",note:"Implementazione: LTS Shop",
+    de:{title:"Wochenkarte DNS",body:"Die Wochenkarte ist ein vollständig digitales Ticket. Nach dem Kauf wird es direkt auf das Smartphone heruntergeladen und im digitalen Wallet gespeichert – kompatibel mit Apple Wallet, Google Wallet und Samsung Wallet.\n\nKeine physische Karte, kein Ausdrucken – das Ticket ist jederzeit am Smartphone verfügbar. Ideal für Gäste: schneller Kauf, sofortige Nutzung und maximale Flexibilität.",note:"Implementierung: LTS Shop"},
+    it:{title:"Tessera settimanale DNS",body:"La tessera settimanale è un biglietto completamente digitale. Dopo l'acquisto viene scaricato direttamente sullo smartphone e salvato nel wallet digitale – compatibile con Apple Wallet, Google Wallet e Samsung Wallet.\n\nNessuna tessera fisica, nessuna stampa – il biglietto è sempre disponibile sullo smartphone. Ideale per gli ospiti: acquisto rapido, utilizzo immediato e massima flessibilità.",note:"Implementazione: LTS Shop"}},
   // 19
   {type:"text-img",imgKey:19,tag:"Guest Card Integration",
     de:{title:"Guest Card Integration",body:"Die Guest Card Integration ermöglicht eine nahtlose Erweiterung bestehender Systeme. Durch eine Add-on-Logik können regionale Gästekarten einfach mit dem DNS-Ticketing verknüpft werden.\n\nDies schafft Mehrwert für Gäste und Regionen gleichermaßen, ohne bestehende Strukturen zu ersetzen. Die modulare Architektur erlaubt flexible Anpassungen je nach regionalen Anforderungen.",note:"Implementierung: LTS Shop"},
@@ -300,22 +287,22 @@ it:{title:"Tessera settimanale DNS",body:"La tessera settimanale è completament
   // 21
   {type:"product",tag:"Nutzerlogik / Logica utenti",
     de:{title:"Nutzerlogik – 3-Stufen-Modell",items:[
-      {h:"LOCAL – Regionale Nutzer",tech:"Einheimische mit Saisonkarte und Hausloipe-Bindung",note:"Stammkunden",icon:"local"},
+      {h:"LOCAL – Regionale Nutzer",tech:"Einheimische mit Saisonkarte (RFID/UHF-Card im Armband-Träger) und Hausloipe-Bindung",note:"Stammkunden",icon:"local"},
       {h:"GUEST – Einfacher Zugang",tech:"Gäste mit digitaler Wochenkarte und QR-Code / Tageskarte",note:"Urlauber",icon:"guest"},
       {h:"PREMIUM – Langfristige Bindung",tech:"Treue Nutzer mit erweiterten Vorteilen und Anreizen",note:"Loyalitätsprogramm",icon:"premium"}]},
     it:{title:"Logica utenti – modello a 3 livelli",items:[
-      {h:"LOCAL – Utenti regionali",tech:"Residenti con tessera stagionale e pista di casa",note:"Clienti fissi",icon:"local"},
+      {h:"LOCAL – Utenti regionali",tech:"Residenti con tessera stagionale (card RFID/UHF nel porta-card da braccio) e pista di casa",note:"Clienti fissi",icon:"local"},
       {h:"GUEST – Accesso semplice",tech:"Ospiti con tessera settimanale digitale / biglietto giornaliero",note:"Turisti",icon:"guest"},
       {h:"PREMIUM – Fidelizzazione",tech:"Utenti fedeli con vantaggi estesi e incentivi",note:"Programma fedeltà",icon:"premium"}]}},
   // 22
   {type:"listright",tag:"Nutzergruppen / Gruppi di utenti",
     de:{title:"Nutzer-\ngruppen",items:[
-      {h:"LOCAL – Regionale Nutzer",b:"Einheimische mit Saisonkarte und Hausloipe-Bindung."},
+      {h:"LOCAL – Regionale Nutzer",b:"Einheimische mit Saisonkarte (RFID/UHF-Card im Armband-Träger) und Hausloipe-Bindung."},
       {h:"GUEST – Einfacher Zugang",b:"Gäste mit digitaler Wochenkarte und QR-Code / Tageskarte."},
       {h:"PREMIUM – Langfristige Bindung",b:"Treue Nutzer mit erweiterten Vorteilen und Anreizen."},
       {h:"Unterschiedliche Bedürfnisse",b:"Jede Gruppe erfordert spezifische Systemlogik."}]},
     it:{title:"Gruppi di\nutenti",items:[
-      {h:"LOCAL – Utenti regionali",b:"Residenti con tessera stagionale e legame con la pista di casa."},
+      {h:"LOCAL – Utenti regionali",b:"Residenti con tessera stagionale (card RFID/UHF nel porta-card da braccio) e legame con la pista di casa."},
       {h:"GUEST – Accesso semplice",b:"Ospiti con tessera settimanale digitale e QR-Code / biglietto giornaliero."},
       {h:"PREMIUM – Fidelizzazione",b:"Utenti fedeli con vantaggi estesi e incentivi."},
       {h:"Esigenze diverse",b:"Ogni gruppo richiede una logica di sistema specifica."}]}},
@@ -612,21 +599,44 @@ function renderSlide(s){
         '<div class="quad-grid">'+data.items.map(function(it){
           return'<div class="quad-card"><h3>'+it.h+'</h3><p>'+it.b+'</p></div>';
         }).join('')+'</div>';
+    case"text-img-points":
+      var imgTop=s.imgKey?imgEl(s.imgKey,140):'';
+      return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
+        '<div class="two-col"><div>'+
+        '<div class="slide-title">'+data.title+'</div>'+
+        data.body.split('\n\n').map(function(p){return'<p class="text-body">'+p+'</p>';}).join('')+
+        (data.note?'<div class="text-note">'+data.note+'</div>':'')+
+        '</div><div>'+imgTop+
+        '<div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">'+
+        data.items.map(function(it){
+          return'<div style="border-left:3px solid var(--light);padding-left:12px">'+
+            '<div style="font-size:12px;font-weight:700;color:var(--deep)">'+it.h+'</div>'+
+            '<div style="font-size:12px;color:var(--muted);line-height:1.5">'+it.b+'</div></div>';
+        }).join('')+
+        '</div></div></div>';
     case"text-img":
-      var imgRight='';
+    case"text-img":
+      var imgRight2='';
       if(s.imgKey==='15ab'){
-        imgRight=imgSlider('15a','15b',220);
+        imgRight2=imgSlider('15a','15b',220);
       } else if(s.imgKey){
-        imgRight=imgEl(s.imgKey,220);
+        imgRight2=imgEl(s.imgKey,220);
       } else {
-        imgRight='<div class="img-placeholder"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#417483" stroke-width="1.6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><div class="img-caption">DOLOMITI NORDICSKI</div></div>';
+        imgRight2='<div class="img-placeholder"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#417483" stroke-width="1.6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><div class="img-caption">DOLOMITI NORDICSKI</div></div>';
+      }
+      var videoWidget='';
+      if(s.de && s.de.video){
+        var videoId=s.de.video.split('v=')[1];
+        videoWidget='<div style="margin-top:12px;border-radius:10px;overflow:hidden;border:1px solid var(--light);">'+
+        '<div style="background:var(--deep);padding:6px 12px;font-size:11px;font-weight:600;color:var(--light);letter-spacing:.05em">▶ PRIOT Smart Track – Planica</div>'+
+        '<iframe width="100%" height="175" src="https://www.youtube.com/embed/'+videoId+'?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe></div>';
       }
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="two-col"><div>'+
         '<div class="slide-title">'+data.title.replace(/\n/g,'<br>')+'</div>'+
         data.body.split('\n\n').map(function(p){return'<p class="text-body">'+p+'</p>';}).join('')+
         (data.note?'<div class="text-note">'+data.note+'</div>':'')+
-        '</div><div>'+imgRight+'</div></div>';
+        '</div><div>'+imgRight2+videoWidget+'</div></div>';
     case"product":
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="slide-title">'+data.title+'</div>'+
