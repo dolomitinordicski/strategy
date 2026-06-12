@@ -2,8 +2,8 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=2.0">
-<title>DNS – Strategisches Ticketing | Stand 10.06.2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DNS – Strategisches Ticketing | Vorstandssitzung 10.06.2026</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f0f6f7;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
@@ -45,7 +45,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .qcard p{font-size:12px;color:var(--muted);line-height:1.55}
 .section-wrap{background:linear-gradient(135deg,var(--deep) 0%,var(--mid) 100%);border-radius:14px;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:44px 32px;text-align:center}
 .section-num{font-size:52px;font-weight:800;color:var(--light);line-height:1;margin-bottom:8px}
-.section-title{font-size:26px;font-weight:700;color:var(--white);margin-bottom:10px;max-width:520px}
+.section-title{font-size:34px;font-weight:700;color:var(--white);margin-bottom:10px;max-width:560px}
 .section-sub{font-size:15px;color:var(--lighter);max-width:420px}
 .list-right{display:grid;grid-template-columns:175px 1fr;gap:24px;align-items:start}
 .list-right-title{font-size:28px;font-weight:800;color:var(--deep);padding-top:4px;line-height:1.2}
@@ -135,10 +135,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
   <div class="header">
     <div class="logo">
       <img src="logo.png" alt="DNS">
-      <span class="logo-sub">Stand 10.06.2026</span>
+      <span class="logo-sub">Vorstandssitzung 10.06.2026</span>
     </div>
     <div class="header-btns">
-      <button class="btn-sm" id="tocBtn" onclick="toggleToc()">☰ index</button>
+      <button class="btn-sm" id="tocBtn" onclick="toggleToc()">☰ Inhalt</button>
       <button class="btn-sm" id="langBtn" onclick="toggleLang()">IT</button>
       <button class="btn-sm btn-docs" onclick="toggleDocs()">📎 DOCS</button>
       <button class="btn-sm" id="fsBtn" onclick="toggleFs()">⛶</button>
@@ -229,7 +229,7 @@ function videoWidget(url){
 }
 
 var S=[
-  {type:'section',num:'3.',tag:'Strategisches Ticketing & Systemkonzept',
+  {type:'section',tag:'Strategisches Ticketing & Systemkonzept',
     de:{title:'Strategisches Ticketing- und Systemkonzept',sub:'DNS Zukunftsvision'},
     it:{title:'Concetto strategico di ticketing e sistema',sub:'Visione futura DNS'}},
 
@@ -406,7 +406,7 @@ var S=[
       {h:'Controllo QR/Wallet',b:'Le tessere settimanali vengono verificate tramite biglietto digitale nel Wallet.'},
       {h:'Verifica seamless',b:'Logica di sistema uniforme. Sforzo minimo per il personale e gli utenti.'}]}},
 
-  {type:'textimg',imgKey:null,tag:'Incentivierung / Incentivazione',
+  {type:'textimg',imgKey:25,tag:'Incentivierung / Incentivazione',
     de:{title:'Incentivierung',body:'Das Scansystem basiert auf Freiwilligkeit und einfacher Logik. Nutzer werden durch ein attraktives Belohnungssystem motiviert, ihre Karten an Kontrollpunkten zu scannen.\n\nDurch gezielte Anreize wie Rabatte, Bonuspunkte oder exklusive Vorteile entsteht eine Win-Win-Situation: höhere Datenqualität für DNS bei gleichzeitigem Mehrwert für die Nutzer.',note:'Mögliche Erweiterungen'},
     it:{title:'Incentivazione',body:'Il sistema di scansione si basa sulla volontarietà e su una logica semplice. Gli utenti sono motivati da un sistema di premi attrattivo a scansionare le loro tessere.\n\nGrazie a incentivi mirati come sconti, punti bonus o vantaggi esclusivi si crea una situazione win-win: maggiore qualità dei dati per DNS e valore aggiunto per gli utenti.',note:'Possibili estensioni'}},
 
@@ -440,7 +440,7 @@ var S=[
     de:{title:'Zukunft & Vision',sub:'Wir wollen das System sein, an dem sich andere orientieren.'},
     it:{title:'Futuro & Visione',sub:'Vogliamo essere il sistema di riferimento per gli altri.'}},
 
-  {type:'textimg',imgKey:25,tag:'Von der Vision zur Realität / Dalla visione alla realtà',
+  {type:'textimg',imgKey:null,tag:'Von der Vision zur Realität / Dalla visione alla realtà',
     de:{title:'Von der Vision zur Realität',body:'Val Casies / Gsiesertal als erster Schritt.\n\nMit dem Pilot in einer einzelnen Region schaffen wir die Grundlage für ein skalierbares System, das schrittweise auf das gesamte DNS-Netzwerk ausgeweitet werden kann.'},
     it:{title:'Dalla visione alla realtà',body:'Val Casies / Gsiesertal come primo passo.\n\nCon il pilota in una singola regione creiamo le basi per un sistema scalabile che può essere esteso gradualmente all\'intera rete DNS.'}},
 
