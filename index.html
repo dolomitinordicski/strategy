@@ -278,14 +278,18 @@ var S=[
     it:{title:'L\'approccio tecnologico',sub:'PRIOT Smart Track'}},
 
   /* 11 */ {type:'text-img-points',imgKey:12,tag:'PRIOT Smart Track',
-    de:{title:'PRIOT Smart Track',body:'PRIOT ist ein slowenisches Unternehmen, das eine integrierte Hardware- und Software-Lösung für das nordische Skizentrum Planica entwickelt hat. Das System umfasst vernetzte Messstationen, mobile Validierungsgeräte und eine cloud-basierte Plattform zur Ticketverwaltung und Nutzungsanalyse.\n\nSeit mehreren Saisons im Einsatz, bildet PRIOT Smart Track die technologische Grundlage für Zutrittskontrolle und Datenmanagement im Langlaufbereich.',items:[
-      {h:'Cloud-basiertes System',b:'Zentrale Datenstruktur, vernetzte Messstationen (LTE).'},
-      {h:'Multi-Ticket-Support',b:'Verschiedene Tickettypen parallel im gleichen System.'},
-      {h:'UHF-Technologie',b:'Automatische Erkennung ohne Anhalten des Nutzers.'}]},
-    it:{title:'PRIOT Smart Track',body:'PRIOT è un\'azienda slovena che ha sviluppato una soluzione integrata hardware e software per il centro nordico di Planica. Il sistema comprende stazioni di misurazione collegate, dispositivi di validazione mobili e una piattaforma cloud per la gestione dei biglietti e l\'analisi dell\'utilizzo.\n\nAttivo da diverse stagioni, PRIOT Smart Track costituisce la base tecnologica per il controllo degli accessi e la gestione dei dati nel fondo.',items:[
-      {h:'Sistema cloud-based',b:'Struttura dati centrale, stazioni collegate (LTE).'},
-      {h:'Multi-ticket support',b:'Diversi tipi di biglietto in parallelo nello stesso sistema.'},
-      {h:'Tecnologia UHF',b:'Riconoscimento automatico senza fermare l\'utente.'}]}},
+    de:{title:'PRIOT Smart Track',body:'PRIOT ist ein slowenisches Unternehmen, das eine integrierte Hardware- und Software-Lösung für das nordische Skizentrum Planica entwickelt hat. Das System umfasst vernetzte Messstationen, mobile Validierungsgeräte und eine cloud-basierte Plattform zur Ticketverwaltung und Nutzungsanalyse.\n\nSeit mehreren Saisons im Einsatz, bildet PRIOT Smart Track die technologische Grundlage für Zutrittskontrolle und Datenmanagement im Langlaufbereich.',
+      link:{label:'www.priot.io',url:'https://www.priot.io/'},
+      items:[
+        {h:'Cloud-basiertes System',b:'Zentrale Datenstruktur, vernetzte Messstationen (LTE).'},
+        {h:'Multi-Ticket-Support',b:'Verschiedene Tickettypen parallel im gleichen System.'},
+        {h:'UHF-Technologie',b:'Automatische Erkennung ohne Anhalten des Nutzers.'}]},
+    it:{title:'PRIOT Smart Track',body:'PRIOT è un\'azienda slovena che ha sviluppato una soluzione integrata hardware e software per il centro nordico di Planica. Il sistema comprende stazioni di misurazione collegate, dispositivi di validazione mobili e una piattaforma cloud per la gestione dei biglietti e l\'analisi dell\'utilizzo.\n\nAttivo da diverse stagioni, PRIOT Smart Track costituisce la base tecnologica per il controllo degli accessi e la gestione dei dati nel fondo.',
+      link:{label:'www.priot.io',url:'https://www.priot.io/'},
+      items:[
+        {h:'Sistema cloud-based',b:'Struttura dati centrale, stazioni collegate (LTE).'},
+        {h:'Multi-ticket support',b:'Diversi tipi di biglietto in parallelo nello stesso sistema.'},
+        {h:'Tecnologia UHF',b:'Riconoscimento automatico senza fermare l\'utente.'}]}},
 
   /* 12 */ {type:'text-img',imgKey:13,tag:'Funktionsweise des Systems',
     video:'https://www.youtube.com/watch?v=3nJNKg5Tz5c',
@@ -427,6 +431,7 @@ var S=[
       {h:'DNS',b:'Coordinamento strategico & governance'}]}},
 
   /* 31 */ {type:'pilot',tag:'Pilot Gsiesertal 2026/27',
+    link:{label:'Angebot PN26-016-DNS (PDF)',url:'https://github.com/dolomitinordicski/strategy/blob/main/PN26-016-DNS%20Dolomiti%20NordicSki%20x%20PRIOT%20Smart%20Track%20Pilot.pdf'},
     de:{title:'Pilot\nGsiesertal\n2026/27',items:[
       {h:'RFID Tagesticket (Polesticker)',b:'Ausgabe an 2 offiziellen Verkaufsstellen. Sticker am Skistock für zuverlässige UHF-Erkennung.'},
       {h:'Hybrides System',b:'Bestehende Tickets laufen in allen anderen Kanälen weiter. Keine Unterbrechung des Betriebs.'},
@@ -620,10 +625,12 @@ function render(s){
 
     case'text-img-points':{
       var top=s.imgKey?imgEl(s.imgKey,130):'';
+      var lnk=data.link?'<a href="'+data.link.url+'" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:6px 12px;background:var(--lightest);border:1px solid var(--light);border-radius:8px;font-size:12px;font-weight:600;color:var(--deep);text-decoration:none;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>'+data.link.label+'</a>':'';
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="two-col"><div>'+
         '<div class="slide-title">'+data.title+'</div>'+
         data.body.split('\n\n').map(function(p){return'<p class="text-body">'+p+'</p>';}).join('')+
+        lnk+
         '</div><div>'+top+
         '<div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">'+
         data.items.map(function(i){
@@ -634,10 +641,13 @@ function render(s){
     }
 
     case'pilot':
+      var plnk=s.link?'<a href="'+s.link.url+'" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:7px 13px;background:var(--lightest);border:1px solid var(--light);border-radius:8px;font-size:12px;font-weight:600;color:var(--deep);text-decoration:none;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>'+s.link.label+'</a>':'';
       return (s.tag?'<div class="tag">'+s.tag+'</div>':'')+
         '<div class="pilot-grid">'+
-        '<div class="pilot-box"><h2>'+data.title.replace(/\n/g,'<br>')+'</h2></div>'+
-        '<div class="pilot-items">'+data.items.map(function(i){
+        '<div style="display:flex;flex-direction:column;gap:10px">'+
+        '<div class="pilot-box"><h2>'+d(s).title.replace(/\n/g,'<br>')+'</h2></div>'+
+        plnk+'</div>'+
+        '<div class="pilot-items">'+d(s).items.map(function(i){
           return'<div class="pilot-item"><h3>'+i.h+'</h3><p>'+i.b+'</p></div>';
         }).join('')+'</div></div>';
 
